@@ -1,0 +1,44 @@
+{% extends 'index2.html.twig' %}
+
+{% block main %}
+
+Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a href="register">ou vous inscrire.</a><br><br>
+
+  <form method="post">
+    {% if error %}
+      <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+      <div class="mb-3">
+        You are logged in as
+        {{ app.user.username }},
+        <a href="{{ path('app_logout') }}">Logout</a>
+      </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputUsername">Email</label><br>
+    <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" autocomplete="username" required="required" autofocus="autofocus">
+    <label for="inputPassword">Password</label><br>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required="required">
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+<br>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" name="_remember_me">
+        Remember me
+      </label>
+    </div><br>
+
+    <button class="btn btn-lg btn-primary" type="submit" id="submit">
+      Sign in
+    </button>
+  </form>
+{% endblock %}
+
+{% block sidebar %} Vous désirez vous inscrire ? <a href="register">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail (vous l'avez probablement déjà fait), puis authentifier vous une première fois.
+<br><br><a href='reset-password'>Password oublié?</a>
+{% endblock %}

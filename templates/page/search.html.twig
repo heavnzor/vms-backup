@@ -1,0 +1,11 @@
+{% extends 'index.html.twig' %}
+
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw}}
+{%endblock%}
+  {%block sidebar %}
+
+    {{user.pseudonyme}}
+    laissez un peu de temps à Google pour indexer le site. Il se peut que la fonction de recherche ne soit pas tout à fait fonctionnel.
+  {%endblock %}

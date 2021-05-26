@@ -1,0 +1,11 @@
+{%extends 'index.html.twig'%}
+
+{% block main%}
+<h1>{{page.title}}</h1><br>{{page.content|raw}}
+{%endblock%}
+
+{% block sidebar%}
+Ne vous en faites pas {{user.pseudonyme}} !<br>
+De toute manière tout membre inscrit gratuitement restera gratuit à vie.<br><hr><br>
+En tout cas, vous pouvez toujours soutenir ViaMedo via <a href='https://www.patreon.com/viamedo' target='_blank'>Patreon</a> si vous le souhaitez et aurez accès à une newsletter exclusive !
+{%endblock%}

@@ -1,0 +1,403 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920__1 {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_5 {
+	fill: rgba(181,181,181,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_5 {
+	position: absolute;
+	overflow: visible;
+	width: 1919px;
+	height: 1080px;
+	left: 1px;
+	top: 0px;
+}
+#humaaansstanding-2 {
+	position: absolute;
+	width: 264.766px;
+	height: 413.751px;
+	left: 27.234px;
+	top: 481.125px;
+	overflow: visible;
+}
+#humaaan-8 {
+	position: absolute;
+	width: 264.766px;
+	height: 413.751px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#HeadFrontShort-Beard {
+	position: absolute;
+	width: 45.208px;
+	height: 78.196px;
+	left: 123.684px;
+	top: 0px;
+	overflow: visible;
+}
+#Head {
+	position: absolute;
+	width: 43.802px;
+	height: 76.131px;
+	left: 0.116px;
+	top: 2.065px;
+	overflow: visible;
+}
+#Trac_3 {
+	fill: rgba(0,0,0,1);
+}
+.Trac_3 {
+	overflow: visible;
+	position: absolute;
+	width: 43.802px;
+	height: 76.131px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Hair {
+	fill: rgba(0,0,0,1);
+}
+.Hair {
+	overflow: visible;
+	position: absolute;
+	width: 45.208px;
+	height: 54.44px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#BottomStandingBaggy-Pants {
+	position: absolute;
+	width: 260.498px;
+	height: 249.252px;
+	left: 0px;
+	top: 164.499px;
+	overflow: visible;
+}
+#Leg {
+	fill: rgba(0,0,0,1);
+}
+.Leg {
+	overflow: visible;
+	position: absolute;
+	width: 99.075px;
+	height: 239.084px;
+	left: 121.792px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Leg_p {
+	fill: rgba(0,0,0,1);
+}
+.Leg_p {
+	overflow: visible;
+	position: absolute;
+	width: 148.429px;
+	height: 191.829px;
+	left: 14.036px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#AccessoriesShoeFlat-Sneaker {
+	transform: translate(-17.956px, 0px) matrix(1,0,0,1,15.408,192.4102) rotate(50deg);
+	transform-origin: center;
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#shoe {
+	fill: rgba(0,0,0,1);
+}
+.shoe {
+	overflow: visible;
+	position: absolute;
+	width: 55.393px;
+	height: 60.191px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#AccessoriesShoeFlat-Sneaker_s {
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 200.01px;
+	top: 227.697px;
+	overflow: visible;
+}
+#shoe_t {
+	fill: rgba(0,0,0,1);
+}
+.shoe_t {
+	overflow: visible;
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Pant {
+	fill: rgba(0,0,0,1);
+}
+.Pant {
+	overflow: visible;
+	position: absolute;
+	width: 105.5px;
+	height: 227.803px;
+	left: 115.164px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Pant_v {
+	fill: rgba(0,0,0,1);
+}
+.Pant_v {
+	overflow: visible;
+	position: absolute;
+	width: 140.102px;
+	height: 215.76px;
+	left: 27.369px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#BodyTurtle-Neck {
+	position: absolute;
+	width: 236.686px;
+	height: 186.561px;
+	left: 28.081px;
+	top: 50.206px;
+	overflow: visible;
+}
+#Skin {
+	fill: rgba(0,0,0,1);
+}
+.Skin {
+	overflow: visible;
+	position: absolute;
+	width: 236.686px;
+	height: 111.284px;
+	left: 0px;
+	top: 75.277px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Clothes-Back {
+	fill: rgba(0,0,0,1);
+}
+.Clothes-Back {
+	overflow: visible;
+	position: absolute;
+	width: 109.806px;
+	height: 117.765px;
+	transform: translate(-23.113px, 4.934px) matrix(1,0,0,1,128.0336,7.8045) rotate(5deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Clothes-Front {
+	fill: rgba(0,0,0,1);
+}
+.Clothes-Front {
+	overflow: visible;
+	position: absolute;
+	width: 136.494px;
+	height: 160.37px;
+	left: 18.812px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Image_1 {
+	position: absolute;
+	width: 265px;
+	height: 399px;
+	left: 1637px;
+	top: 496px;
+	overflow: visible;
+}
+#icons8-heart_plus {
+	position: absolute;
+	width: 420px;
+	height: 420px;
+	left: 1px;
+	top: -46px;
+	overflow: visible;
+}
+#ViaMedo_ {
+	left: 431px;
+	top: 78px;
+	position: absolute;
+	overflow: visible;
+	width: 288px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: SF Pro;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 72px;
+	color: rgba(255,255,255,1);
+}
+#Trac_4 {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Trac_4 {
+	overflow: visible;
+	position: absolute;
+	width: 633px;
+	height: 694px;
+	left: 311px;
+	top: 341px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rectangle_4 {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 633px;
+	height: 694px;
+	left: 985px;
+	top: 341px;
+}
+#votre_moi_idal__porte_de_main {
+	left: 736px;
+	top: 78px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: SF Pro;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 72px;
+	color: rgba(255,255,255,1);
+}
+#icons8-home {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 314px;
+	top: 242px;
+	overflow: visible;
+}
+#icons8-info {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 448px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-temperature_sensitive {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 582px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-video {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 716px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-idea {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 850px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-chart {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 984px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-historic_ship {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 1118px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-money {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 1252px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-goal {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 1386px;
+	top: 239px;
+	overflow: visible;
+}
+#icons8-services {
+	position: absolute;
+	width: 87px;
+	height: 87px;
+	left: 1520px;
+	top: 239px;
+	overflow: visible;
+}

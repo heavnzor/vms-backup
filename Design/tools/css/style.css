@@ -1,0 +1,185 @@
+.mediaViewInfo {
+	--web-view-name: 1024x768;
+	--web-view-id: ID1024x768;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: ID1024x768;
+}
+* {
+	text-align: center;
+	align-items: center;
+	align-self: center;
+	align-content: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#ID1024x768 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: 1024x768;
+	--web-view-id: ID1024x768;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_4 {
+	opacity: 0.285;
+	fill: rgba(179,204,252,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 1024px;
+	height: 768px;
+	left: 0px;
+	top: 0px;
+}
+#containers {
+	position: absolute;
+	width: 752.951px;
+	height: 378.29px;
+	left: 257.049px;
+	top: 350.855px;
+	overflow: visible;
+}
+#Trac_2 {
+	position: absolute;
+	width: 283.898px;
+	height: 378.29px;
+	left: 469.053px;
+	top: 0px;
+	overflow: visible;
+}
+#Trac_4 {
+	position: absolute;
+	width: 438.151px;
+	height: 378.29px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#icons {
+	position: absolute;
+	width: 922px;
+	height: 254.89px;
+	left: 45px;
+	top: 64.11px;
+	overflow: visible;
+}
+#icons8-info {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 177px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-historic_ship {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 525px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-idea {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 351px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-money {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 612px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-goal {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 699px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-disconnected {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 780px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-play_button {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 264px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-home {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 90px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icons8-pie_chart {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 438px;
+	top: 194.89px;
+	overflow: visible;
+}
+#icon {
+	position: absolute;
+	width: 120px;
+	height: 119.779px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#icons8-search {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 862px;
+	top: 29.89px;
+	overflow: visible;
+}
+#banniere {
+	position: absolute;
+	width: 600px;
+	height: 225.556px;
+	left: 212px;
+	top: 14px;
+	overflow: visible;
+}
+#Image_1 {
+	position: absolute;
+	width: 200px;
+	height: 312px;
+	left: 24px;
+	top: 384px;
+	overflow: visible;
+}

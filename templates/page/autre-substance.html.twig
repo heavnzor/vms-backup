@@ -1,0 +1,44 @@
+{% extends 'index.html.twig' %}
+{%block main %}
+  {{page.title}}<br>
+  {{page.content|raw}}<br><br>
+  Vous désirez ajouter autre chose ?
+<a href='tabac'>Une marque de cigarettes ?</a>
+<a href='cannabis'>Une variété de cannabis ?</a>
+<a href='substances'>Ou un médicament ?</a><br><br>
+  <form action='autre-substance' method='post'>
+      {{ form_start(substanceForm) }}
+      {{ form_label(substanceForm.name) }}<br>
+      {{ form_widget(substanceForm.name) }}<br>
+      {{ form_label(substanceForm.type) }}<br>
+      {{ form_widget(substanceForm.type) }}<br>
+      {{ form_label(substanceForm.quantityType) }}<br>
+      {{ form_widget(substanceForm.quantityType) }}<br>
+      {{ form_label(substanceForm.price) }}<br>
+      {{ form_widget(substanceForm.price) }}<br>
+      {{ form_label(substanceForm.quantity) }}<br>
+      {{ form_widget(substanceForm.quantity) }}<br>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+      {{ form_end(substanceForm) }}
+ 
+      
+{%endblock %}
+{% block sidebar%}
+<em>Actuellement, les produits listés sont :</em>
+
+{%for substance in substances%}
+  <p class="">
+    {{substance.name}} 
+    {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
+    <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.svg' width='30px'></a>
+    {{substance.quantity}}
+    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+    <span class="badge badge-danger">Voulez-vous le supprimer ?</span>
+    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+    {%if substance.nocivity is same as(false) %}
+ <br> <span class="badge badge-danger">Considérez vous cette <br> substance comme nocive ?</span> 
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     {%endif%}
+  </p>
+  {%endfor%}
+  {% endblock %}

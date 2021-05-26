@@ -1,0 +1,50 @@
+{% extends 'index.html.twig' %}
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw}}<br><br>
+  {% if value is defined %}
+    {%for val in value %}
+      {{val.medicament}}<br>
+      <form action='register-substance' method='post'>
+        <input type="hidden" name="price" value="{{val.prix}}">
+        <input type="hidden" name="medicament" value="{{val.medicament}}">
+        <input type="hidden" name="type" value="medicament">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </form>
+    {%endfor %}
+  {% endif %}
+Vous désirez ajouter autre chose qu'un médicament ? <a href='tabac'>Une marque de cigarettes ?</a> <a href='cannabis'>Une variété de cannabis ?</a> <a href='autre-substance'>ou une toute autre substance ?</a>
+  {%if medicamentForm is defined %}
+  
+    <form action='substances' method='post'>
+    {{ form_row(medicamentForm.medicament) }}
+    <button type="submit" class="btn btn-primary">Chercher</button>
+    {{ form_end(medicamentForm) }}
+  {% endif %}
+{% endblock %}
+
+{%block sidebar %}
+  {{user.pseudonyme}}, cherchons ensemble dès à présent les substances que vous consommez au quotidien.<br><br>
+
+  <br>
+
+
+<em>Actuellement, les produits listés sont :</em>
+
+{%for substance in substances%}
+  <p class="">
+    {{substance.name}} 
+{% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
+    <a href="add-substance?id={{substance.id}}"><img src='../pics/icons8-add.svg' width='30px'></a>
+    {{substance.quantity}} {{substance.quantityType}} 
+    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+    <span class="badge badge-danger">Voulez-vous le supprimer ?</span>
+    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+    {%if substance.nocivity is same as(false) %}
+     <br><span class="badge badge-danger">Considérez vous cette substance<br> comme nocive ?</span> 
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     {%endif%}
+     
+  </p>
+  {%endfor%}
+  {%endblock %}

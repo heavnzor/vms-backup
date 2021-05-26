@@ -1,0 +1,55 @@
+{% extends 'index.html.twig' %}
+
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw }}<br><br>
+  {% if value is defined %}
+    {%for val in value %}
+      <strong>{{val.variete}} <br>Effets : </strong>{{val.effets}}
+      <form action='register-cannabis' method='post'>
+     Prix (par gramme) : <input type="text" name="price" value="12,50">
+     <input type="hidden" name="type" value="cannabis">
+        <input type="hidden" name="variete" value="{{val.variete}}">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </form>
+    {%endfor %}
+  {% endif %}
+  {%if cannabisForm is defined %}
+    Vous désirez ajouter autre chose ? <a href='tabac'>Une marque de cigarettes ?</a> <a href='substances'>Un médicament ?</a> <a href='autre-substance'>Ou une toute autre substance ?</a><br><br>
+    <form action='cannabis' method='post'>
+{{ form_label(cannabisForm.description) }}<br>
+{{ form_widget(cannabisForm.description) }}<br><br>
+    <button type="submit" class="btn btn-primary">Chercher</button>
+    {{ form_end(cannabisForm) }}
+  {% endif %}
+{% endblock %}
+
+{%block sidebar %}
+  {%if val is defined%}
+    {{user.pseudonyme}}
+    nous avons ajouté la variété que vous fumez :
+    {{val}}
+    aux substances que vous consommez.
+    {%else%}
+    Cherchons ensemble la variété que vous fumez 
+{%endif %}
+<br><br>
+<em>Actuellement, les produits listés sont :</em>
+
+{%for substance in substances%}
+  <p class="">
+    {{substance.name}}
+    {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
+
+    <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.svg' width='30px'></a>
+    {{substance.quantity}}
+    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+    <span class="badge badge-danger">Voulez-vous le supprimer ?</span>
+    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+    {%if substance.nocivity is same as(false) %}
+ <br> <span class="badge badge-danger">Considérez vous cette <br> substance comme nocive ?</span> 
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     {%endif%}
+  </p>
+  {%endfor%}
+  {%endblock %}

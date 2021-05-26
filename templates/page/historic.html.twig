@@ -1,0 +1,31 @@
+{% extends 'index.html.twig' %}
+
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw }}<br>
+ 
+{% endblock %}
+
+{%block sidebar %}
+  {%if user is defined%}
+    {{user.pseudonyme}}, voici l'historique de vos consommations.<br><br>{% if substances is defined %}
+  {%for substance in substances %}Vous consommez depuis
+    {% set difference = date(substance.createdAt|date('d-m-Y H:i:s')).diff(date('now'|date('d-m-Y H:i:s','Europe/Paris'))) %}
+    {{substance.createdAt|date('d-m-Y H:i:s')}}
+    ce produit :
+    <strong>{{substance.name}}</strong>
+    donc depuis
+    {% set leftDays = difference.days %}
+    {% set leftHours = difference.h %}
+    {% set leftMinutes = difference.i %}
+    {{leftDays}}
+    jours,
+    {{leftHours}}
+    heures, et
+    {{leftMinutes}}
+    minutes.<br>
+  {%endfor %}
+{% endif %}
+
+  {%endif %}
+{%endblock %}

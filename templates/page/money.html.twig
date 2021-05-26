@@ -1,0 +1,68 @@
+{% extends 'index.html.twig' %}
+
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw}}
+  {%if substance is defined %}
+    {{substance}}
+    a bien été supprimé de votre liste,
+    {{user.pseudonyme}}
+  {%endif %}
+  {%set price = 0%}
+  {%if substances is defined %}
+
+    {%for substance in substances%}
+      {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+      {%set price = tempprice|number_format(2, '.') + price %}
+      <strong>{{substance.name}} :</strong>
+      <br>
+      {%set price = price|replace({',': '.'})%}
+      {{tempprice}}
+      € par jour. Voyons maintenant si nous multiplions par 7 pour savoir combien vous coûte une semaine ...
+      {{tempprice * 7 }}€ !<br>
+    {%endfor %}
+
+    <strong>L'addition s'il vous plait !</strong><br>
+
+    {{price}}€ par jour soit
+    {{price * 7 }}€ par semaine soit
+    {{price * 30 }}€ par mois soit
+    {{price * 365}}€ par an!
+    {%endif%}
+  {% endblock %}
+
+  {%block sidebar %}
+    {%if user is defined%}
+      {{user.pseudonyme}}, calculons ensemble combien vous coute toutes les substances que vous consommez.<br><hr><br>Vous savez combien vous fumez exactement ? Indiquez ici le nombre de cigarettes ou de joints que vous fumez par jour:<br><hr><br>
+      <form action='calcul' method='post'><input type='number' name="number"><br><br>Joints<br><input type="radio" name='type' value='cannabis'><br><br>Cigarettes<br><input type="radio" name='type' value='tabac'><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
+      {%if conso is defined %}
+        {%for substance in substances%}
+          {%if substance.type is same as 'cigarette'%}
+            {%if type is same as 'tabac'%}
+              {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+              Soit un paquet est égal à 20 cigarettes, vous en fumez
+              {{conso}}
+              donc cela vous coûte
+              {% set tempprice = tempprice / 20%}
+              {%set tempprice = tempprice * conso%}
+              {{tempprice|number_format(2,'.')}}€ par jour...
+              {%endif%}
+              {%endif%}
+              {%endfor%}
+              {%for substance in substances%}
+                {%if substance.type is same as 'cannabis'%}
+                  {%if type is same as 'cannabis'%}
+                    {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+                    Soit un joint est égal à 0,5 gramme, vous en fumez
+                    {{conso}}
+                    donc cela vous coûte
+                    {% set tempprice = tempprice * conso * 0.5 %}
+                    {{tempprice|number_format(2,'.')}}€ par jour...
+                    {%endif%}
+                    {%endif%}
+                    {%endfor%}
+
+                    {%endif%}
+                    {%endif%}
+
+                  {%endblock %}

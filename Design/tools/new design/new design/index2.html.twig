@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="fr-FR">
+  <!--<![endif]-->
+
+  <head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      {%block title%}ViaMedo : Beta App{%endblock%}</title>
+      <!-- style and script resources -->
+      {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+      {% endblock %}
+      {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+      {% endblock %}
+      <!--meta properties -->
+      <meta name="description" content="Aide à la désaccoutumance de substances addictives : tabac, café, cannabis, psychotropes ..."/>
+      <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+      <meta name="robots" content="index, follow, archive, max-snippet: -1, max-image-preview:large, max-video-preview: -1"/>
+      <link rel="canonical" href="page/"/>
+      <!--search engine verification-->
+      <meta name="google-site-verification" content=""/>
+      <!--powered by meta-->
+      <meta name="generator" content=""/>
+      <!-- Site fevicon icons -->
+      <link rel="icon" href="page/../pics/favicon.ico" sizes="32x32"/>
+      <link rel="icon" href="page/../pics/favicon_16.ico" sizes="16x16"/>
+
+    </head>
+
+    <body>
+      {%block body%}
+
+        <div class="container-sm">
+          {%block content%}
+            <div class="row centered">
+              <div class="col-sm-12"><img class="banniere" id="banniere" src="../pics/banniere copie.png"></div>
+            </div>
+            <div class="row centered">
+              {%block navigation%}
+                <nav class="navbar col-sm-12" role="navigation">
+                  <a href="page/home"><img src="../pics/home.png" width="70px"><br>Accueil</a>
+                  <a href="page/infos"><img src="../pics/infos.png" width="70px"><br>Informations</a>
+                  <a href="page/substances"><img src="../pics/substance.png" width="70px"><br>Substances</a>
+                  <a href="page/videos"><img src="../pics/youtube.png" width="70px"><br>Vidéos</a>
+                  <a href="page/tips"><img src="../pics/icons8-idea.svg" width="70px"><br>Astuces</a>
+                  <a href="page/stats"><img src="../pics/icons8-chart.svg" width="70px"><br>Statistiques</a>
+                  <a href="page/historic"><img src="../pics/historic.png" width="70px"><br>Historique</a>
+                  <a href="page/money"><img src="../pics/money.png" width="70px"><br>Dépenses</a>
+                  <a href="page/goals"><img src="../pics/goals.png" width="70px"><br>Objectifs</a>
+                  <a href="page/search"><img src="../pics/search.png" width="70px"><br>Rechercher</a>
+                  <a href="page/services"><img src="../pics/services.png" width="70px"><br>Services</a>
+                  <a href="page/disconnect"><img src="../pics/disconnect.png" width="70px"><br>Déconnexion</a>
+
+                </nav>
+              {% endblock %}
+            </div>
+
+            <div class="row "> 
+
+              <div class="col-sm-7 main mx-auto px-5 py-5 ">
+                {%block main %}{%endblock %}
+              </div>
+              <div class="col-sm-4 aside px-5 py-5   ">
+                {%block sidebar %}{%endblock %}
+              </div>
+            </div>
+            <div class="row">
+              <footer class="col-sm-12 m-auto">Copyright 2021 - Mela Antonu-Maria - <a href="https://www.viamedo.fr/CGV.pdf" target="_blank">CGV</a></footer>
+            </div>
+          {% endblock %}
+        </div>
+      {% endblock %}
+    </body>
+
+  </html>

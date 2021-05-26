@@ -1,0 +1,377 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920__1 {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_3 {
+	opacity: 0.285;
+	fill: rgba(179,204,252,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_3 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1080px;
+	left: 0px;
+	top: 0px;
+}
+#containers {
+	position: absolute;
+	width: 1492px;
+	height: 443px;
+	left: 396px;
+	top: 611px;
+	overflow: visible;
+}
+#Trac_2 {
+	position: absolute;
+	width: 403px;
+	height: 443px;
+	left: 1089px;
+	top: 0px;
+	overflow: visible;
+}
+#Trac_4 {
+	position: absolute;
+	width: 1013px;
+	height: 443px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#icons {
+	position: absolute;
+	width: 1622px;
+	height: 471.77px;
+	left: 117px;
+	top: 89.23px;
+	overflow: visible;
+}
+#icons8-info {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 245px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-historic_ship {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 962px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-idea {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 605px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-money {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 1142px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-goal {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 1322px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-disconnected {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 1502px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-play_button {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 425px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-home {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 65px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icons8-pie_chart {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 785px;
+	top: 351.77px;
+	overflow: visible;
+}
+#icon {
+	position: absolute;
+	width: 250px;
+	height: 249.54px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#icons8-search {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 1502px;
+	top: 64.77px;
+	overflow: visible;
+}
+#banniere {
+	position: absolute;
+	width: 1013px;
+	height: 380.813px;
+	left: 441px;
+	top: 10.187px;
+	overflow: visible;
+}
+#humaaansstanding-2 {
+	position: absolute;
+	width: 264.766px;
+	height: 413.751px;
+	left: 55.234px;
+	top: 625.625px;
+	overflow: visible;
+}
+#humaaan-8 {
+	position: absolute;
+	width: 264.766px;
+	height: 413.751px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#HeadFrontShort-Beard {
+	position: absolute;
+	width: 45.208px;
+	height: 78.196px;
+	left: 123.684px;
+	top: 0px;
+	overflow: visible;
+}
+#Head {
+	position: absolute;
+	width: 43.802px;
+	height: 76.131px;
+	left: 0.116px;
+	top: 2.065px;
+	overflow: visible;
+}
+#Trac_3 {
+	fill: rgba(87,51,31,1);
+}
+.Trac_3 {
+	overflow: visible;
+	position: absolute;
+	width: 43.802px;
+	height: 76.131px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Hair {
+	fill: rgba(25,24,71,1);
+}
+.Hair {
+	overflow: visible;
+	position: absolute;
+	width: 45.208px;
+	height: 54.44px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#BottomStandingBaggy-Pants {
+	position: absolute;
+	width: 260.497px;
+	height: 249.252px;
+	left: 0px;
+	top: 164.499px;
+	overflow: visible;
+}
+#Leg {
+	fill: rgba(61,34,22,1);
+}
+.Leg {
+	overflow: visible;
+	position: absolute;
+	width: 99.075px;
+	height: 239.084px;
+	left: 121.792px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Leg_ {
+	fill: rgba(87,51,31,1);
+}
+.Leg_ {
+	overflow: visible;
+	position: absolute;
+	width: 148.429px;
+	height: 191.829px;
+	left: 14.036px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#AccessoriesShoeFlat-Sneaker {
+	transform: translate(0px, 0px) matrix(1,0,0,1,-2.5476,192.4102) rotate(50deg);
+	transform-origin: center;
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#shoe {
+	fill: rgba(228,228,228,1);
+}
+.shoe {
+	overflow: visible;
+	position: absolute;
+	width: 55.393px;
+	height: 60.191px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#AccessoriesShoeFlat-Sneaker_ {
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 200.01px;
+	top: 227.697px;
+	overflow: visible;
+}
+#shoe_ {
+	fill: rgba(228,228,228,1);
+}
+.shoe_ {
+	overflow: visible;
+	position: absolute;
+	width: 60.488px;
+	height: 21.555px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Pant {
+	fill: rgba(105,161,172,1);
+}
+.Pant {
+	overflow: visible;
+	position: absolute;
+	width: 105.5px;
+	height: 227.803px;
+	left: 115.164px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Pant_bb {
+	fill: rgba(137,197,204,1);
+}
+.Pant_bb {
+	overflow: visible;
+	position: absolute;
+	width: 140.102px;
+	height: 215.76px;
+	left: 27.369px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#BodyTurtle-Neck {
+	position: absolute;
+	width: 236.686px;
+	height: 186.561px;
+	left: 28.081px;
+	top: 50.206px;
+	overflow: visible;
+}
+#Skin {
+	fill: rgba(87,51,31,1);
+}
+.Skin {
+	overflow: visible;
+	position: absolute;
+	width: 236.686px;
+	height: 111.284px;
+	left: 0px;
+	top: 75.277px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Clothes-Back {
+	fill: rgba(25,24,71,1);
+}
+.Clothes-Back {
+	overflow: visible;
+	position: absolute;
+	width: 109.806px;
+	height: 117.765px;
+	transform: translate(0px, 0px) matrix(1,0,0,1,104.9201,12.7383) rotate(5deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Clothes-Front {
+	fill: rgba(47,54,118,1);
+}
+.Clothes-Front {
+	overflow: visible;
+	position: absolute;
+	width: 136.494px;
+	height: 160.37px;
+	left: 18.812px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}

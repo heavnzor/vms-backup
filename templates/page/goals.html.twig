@@ -1,0 +1,13 @@
+{% extends 'index.html.twig' %}
+{%block main %}
+  {{page.content|raw}}
+{% endblock %}
+{%block sidebar %}
+  {{user.pseudonyme}}, petit rappel : sur vos consommations actuelles :
+  <br>
+  {%for substance in substances%}{{substance.name}}
+    à raison de
+    {{substance.quantity}}
+    par jour.<br>
+  {% endfor %}
+{% endblock %}

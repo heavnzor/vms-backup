@@ -1,0 +1,255 @@
+body {
+    font-family: 'Playfair Display', serif;
+    color: white;
+
+    background-image: url("./pics/back-ground.png");
+    background-repeat: no-repeat;
+    background-color: #666666;
+    background-position: center;
+    justify-content: left;
+    align-items: center;
+    justify-content: center;
+
+}
+a {
+    color: red !important;
+    text-decoration: none !important;
+}
+a:hover {
+    color: red !important;
+    text-decoration: underline !important;
+}
+
+header {
+    text-align: center;
+    border: 0;
+}
+
+code {
+    color: white;
+}
+
+
+footer {
+    color: black;
+    text-align: center;
+}
+
+.centered {
+    justify-content: center !important;
+    justify-self: center !important;
+    text-align: center !important;
+    align-self: center !important;
+    align-items: center !important;
+    align-content: center !important;
+}
+
+img {
+    margin: 5px;
+    border: none;
+    border: 0;
+}
+
+#valid-tooltip {
+    z-index: 5;
+    display: block;
+    max-width: 100%;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 0.875rem;
+    color: rgba(61, 255, 94, 0.9);
+}
+
+form {
+    width: 300px !important;
+    float: center !important;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    width: 50% !important;
+    border-radius: 30px !important;
+    text-align: center;
+    -webkit-box-sizing: border-box; /* Pour les anciennes versions des navigateurs WebKit */
+    -moz-box-sizing: border-box; /* Pour tous les navigateurs Gecko */
+    box-sizing: border-box;
+
+
+}
+button:hover,
+input:hover {
+    background-color: rgba(170, 0, 0, 0.9) !important;
+    align-self: center;
+    justify-content: center;
+
+}
+
+footer {
+    text-align: center;
+}
+#banniere {
+    border-radius: 15px;
+}
+
+.box-rounded {
+    padding: 10px;
+    border-radius: 15px;
+}
+
+nav {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+#error-message {
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#icon {
+    border-radius: 15px;
+}
+
+#submit:hover {
+    background-color: rgb(116, 0, 0);
+    color: white;
+}
+
+main {
+    background-color: black;
+    color: white;
+    text-align: left;
+    border: 1px dotted white;
+}
+aside {
+    background-color: black;
+    color: white;
+    text-align: left;
+    border: 1px dotted white;
+
+
+}
+
+
+section {
+    vertical-align: top;
+    align-items: stretch;
+
+
+}
+
+iframe {
+    border-radius: 20px;
+    margin: 20px;
+}
+
+
+@media(max-width:767px) {
+    body {
+        background-color: #666666;
+    }
+    aside,
+    main {
+        border-radius: 0;
+    }
+    nav {
+        margin: 20px;
+    }
+
+
+    #banniere {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    iframe {
+        max-width: 280px;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media(min-width:768px) {
+    #banniere {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+    body {
+        background-color: #666666;
+
+
+    }
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
+
+
+    iframe {
+        max-width: 280px;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+}
+
+@media(min-width:992px) {
+    #banniere {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    aside,
+    main {
+        margin: 20px
+    }
+
+
+    body {
+        background-color: #666666;
+        border-image-repeat: no-repeat;
+
+
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+}
+
+@media(min-width:1200px) {
+
+    #banniere {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
+
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+}

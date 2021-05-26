@@ -1,0 +1,9 @@
+{% extends 'index.html.twig' %}
+{%block main %}
+  <h1>{{page.title}}</h1>
+  {{page.content|raw}}
+{% endblock %}
+{%block sidebar %}
+  {{user.pseudonyme}}
+  voici quelques astuces sur les dépendances (<a href='https://www.canada.ca/fr/sante-canada/services/opioides/stigmatisation/astuces-parlons-utilisation-substances.html' target='_blank'>Source canada.ca</a>)
+{% endblock %}

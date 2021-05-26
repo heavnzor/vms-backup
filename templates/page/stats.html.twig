@@ -1,0 +1,19 @@
+{% extends 'index.html.twig' %}
+
+{% block main %}
+  <h2>{{ page.title }}</h2>
+  <br>{{page.content|raw }}<br>
+<div id="div_chart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  {{ gc_draw(piechart, 'div_chart') }}
+</script>
+ {%endblock %}
+
+{%block sidebar %}
+  {%if user is defined%}
+    {{user.pseudonyme}}, voici les statistiques de vos consommations sous forme graphique.
+
+  {%endif %}
+  {%endblock %}
