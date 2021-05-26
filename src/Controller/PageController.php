@@ -68,8 +68,7 @@ class PageController extends AbstractController
 
             case 'stats':
                 $substances = $user->getSubstances();
-                $pieChart = new PieChart();
-                $pieChart->getData()->setArrayToDataTable([['Tasks', 'hours per day']]);
+       
 
            
 
