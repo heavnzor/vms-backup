@@ -192,7 +192,7 @@ class __TwigTemplate_70c1f8dcd85d1f1e5b88c4b503f43bee02f7c22af608a1906c560c50db4
             // line 43
             if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 43) === false)) {
                 // line 44
-                echo "     <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+                echo "     <br><span class=\"badge badge-danger\">Considérez vous cette substance<br> comme nocive ?</span> 
      <a href='nocivite-substance?id=";
                 // line 45
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 45), "html", null, true);
@@ -277,13 +277,13 @@ Vous désirez ajouter autre chose qu'un médicament ? <a href='tabac'>Une marque
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
-     <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+     <br><span class=\"badge badge-danger\">Considérez vous cette substance<br> comme nocive ?</span> 
      <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
      {%endif%}
      
   </p>
   {%endfor%}
   {%endblock %}
-", "page/show.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/show.html.twig");
+", "page/show.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/show.html.twig");
     }
 }

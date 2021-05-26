@@ -28,6 +28,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 
         $this->blocks = [
             'stylesheets' => [$this, 'block_stylesheets'],
+            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
             'main' => [$this, 'block_main'],
             'sidebar' => [$this, 'block_sidebar'],
@@ -58,7 +59,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
     <title>ViaMedo : Beta</title>
     <!-- style and script resources -->
     <script data-ad-client=\"ca-pub-1152024597883583\" async=\"async\" src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async=\"async\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CEFC8S5YV4\"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -73,8 +74,10 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
         // line 26
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 29
-        echo "    <script src=\"\"></script>
-    <!--meta properties -->
+        echo "    ";
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 32
+        echo "    <!--meta properties -->
     <meta name=\"description\" content=\"Aide à la désaccoutumance de substances addictives\"/>
     <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
     <meta name=\"robots\" content=\"index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1\"/>
@@ -99,11 +102,11 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
   </head>
   <body>
     ";
-        // line 54
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 120
-        echo "      </body>
-    </html>
+        // line 127
+        echo "            </body>
+          </html>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -136,7 +139,30 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 
     }
 
-    // line 54
+    // line 29
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 30
+        echo "      ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
+        echo "
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -146,78 +172,83 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 55
+        // line 57
         echo "      <div class=\"container\">
         <div class=\"row\">
           <div class=\"col-sm-12\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row centered\">
-          <nav class=\"navbar col-sm-12\" role=\"navigation\">
-            <a href=\"home\">
-              <img src=\"../pics/icons8-home.svg\" width=\"70px\">
-              <br>Accueil</a>
-            <a href=\"infos\">
-              <img src=\"../pics/icons8-info.svg\" width=\"70px\">
-              <br>Informations</a>
-            <a href=\"substances\">
-              <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
-              <br>Substances</a>
-            <a href=\"videos\">
-              <img src=\"../pics/icons8-video.svg\" width=\"70px\">
-              <br>Vidéos</a>
-            <a href=\"tips\">
-              <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
-              <br>Astuces</a>
-            <a href=\"stats\">
-              <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
-              <br>Statistiques</a>
-            <a href=\"historic\">
-              <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
-              <br>Historique</a>
-            <a href=\"money\">
-              <img src=\"../pics/icons8-money.svg\" width=\"70px\">
-              <br>Dépenses</a>
-            <a href=\"goals\">
-              <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
-              <br>Objectifs</a>
-            <a href=\"services\">
-              <img src=\"../pics/icons8-services.svg\" width=\"70px\">
-              <br>Services</a>
-            <a href=\"disconnect\">
-              <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
-              <br>Déconnexion</a>
-
-          </nav>
-        </div>
-
         <div class=\"row\">
-          <main class=\"col-sm-6 mx-auto py-5 px-5 \">
-            ";
-        // line 101
+          <div class=\"pos-f-t\">
+            <div class=\"collapse\" id=\"navbarToggleExternalContent\">
+              <div class=\"bg-dark p-4\">
+                <a href=\"home\">
+                  <img src=\"../pics/icons8-home.svg\" width=\"70px\">
+                  Accueil</a>
+                <a href=\"infos\">
+                  <img src=\"../pics/icons8-info.svg\" width=\"70px\">
+                  Informations</a>
+                <a href=\"substances\">
+                  <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
+                  Substances</a>
+                <a href=\"videos\">
+                  <img src=\"../pics/icons8-video.svg\" width=\"70px\">
+                  Vidéos</a>
+                <a href=\"tips\">
+                  <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
+                  Astuces</a>
+                <a href=\"stats\">
+                  <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
+                  Statistiques</a>
+                <a href=\"historic\">
+                  <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
+                 Historique</a>
+                <a href=\"money\">
+                  <img src=\"../pics/icons8-money.svg\" width=\"70px\">
+                  Dépenses</a>
+                <a href=\"goals\">
+                  <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
+                  Objectifs</a>
+                <a href=\"services\">
+                  <img src=\"../pics/icons8-services.svg\" width=\"70px\">
+                  Services</a>
+                <a href=\"disconnect\">
+                  <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
+                  Déconnexion</a>
+              </div>
+            </div>
+            <nav class=\"navbar navbar-dark bg-dark col-sm-12\" role=\"navigation\">
+              <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                <span class=\"navbar-toggler-icon\"></nav>
+              </div>
+
+              <div class=\"row\">
+                <main class=\"col-sm-6 mx-auto py-5 px-5 \">
+                  ";
+        // line 108
         $this->displayBlock('main', $context, $blocks);
-        // line 102
-        echo "          </main>
-          <aside class=\"col-sm-5 px-5 py-5 \">
-            ";
-        // line 104
+        // line 109
+        echo "                </main>
+                <aside class=\"col-sm-5 px-5 py-5 \">
+                  ";
+        // line 111
         $this->displayBlock('sidebar', $context, $blocks);
         echo "</aside>
-          </div>
+                </div>
 
-          <div class=\"row\">
-            <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-              <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
-            </div>
-          </div>
+                <div class=\"row\">
+                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
+                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                  </div>
+                </div>
 
-        </div>
+              </div>
 
-        <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
-        <script src=\"\" async=\"async\" defer=\"defer\"></script>
-        ";
+              <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
+              <script src=\"\" async=\"async\" defer=\"defer\"></script>
+              ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -226,7 +257,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 
     }
 
-    // line 101
+    // line 108
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -244,7 +275,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 
     }
 
-    // line 104
+    // line 111
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -269,7 +300,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 
     public function getDebugInfo()
     {
-        return array (  248 => 104,  230 => 101,  204 => 104,  200 => 102,  198 => 101,  150 => 55,  140 => 54,  127 => 27,  117 => 26,  105 => 120,  103 => 54,  76 => 29,  74 => 26,  47 => 1,);
+        return array (  279 => 111,  261 => 108,  235 => 111,  231 => 109,  229 => 108,  176 => 57,  166 => 56,  153 => 30,  143 => 29,  130 => 27,  120 => 26,  108 => 127,  106 => 56,  80 => 32,  77 => 29,  75 => 26,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -288,7 +319,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
     <title>ViaMedo : Beta</title>
     <!-- style and script resources -->
     <script data-ad-client=\"ca-pub-1152024597883583\" async=\"async\" src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async=\"async\" src=\"https://www.googletagmanager.com/gtag/js?id=G-CEFC8S5YV4\"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -302,7 +333,9 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
     {% block stylesheets %}
       {{ encore_entry_link_tags('app') }}
     {% endblock %}
-    <script src=\"\"></script>
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
     <!--meta properties -->
     <meta name=\"description\" content=\"Aide à la désaccoutumance de substances addictives\"/>
     <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
@@ -333,68 +366,73 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
           <div class=\"col-sm-12\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row centered\">
-          <nav class=\"navbar col-sm-12\" role=\"navigation\">
-            <a href=\"home\">
-              <img src=\"../pics/icons8-home.svg\" width=\"70px\">
-              <br>Accueil</a>
-            <a href=\"infos\">
-              <img src=\"../pics/icons8-info.svg\" width=\"70px\">
-              <br>Informations</a>
-            <a href=\"substances\">
-              <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
-              <br>Substances</a>
-            <a href=\"videos\">
-              <img src=\"../pics/icons8-video.svg\" width=\"70px\">
-              <br>Vidéos</a>
-            <a href=\"tips\">
-              <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
-              <br>Astuces</a>
-            <a href=\"stats\">
-              <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
-              <br>Statistiques</a>
-            <a href=\"historic\">
-              <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
-              <br>Historique</a>
-            <a href=\"money\">
-              <img src=\"../pics/icons8-money.svg\" width=\"70px\">
-              <br>Dépenses</a>
-            <a href=\"goals\">
-              <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
-              <br>Objectifs</a>
-            <a href=\"services\">
-              <img src=\"../pics/icons8-services.svg\" width=\"70px\">
-              <br>Services</a>
-            <a href=\"disconnect\">
-              <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
-              <br>Déconnexion</a>
-
-          </nav>
-        </div>
-
         <div class=\"row\">
-          <main class=\"col-sm-6 mx-auto py-5 px-5 \">
-            {%block main %}{% endblock %}
-          </main>
-          <aside class=\"col-sm-5 px-5 py-5 \">
-            {%block sidebar%}{%endblock%}</aside>
-          </div>
-
-          <div class=\"row\">
-            <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-              <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+          <div class=\"pos-f-t\">
+            <div class=\"collapse\" id=\"navbarToggleExternalContent\">
+              <div class=\"bg-dark p-4\">
+                <a href=\"home\">
+                  <img src=\"../pics/icons8-home.svg\" width=\"70px\">
+                  Accueil</a>
+                <a href=\"infos\">
+                  <img src=\"../pics/icons8-info.svg\" width=\"70px\">
+                  Informations</a>
+                <a href=\"substances\">
+                  <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
+                  Substances</a>
+                <a href=\"videos\">
+                  <img src=\"../pics/icons8-video.svg\" width=\"70px\">
+                  Vidéos</a>
+                <a href=\"tips\">
+                  <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
+                  Astuces</a>
+                <a href=\"stats\">
+                  <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
+                  Statistiques</a>
+                <a href=\"historic\">
+                  <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
+                 Historique</a>
+                <a href=\"money\">
+                  <img src=\"../pics/icons8-money.svg\" width=\"70px\">
+                  Dépenses</a>
+                <a href=\"goals\">
+                  <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
+                  Objectifs</a>
+                <a href=\"services\">
+                  <img src=\"../pics/icons8-services.svg\" width=\"70px\">
+                  Services</a>
+                <a href=\"disconnect\">
+                  <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
+                  Déconnexion</a>
+              </div>
             </div>
-          </div>
+            <nav class=\"navbar navbar-dark bg-dark col-sm-12\" role=\"navigation\">
+              <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                <span class=\"navbar-toggler-icon\"></nav>
+              </div>
 
-        </div>
+              <div class=\"row\">
+                <main class=\"col-sm-6 mx-auto py-5 px-5 \">
+                  {%block main %}{% endblock %}
+                </main>
+                <aside class=\"col-sm-5 px-5 py-5 \">
+                  {%block sidebar%}{%endblock%}</aside>
+                </div>
 
-        <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+                <div class=\"row\">
+                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
+                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                  </div>
+                </div>
 
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
-        <script src=\"\" async=\"async\" defer=\"defer\"></script>
-        {%endblock%}
-      </body>
-    </html>
-", "index.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/index.html.twig");
+              </div>
+
+              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+
+              <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
+              <script src=\"\" async=\"async\" defer=\"defer\"></script>
+              {%endblock%}
+            </body>
+          </html>
+", "index.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/index.html.twig");
     }
 }

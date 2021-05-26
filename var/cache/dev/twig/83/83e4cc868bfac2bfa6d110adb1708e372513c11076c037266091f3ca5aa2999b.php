@@ -61,6 +61,6 @@ class __TwigTemplate_27d91556c03e77fbfc79bb2f57251ee654e96e8e37fa95ae54dbd3ff3b1
 
     public function getSourceContext()
     {
-        return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\"><path fill=\"#E04F5F\" d=\"M7.9,256C7.9,119,119,7.9,256,7.9C393,7.9,504.1,119,504.1,256c0,137-111.1,248.1-248.1,248.1C119,504.1,7.9,393,7.9,256z\"/><path fill=\"#FFF\" d=\"M391.5,214.2H120.5c-4,0-7.2,3.2-7.2,7.2v69.2c0,4,3.2,7.2,7.2,7.2h270.9c4,0,7.2-3.2,7.2-7.2v-69.2C398.7,217.4,395.4,214.2,391.5,214.2z\"/></svg>", "pics/icons8-minus.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/pics/icons8-minus.svg");
+        return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"512\" height=\"512\" viewBox=\"0 0 512 512\"><path fill=\"#E04F5F\" d=\"M7.9,256C7.9,119,119,7.9,256,7.9C393,7.9,504.1,119,504.1,256c0,137-111.1,248.1-248.1,248.1C119,504.1,7.9,393,7.9,256z\"/><path fill=\"#FFF\" d=\"M391.5,214.2H120.5c-4,0-7.2,3.2-7.2,7.2v69.2c0,4,3.2,7.2,7.2,7.2h270.9c4,0,7.2-3.2,7.2-7.2v-69.2C398.7,217.4,395.4,214.2,391.5,214.2z\"/></svg>", "pics/icons8-minus.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/pics/icons8-minus.svg");
     }
 }

@@ -136,6 +136,6 @@ class __TwigTemplate_6604fdd6e5b02172a64a2ebb6e567e5aa6f8e534c82497f7ac12e32acb5
     {{user.pseudonyme}}
     laissez un peu de temps à Google pour indexer le site. Il se peut que la fonction de recherche ne soit pas tout à fait fonctionnel.
   {%endblock %}
-", "page/search.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/search.html.twig");
+", "page/search.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/search.html.twig");
     }
 }

@@ -122,7 +122,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
             // line 18
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 18), "html", null, true);
             echo "
-     ";
+         ";
             // line 19
             if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 19) === true)) {
                 echo "<img src='../pics/icons8-happy_skull.svg' width='30px'>";
@@ -150,7 +150,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
             // line 26
             if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 26) === false)) {
                 // line 27
-                echo "an class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+                echo "<br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
      <a href='nocivite-substance?id=";
                 // line 28
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 28), "html", null, true);
@@ -209,7 +209,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
   <em>Actuellement, les produits listés sont :</em>
   <p class=\"\">
     {{substance.name}}
-     {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
+         {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
 
     <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.svg' width='30px'></a>
     {{substance.quantity}}
@@ -217,12 +217,12 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
-an class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+<br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
      <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
      {%endif%}
   </p>
   {%endfor%}
  {%endblock %}
-", "page/delete-substance.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/delete-substance.html.twig");
+", "page/delete-substance.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/delete-substance.html.twig");
     }
 }

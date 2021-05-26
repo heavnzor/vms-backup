@@ -94,6 +94,6 @@ class __TwigTemplate_5bfd165d79bed53e913a12021e233ac32e7a4450950407ac3a2036e3a2c
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/registration/confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/registration/confirmation_email.html.twig");
     }
 }

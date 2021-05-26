@@ -65,7 +65,6 @@ form {
     float: center !important;
 }
 
-button,
 input,
 select,
 textarea {
@@ -104,7 +103,6 @@ footer {
 nav {
     margin: 10px;
     padding: 10px;
-    border-radius: 15px;
     justify-content: space-between;
 }
 

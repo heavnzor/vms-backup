@@ -132,6 +132,6 @@ En tout cas, vous pouvez toujours soutenir ViaMedo via <a href='https://www.patr
 Ne vous en faites pas {{user.pseudonyme}} !<br>
 De toute manière tout membre inscrit gratuitement restera gratuit à vie.<br><hr><br>
 En tout cas, vous pouvez toujours soutenir ViaMedo via <a href='https://www.patreon.com/viamedo' target='_blank'>Patreon</a> si vous le souhaitez et aurez accès à une newsletter exclusive !
-{%endblock%}", "page/services.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/services.html.twig");
+{%endblock%}", "page/services.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/services.html.twig");
     }
 }

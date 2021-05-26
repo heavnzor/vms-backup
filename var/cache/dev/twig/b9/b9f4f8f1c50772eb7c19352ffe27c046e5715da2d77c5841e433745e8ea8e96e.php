@@ -157,6 +157,6 @@ class __TwigTemplate_5b65d04c9138fc7fe751e8cce08e4f40ec6352c061f22dccdab62ca3457
 
   {%endif %}
   {%endblock %}
-", "page/stats.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/stats.html.twig");
+", "page/stats.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/stats.html.twig");
     }
 }

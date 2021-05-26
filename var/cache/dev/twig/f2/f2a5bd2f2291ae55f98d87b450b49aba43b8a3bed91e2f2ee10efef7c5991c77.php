@@ -133,6 +133,6 @@ class __TwigTemplate_a6b753f3445727f2a8642031cdd00bae495e09fc1dbde2da1b3a0c33d3c
 
     <a href=\"{{ path('page_crud_index') }}\">back to list</a>
 {% endblock %}
-", "page_crud/new.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page_crud/new.html.twig");
+", "page_crud/new.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page_crud/new.html.twig");
     }
 }

@@ -127,6 +127,6 @@ A très bientôt sur ViaMedo!
 A très bientôt sur ViaMedo!
 
   {% endblock %}
-", "page/disconnect.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/disconnect.html.twig");
+", "page/disconnect.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/disconnect.html.twig");
     }
 }

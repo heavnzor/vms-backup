@@ -227,6 +227,6 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
  <p class='alert alert-danger' role='alert'>Bonjour sombre inconnu, <a href=\"register\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
  {%endif%}
 {% endblock %}
-", "page/home.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/home.html.twig");
+", "page/home.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/home.html.twig");
     }
 }

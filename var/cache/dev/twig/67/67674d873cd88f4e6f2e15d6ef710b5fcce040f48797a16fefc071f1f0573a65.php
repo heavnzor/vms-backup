@@ -155,6 +155,6 @@ class __TwigTemplate_89f9292990dbb851655a4be2b2d8ceb7d896ffed54881054e54cbe843c1
 {% block panel %}
     {{ render(controller('web_profiler.controller.router::panelAction', { token: token })) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
     }
 }

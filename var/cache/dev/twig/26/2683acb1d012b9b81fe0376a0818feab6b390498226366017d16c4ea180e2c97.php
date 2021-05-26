@@ -557,6 +557,6 @@ class __TwigTemplate_bbffbd833e0f870368291fbc1c72a1f8856aaf8767f5869cdba24d376a2
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Collector/http_client.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
+", "@WebProfiler/Collector/http_client.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
     }
 }

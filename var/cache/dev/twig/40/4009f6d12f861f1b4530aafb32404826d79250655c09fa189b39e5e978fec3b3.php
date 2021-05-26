@@ -127,6 +127,6 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous <img src='../pi
 {% block sidebar %}
 
 {% endblock %}
-", "page/index.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/index.html.twig");
+", "page/index.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/index.html.twig");
     }
 }

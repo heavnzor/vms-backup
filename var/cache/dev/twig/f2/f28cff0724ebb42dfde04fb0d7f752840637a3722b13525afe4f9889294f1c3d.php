@@ -216,6 +216,6 @@ class __TwigTemplate_38bc09f54c34ac891eefcdd5231ee476ea614e297b528bc452aa54350e2
 
     {{ include('page_crud/_delete_form.html.twig') }}
 {% endblock %}
-", "page_crud/show.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page_crud/show.html.twig");
+", "page_crud/show.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page_crud/show.html.twig");
     }
 }

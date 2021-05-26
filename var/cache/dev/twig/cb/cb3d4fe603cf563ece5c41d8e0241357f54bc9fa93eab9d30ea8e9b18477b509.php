@@ -132,6 +132,6 @@ class __TwigTemplate_d8697795bff39b337fb2cdb28c99d7a8246047d5da9865b255eb277aa73
   {{user.pseudonyme}}
   voici quelques astuces sur les dépendances (<a href='https://www.canada.ca/fr/sante-canada/services/opioides/stigmatisation/astuces-parlons-utilisation-substances.html' target='_blank'>Source canada.ca</a>)
 {% endblock %}
-", "page/tips.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/tips.html.twig");
+", "page/tips.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/tips.html.twig");
     }
 }

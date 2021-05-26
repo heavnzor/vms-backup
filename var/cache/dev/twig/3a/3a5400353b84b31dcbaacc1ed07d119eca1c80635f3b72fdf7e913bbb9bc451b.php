@@ -71,6 +71,6 @@ class __TwigTemplate_c3d3cff059724b1313e11190a1163cd05d6b57c5612790670c15902219a
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }

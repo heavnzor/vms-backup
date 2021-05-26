@@ -61,6 +61,6 @@ class __TwigTemplate_e15edbe8dd3756a0e90471fbc8219696ceeaef627f0f3210f14ea08af57
 
     public function getSourceContext()
     {
-        return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 3A9 9 0 1 0 12 21A9 9 0 1 0 12 3Z\" opacity=\".3\"/><path d=\"M11 2.7H13V9H11zM16 9L12 13 8 9z\"/><path d=\"M12,22C6.5,22,2,17.5,2,12S6.5,2,12,2s10,4.5,10,10S17.5,22,12,22z M12,4c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S16.4,4,12,4 z\"/></svg>", "page/pics/icons8-signin.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/pics/icons8-signin.svg");
+        return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 3A9 9 0 1 0 12 21A9 9 0 1 0 12 3Z\" opacity=\".3\"/><path d=\"M11 2.7H13V9H11zM16 9L12 13 8 9z\"/><path d=\"M12,22C6.5,22,2,17.5,2,12S6.5,2,12,2s10,4.5,10,10S17.5,22,12,22z M12,4c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S16.4,4,12,4 z\"/></svg>", "page/pics/icons8-signin.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/pics/icons8-signin.svg");
     }
 }

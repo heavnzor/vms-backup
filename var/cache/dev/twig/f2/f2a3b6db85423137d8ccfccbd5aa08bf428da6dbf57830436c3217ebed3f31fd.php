@@ -79,6 +79,6 @@ class __TwigTemplate_96d14afb48637615a4a61455fd6bdb9f9ef4f45f330275e2482f1c08806
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ page.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "page_crud/_delete_form.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page_crud/_delete_form.html.twig");
+", "page_crud/_delete_form.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page_crud/_delete_form.html.twig");
     }
 }

@@ -65,6 +65,6 @@ class __TwigTemplate_3c953766f415cedceaf8acbf766d86eaf17ea3239576f2a6781aa847d84
     {
         return new Source("<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" fill=\"#000000\"><path d=\"M 25 0 C 20.59375 0 17 3.59375 17 8 L 17 19.1875 L 10.71875 23 L 1 23 C 0.449219 23 0 23.449219 0 24 C 0 24.550781 0.449219 25 1 25 L 11 25 C 11.183594 25 11.375 24.9375 11.53125 24.84375 L 18.5 20.625 C 18.519531 20.617188 18.542969 20.605469 18.5625 20.59375 L 32.5 12.125 C 32.519531 12.117188 32.542969 12.105469 32.5625 12.09375 L 39.28125 8 L 49 8 C 49.554688 8 50 7.550781 50 7 C 50 6.449219 49.554688 6 49 6 L 39 6 C 38.816406 6 38.625 6.0625 38.46875 6.15625 L 33 9.46875 L 33 8 C 33 3.59375 29.40625 0 25 0 Z M 25 2 C 28.324219 2 31 4.675781 31 8 L 31 10.6875 L 19 17.96875 L 19 8 C 19 4.675781 21.675781 2 25 2 Z M 33 14.15625 L 17 23.875 L 17 26.78125 C 13.859375 29.242188 12 33.015625 12 37 C 12 44.167969 17.832031 50 25 50 C 32.167969 50 38 44.167969 38 37 C 38 33.015625 36.140625 29.242188 33 26.78125 Z\" fill=\"#000000\"/></svg>
-", "page/pics/icons8-temperature_sensitive.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/pics/icons8-temperature_sensitive.svg");
+", "page/pics/icons8-temperature_sensitive.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/pics/icons8-temperature_sensitive.svg");
     }
 }

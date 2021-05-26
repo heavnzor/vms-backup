@@ -365,6 +365,6 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
                     {%endif%}
 
                   {%endblock %}
-", "page/money.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/money.html.twig");
+", "page/money.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/money.html.twig");
     }
 }

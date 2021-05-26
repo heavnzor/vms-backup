@@ -217,6 +217,6 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
 {% block sidebar %} Vous désirez vous inscrire ? <a href=\"register\">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail (vous l'avez probablement déjà fait), puis authentifier vous une première fois.
 <br><br><a href='reset-password'>Password oublié?</a>
 {% endblock %}
-", "security/login.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/security/login.html.twig");
+", "security/login.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/security/login.html.twig");
     }
 }

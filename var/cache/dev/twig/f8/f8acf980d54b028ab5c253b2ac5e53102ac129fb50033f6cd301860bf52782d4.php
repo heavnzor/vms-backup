@@ -96,6 +96,6 @@ class __TwigTemplate_f77b4af3564d631055798a5cd0caceb573912179a8ff6843305b7316db0
 <p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 
 <p>Cheers!</p>
-", "reset_password/email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/reset_password/email.html.twig");
+", "reset_password/email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/reset_password/email.html.twig");
     }
 }

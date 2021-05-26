@@ -125,6 +125,6 @@ class __TwigTemplate_cd0feb8c049b123dea3315056beff43fb2605c59a7b99e2c98a3abfcccd
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

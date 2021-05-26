@@ -12,13 +12,16 @@ return [[
     'entrypoints' => [
         'app' => [
             'js' => [
+                'build/js/jquery-3.6.0.min.js',
                 '/build/runtime.js',
                 '/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js',
                 '/build/app.js',
+                'build/js/bootstrap.js',
+                '/build/js/bootstrap.bundle.js',
                 '/build/highcharts.js',
             ],
             'css' => [
-                '/build/bootstrap.css',
+                '/build/css/bootstrap.css',
                 'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap',
                 '/build/app.css',
                 '/build/iphone.css',

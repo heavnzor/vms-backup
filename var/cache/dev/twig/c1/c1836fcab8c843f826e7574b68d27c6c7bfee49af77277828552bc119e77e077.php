@@ -200,6 +200,6 @@ trailer
 startxref
 793
 %%EOF
-", "page/pics/icons8-signin.pdf", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/pics/icons8-signin.pdf");
+", "page/pics/icons8-signin.pdf", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/pics/icons8-signin.pdf");
     }
 }

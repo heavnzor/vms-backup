@@ -97,6 +97,6 @@ class __TwigTemplate_aa9beba09ae6b7091ee0f9216abdd21c08f32310915c97e2f7a9faf851d
 <div id=\"{{ lightbox_content_id }}\" class=\"ea-lightbox\">
     <img src=\"{{ asset(field.formattedValue) }}\">
 </div>
-", "@EasyAdmin/crud/field/image.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/easycorp/easyadmin-bundle/src/Resources/views/crud/field/image.html.twig");
+", "@EasyAdmin/crud/field/image.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/views/crud/field/image.html.twig");
     }
 }

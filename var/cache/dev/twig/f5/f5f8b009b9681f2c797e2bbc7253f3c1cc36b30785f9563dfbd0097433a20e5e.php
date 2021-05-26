@@ -167,6 +167,6 @@ class __TwigTemplate_c3fec8003a5abc29b4a59736080d7e2ad9667ce4ba2f83ce0839575c44d
         <button class=\"btn btn-primary\">Envoyez l'email de réinitialisation</button>
     {{ form_end(requestForm) }}
 {% endblock %}
-", "reset_password/request.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/reset_password/request.html.twig");
+", "reset_password/request.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/reset_password/request.html.twig");
     }
 }

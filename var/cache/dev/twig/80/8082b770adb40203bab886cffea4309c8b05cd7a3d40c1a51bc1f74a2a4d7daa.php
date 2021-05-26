@@ -133,6 +133,6 @@ class __TwigTemplate_2572353dbfef761d813b479bae5257ba3e85505a84f68411588fc66035e
     </p>
     <p>Si vous ne recevez pas d'e-mail, vérifiez votre dossier de courrier indésirable (spam) ou <a href=\"{{ path('app_forgot_password_request') }}\">réessayez</a>.</p>
 {% endblock %}
-", "reset_password/check_email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/reset_password/check_email.html.twig");
+", "reset_password/check_email.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/reset_password/check_email.html.twig");
     }
 }

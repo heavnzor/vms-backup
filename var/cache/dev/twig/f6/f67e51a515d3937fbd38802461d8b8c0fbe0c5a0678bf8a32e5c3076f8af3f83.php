@@ -95,6 +95,6 @@ class __TwigTemplate_4c4c79e39202835cee3c5feab665bc92f5178593bbd311759077a00e62d
 {% if ea_select2_locale != 'en' %}
     <script src=\"{{ asset('bundles/easyadmin/select2/i18n/' ~ ea_select2_locale ~ '.js') }}\"></script>
 {% endif %}
-", "@EasyAdmin/crud/includes/_select2_widget.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/easycorp/easyadmin-bundle/src/Resources/views/crud/includes/_select2_widget.html.twig");
+", "@EasyAdmin/crud/includes/_select2_widget.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/views/crud/includes/_select2_widget.html.twig");
     }
 }

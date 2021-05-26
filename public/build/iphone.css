@@ -175,11 +175,11 @@
     img {
         width: 120px;
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -249,11 +249,11 @@ main {
         border-image-repeat: no-repeat;
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -323,11 +323,11 @@ main {
 
     }
 
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -397,11 +397,11 @@ main {
         border-image-repeat: no-repeat;
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -470,11 +470,11 @@ main {
         border-image-repeat: no-repeat;
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -545,11 +545,11 @@ main {
 
     }
 
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -617,11 +617,11 @@ main {
         border-image-repeat: no-repeat;
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -692,11 +692,11 @@ main {
 
     }
 
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -766,11 +766,11 @@ main {
         border-image-repeat: no-repeat;
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
     #banniere {
         width: 975px;
@@ -843,12 +843,11 @@ main {
     #banniere {
         width: 975px;
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
-
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     .font-size-0 {
@@ -915,12 +914,11 @@ main {
         background-image: none;
     }
 
-nav,
-aside,
-main {
-    margin: 20px;
-}
-
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -993,12 +991,13 @@ main {
 
         background-image: none;
     }
-nav{
-    margin: 20px;
-}
- aside,main {
-     border-radius : none;
- }
+    nav {
+        margin: 20px;
+    }
+    aside,
+    main {
+        border-radius: none;
+    }
 
 
     #banniere {
@@ -1076,9 +1075,9 @@ nav{
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1158,9 +1157,9 @@ nav {
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     section h1 img {
@@ -1232,9 +1231,9 @@ nav {
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1308,9 +1307,9 @@ nav {
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1385,9 +1384,9 @@ nav {
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     .font-size-0 {
@@ -1463,9 +1462,9 @@ nav {
     main {
         border-radius: none;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1515,9 +1514,9 @@ nav {
     main {
         border-radius: 0;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1599,9 +1598,9 @@ nav {
 
 
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
     span img {
         width: 40px;
@@ -1672,11 +1671,11 @@ nav {
     main {
         border-radius: 0;
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1697,9 +1696,9 @@ main {
     main {
         border-radius: 0;
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1716,10 +1715,10 @@ nav {
 
 
     }
-  
-nav {
-    margin: 20px;
-}
+
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1735,11 +1734,9 @@ nav {
 
 
     }
-nav
-{
-    margin: 20px;
-}
-
+    nav {
+        margin: 20px;
+    }
 
 
     #banniere {
@@ -1755,9 +1752,9 @@ nav
 
 
     }
-nav {
-    margin: 20px;
-}
+    nav {
+        margin: 20px;
+    }
 
     aside,
     main {
@@ -1778,12 +1775,11 @@ nav {
 
 
     }
-nav,
-aside,
-main {
-    margin: 20px;
-}
-
+    nav,
+    aside,
+    main {
+        margin: 20px;
+    }
 
 
     #banniere {

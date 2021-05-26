@@ -175,31 +175,49 @@ class __TwigTemplate_8ff558fc5e1b407a1928c4d98f5d9478bda4462481312226b659a80fac8
         ";
             // line 43
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 43), "html", null, true);
+            echo "
+        ";
+            // line 44
+            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 44) === true)) {
+                echo "<img src='../pics/icons8-happy_skull.svg' width='30px'>";
+            }
             echo "<br>
         <a href='add-substance?id=";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 44), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 45), "html", null, true);
             echo "'><img src='../pics/icons8-add.svg' width='30px'></a>
         ";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 45), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 46), "html", null, true);
             echo "
         <a href='less-substance?id=";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 46), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 47), "html", null, true);
             echo "'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
         <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
       <a href='delete-substance?id=";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 48), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 49), "html", null, true);
             echo "'><img src='../pics/icons8-delete.svg' width='30px'></a>
-    </p>
+      ";
+            // line 50
+            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 50) === false)) {
+                // line 51
+                echo " <br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+     <a href='nocivite-substance?id=";
+                // line 52
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 52), "html", null, true);
+                echo "'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     ";
+            }
+            // line 54
+            echo "    </p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 56
         echo "  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -221,7 +239,7 @@ class __TwigTemplate_8ff558fc5e1b407a1928c4d98f5d9478bda4462481312226b659a80fac8
 
     public function getDebugInfo()
     {
-        return array (  203 => 51,  194 => 48,  189 => 46,  185 => 45,  181 => 44,  177 => 43,  174 => 42,  170 => 41,  165 => 38,  159 => 36,  153 => 33,  147 => 31,  144 => 30,  134 => 29,  121 => 25,  116 => 23,  109 => 18,  106 => 17,  103 => 16,  93 => 12,  85 => 8,  80 => 7,  78 => 6,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  221 => 56,  214 => 54,  209 => 52,  206 => 51,  204 => 50,  200 => 49,  195 => 47,  191 => 46,  187 => 45,  181 => 44,  177 => 43,  174 => 42,  170 => 41,  165 => 38,  159 => 36,  153 => 33,  147 => 31,  144 => 30,  134 => 29,  121 => 25,  116 => 23,  109 => 18,  106 => 17,  103 => 16,  93 => 12,  85 => 8,  80 => 7,  78 => 6,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -268,15 +286,20 @@ class __TwigTemplate_8ff558fc5e1b407a1928c4d98f5d9478bda4462481312226b659a80fac8
 
       {%for substance in substances%}
       <p class=\"\">
-        {{substance.name}}<br>
+        {{substance.name}}
+        {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
         <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.svg' width='30px'></a>
         {{substance.quantity}}
         <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
         <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
       <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+      {%if substance.nocivity is same as(false) %}
+ <br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     {%endif%}
     </p>
     {%endfor%}
   {%endblock %}
-", "page/cigarette.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/cigarette.html.twig");
+", "page/cigarette.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/cigarette.html.twig");
     }
 }

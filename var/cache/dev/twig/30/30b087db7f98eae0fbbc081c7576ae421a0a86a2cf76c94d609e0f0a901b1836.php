@@ -65,6 +65,6 @@ class __TwigTemplate_3cff60a654acfaad06ab3d13205a7f39265dda7eb648fb7be9096b55f06
     {
         return new Source("<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" fill=\"#000000\"><path d=\"M25,2C12.297,2,2,12.297,2,25s10.297,23,23,23s23-10.297,23-23S37.703,2,25,2z M25,11c1.657,0,3,1.343,3,3s-1.343,3-3,3 s-3-1.343-3-3S23.343,11,25,11z M29,38h-2h-4h-2v-2h2V23h-2v-2h2h4v2v13h2V38z\" fill=\"#000000\"/></svg>
-", "page/pics/icons8-info.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/pics/icons8-info.svg");
+", "page/pics/icons8-info.svg", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/pics/icons8-info.svg");
     }
 }

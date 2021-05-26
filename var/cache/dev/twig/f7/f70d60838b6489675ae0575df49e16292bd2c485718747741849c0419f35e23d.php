@@ -1298,6 +1298,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355) == twig
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

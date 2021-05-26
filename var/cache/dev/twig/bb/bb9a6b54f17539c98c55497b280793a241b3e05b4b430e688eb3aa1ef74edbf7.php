@@ -99,6 +99,6 @@ class __TwigTemplate_09513b01303bb61585d06efee6756131d25aabe8a87236a807cd04f093a
 .container.body_default {
     border-top: 8px solid #aaaaaa;
 }
-", "@email/zurb_2/notification/local.css", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
+", "@email/zurb_2/notification/local.css", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
     }
 }

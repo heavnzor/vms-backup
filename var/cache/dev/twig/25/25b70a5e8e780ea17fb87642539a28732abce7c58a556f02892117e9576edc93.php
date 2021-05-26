@@ -130,6 +130,6 @@ class __TwigTemplate_1372e2f7df6d124cac06ab032ec4bee2520b905749226a0d341ce7c9f9e
 {%block sidebar %}
   {{user.pseudonyme}} voici quelques informations sur les substances addictives (source : gouv.fr)
 {% endblock %}
-", "page/infos.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page/infos.html.twig");
+", "page/infos.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/infos.html.twig");
     }
 }

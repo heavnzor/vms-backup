@@ -84,6 +84,6 @@ class __TwigTemplate_9f6e5ca7bf18980e4b6d429f6ba5e81c672023ea9412a39620f4a7f1d79
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "page_crud/_form.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/page_crud/_form.html.twig");
+", "page_crud/_form.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page_crud/_form.html.twig");
     }
 }

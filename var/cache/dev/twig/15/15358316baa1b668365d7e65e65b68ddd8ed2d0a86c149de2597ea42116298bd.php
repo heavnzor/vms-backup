@@ -228,6 +228,6 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
 <li>Enfin, vous vous authentifiez une première fois avec le login et le password que vous avez choisi et votre compte sera pleinement validé !</li>
 </ul>
 {%endblock%}
-", "registration/register.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/templates/registration/register.html.twig");
+", "registration/register.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/registration/register.html.twig");
     }
 }
