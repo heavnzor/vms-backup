@@ -2,7 +2,7 @@ body {
     font-family: 'Playfair Display', serif;
     color: white;
 
-    background-image: url("./pics/back-ground.png");
+    background-image: url("./pics/background.png");
     background-repeat: no-repeat;
     background-color: #666666;
     background-position: center;
@@ -40,7 +40,6 @@ footer {
     justify-self: center !important;
     text-align: center !important;
     align-self: center !important;
-    align-items: center !important;
     align-content: center !important;
 }
 

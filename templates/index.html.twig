@@ -56,13 +56,13 @@
     {% block body %}
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-11">
             <img src="../pics/banniere.png"></div>
         </div>
-        <div class="row">
-          <div class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-              <div class="bg-dark p-4">
+        <div class="row  ">
+          <div class="col-sm 11 ">
+            <div class="collapse centered" id="navbarToggleExternalContent">
+              <div class="bg-dark centered">
                 <a href="home">
                   <img src="../pics/icons8-home.svg" width="70px">
                   Accueil</a>
@@ -96,18 +96,18 @@
                 <a href="disconnect">
                   <img src="../pics/icons8-disconnected.svg" width="70px">
                   Déconnexion</a>
+                  </span>
               </div>
             </div>
-            <nav class="navbar navbar-dark bg-dark col-sm-12" role="navigation">
+            <nav class="navbar navbar-dark bg-dark col-sm-11" role="navigation">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></nav>
-              </div>
 
-              <div class="row">
-                <main class="col-sm-6 mx-auto py-5 px-5 ">
+              <div class="row centered">
+                <main class="col-sm-6 py-5 px-5">
                   {%block main %}{% endblock %}
                 </main>
-                <aside class="col-sm-5 px-5 py-5 ">
+                <aside class="col-sm-5 py-5 px-5">
                   {%block sidebar%}{%endblock%}</aside>
                 </div>
 

@@ -177,41 +177,41 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
           <div class=\"col-sm-12\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row\">
+        <div class=\"row centered\">
           <div class=\"pos-f-t\">
             <div class=\"collapse\" id=\"navbarToggleExternalContent\">
               <div class=\"bg-dark p-4\">
-                <a href=\"home\">
+                <a href=\"page/home\">
                   <img src=\"../pics/icons8-home.svg\" width=\"70px\">
                   Accueil</a>
-                <a href=\"infos\">
+                <a href=\"page/infos\">
                   <img src=\"../pics/icons8-info.svg\" width=\"70px\">
                   Informations</a>
-                <a href=\"substances\">
+                <a href=\"page/substances\">
                   <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
                   Substances</a>
-                <a href=\"videos\">
+                <a href=\"page/videos\">
                   <img src=\"../pics/icons8-video.svg\" width=\"70px\">
                   Vidéos</a>
-                <a href=\"tips\">
+                <a href=\"page/tips\">
                   <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
                   Astuces</a>
-                <a href=\"stats\">
+                <a href=\"page/stats\">
                   <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
                   Statistiques</a>
-                <a href=\"historic\">
+                <a href=\"page/historic\">
                   <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
                   Historique</a>
-                <a href=\"money\">
+                <a href=\"page/money\">
                   <img src=\"../pics/icons8-money.svg\" width=\"70px\">
                   Dépenses</a>
-                <a href=\"goals\">
+                <a href=\"page/goals\">
                   <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
                   Objectifs</a>
-                <a href=\"services\">
+                <a href=\"page/services\">
                   <img src=\"../pics/icons8-services.svg\" width=\"70px\">
                   Services</a>
-                <a href=\"disconnect\">
+                <a href=\"page/disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
                   Déconnexion</a>
               </div>
@@ -237,13 +237,13 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 
                 <div class=\"row\">
                   <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                    <a href=\"page/http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
                   </div>
                 </div>
 
               </div>
 
-              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"page/#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
               <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
               <script src=\"\" async=\"async\" defer=\"defer\"></script>
@@ -364,41 +364,41 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
           <div class=\"col-sm-12\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row\">
+        <div class=\"row centered\">
           <div class=\"pos-f-t\">
             <div class=\"collapse\" id=\"navbarToggleExternalContent\">
               <div class=\"bg-dark p-4\">
-                <a href=\"home\">
+                <a href=\"page/home\">
                   <img src=\"../pics/icons8-home.svg\" width=\"70px\">
                   Accueil</a>
-                <a href=\"infos\">
+                <a href=\"page/infos\">
                   <img src=\"../pics/icons8-info.svg\" width=\"70px\">
                   Informations</a>
-                <a href=\"substances\">
+                <a href=\"page/substances\">
                   <img src=\"../pics/icons8-temperature_sensitive.svg\" width=\"70px\">
                   Substances</a>
-                <a href=\"videos\">
+                <a href=\"page/videos\">
                   <img src=\"../pics/icons8-video.svg\" width=\"70px\">
                   Vidéos</a>
-                <a href=\"tips\">
+                <a href=\"page/tips\">
                   <img src=\"../pics/icons8-idea.svg\" width=\"70px\">
                   Astuces</a>
-                <a href=\"stats\">
+                <a href=\"page/stats\">
                   <img src=\"../pics/icons8-chart.svg\" width=\"70px\">
                   Statistiques</a>
-                <a href=\"historic\">
+                <a href=\"page/historic\">
                   <img src=\"../pics/icons8-historic_ship.svg\" width=\"70px\">
                   Historique</a>
-                <a href=\"money\">
+                <a href=\"page/money\">
                   <img src=\"../pics/icons8-money.svg\" width=\"70px\">
                   Dépenses</a>
-                <a href=\"goals\">
+                <a href=\"page/goals\">
                   <img src=\"../pics/icons8-goal.svg\" width=\"70px\">
                   Objectifs</a>
-                <a href=\"services\">
+                <a href=\"page/services\">
                   <img src=\"../pics/icons8-services.svg\" width=\"70px\">
                   Services</a>
-                <a href=\"disconnect\">
+                <a href=\"page/disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
                   Déconnexion</a>
               </div>
@@ -418,13 +418,13 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 
                 <div class=\"row\">
                   <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                    <a href=\"page/http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
                   </div>
                 </div>
 
               </div>
 
-              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+              <!--[if lt IE 7]> <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"page/#\">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
               <link rel=\"stylesheet\" type=\"text/css\" href=\"/\" media=\"print\"/>
               <script src=\"\" async=\"async\" defer=\"defer\"></script>

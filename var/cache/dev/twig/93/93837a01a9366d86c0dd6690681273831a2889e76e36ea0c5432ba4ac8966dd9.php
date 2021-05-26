@@ -175,16 +175,16 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
         // line 57
         echo "      <div class=\"container\">
         <div class=\"row\">
-          <div class=\"col-sm-12\">
+          <div class=\"col-sm-11\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row\">
-          <div class=\"pos-f-t\">
-            <div class=\"collapse\" id=\"navbarToggleExternalContent\">
-              <div class=\"bg-dark p-4\">
-                <a href=\"home\">
+        <div class=\"row  \">
+          <div class=\"col-sm 11 \">
+            <div class=\"collapse centered\" id=\"navbarToggleExternalContent\">
+              <div class=\"bg-dark centered\">
+                <span class=\"centered\"><a href=\"home\">
                   <img src=\"../pics/icons8-home.svg\" width=\"70px\">
-                  Accueil</a>
+                  <br>Accueil</a></span>
                 <a href=\"infos\">
                   <img src=\"../pics/icons8-info.svg\" width=\"70px\">
                   Informations</a>
@@ -215,21 +215,21 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
                 <a href=\"disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
                   Déconnexion</a>
+                  </span>
               </div>
             </div>
-            <nav class=\"navbar navbar-dark bg-dark col-sm-12\" role=\"navigation\">
+            <nav class=\"navbar navbar-dark bg-dark col-sm-11\" role=\"navigation\">
               <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></nav>
-              </div>
 
-              <div class=\"row\">
-                <main class=\"col-sm-6 mx-auto py-5 px-5 \">
+              <div class=\"row centered\">
+                <main class=\"col-sm-6 py-5 px-5\">
                   ";
         // line 108
         $this->displayBlock('main', $context, $blocks);
         // line 109
         echo "                </main>
-                <aside class=\"col-sm-5 px-5 py-5 \">
+                <aside class=\"col-sm-5 py-5 px-5\">
                   ";
         // line 111
         $this->displayBlock('sidebar', $context, $blocks);
@@ -363,16 +363,16 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
     {% block body %}
       <div class=\"container\">
         <div class=\"row\">
-          <div class=\"col-sm-12\">
+          <div class=\"col-sm-11\">
             <img src=\"../pics/banniere.png\"></div>
         </div>
-        <div class=\"row\">
-          <div class=\"pos-f-t\">
-            <div class=\"collapse\" id=\"navbarToggleExternalContent\">
-              <div class=\"bg-dark p-4\">
-                <a href=\"home\">
+        <div class=\"row  \">
+          <div class=\"col-sm 11 \">
+            <div class=\"collapse centered\" id=\"navbarToggleExternalContent\">
+              <div class=\"bg-dark centered\">
+                <span class=\"centered\"><a href=\"home\">
                   <img src=\"../pics/icons8-home.svg\" width=\"70px\">
-                  Accueil</a>
+                  <br>Accueil</a></span>
                 <a href=\"infos\">
                   <img src=\"../pics/icons8-info.svg\" width=\"70px\">
                   Informations</a>
@@ -403,18 +403,18 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
                 <a href=\"disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"70px\">
                   Déconnexion</a>
+                  </span>
               </div>
             </div>
-            <nav class=\"navbar navbar-dark bg-dark col-sm-12\" role=\"navigation\">
+            <nav class=\"navbar navbar-dark bg-dark col-sm-11\" role=\"navigation\">
               <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></nav>
-              </div>
 
-              <div class=\"row\">
-                <main class=\"col-sm-6 mx-auto py-5 px-5 \">
+              <div class=\"row centered\">
+                <main class=\"col-sm-6 py-5 px-5\">
                   {%block main %}{% endblock %}
                 </main>
-                <aside class=\"col-sm-5 px-5 py-5 \">
+                <aside class=\"col-sm-5 py-5 px-5\">
                   {%block sidebar%}{%endblock%}</aside>
                 </div>
 
