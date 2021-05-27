@@ -205,13 +205,13 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
                  Historique</a>
                 <a href=\"money\">
                   <img src=\"../pics/icons8-money.svg\" width=\"30px\">
-                  Dépenses</a><br>
+                  Dépenses</a>
                 <a href=\"goals\">
                   <img src=\"../pics/icons8-goal.svg\" width=\"30px\">
                   Objectifs</a>
-                <a href=\"services\">
-                  <img src=\"../pics/icons8-services.svg\" width=\"30px\">
-                  Services</a>
+                <a href=\"temoignages\">
+                  <img src=\"../pics/icons8-quote copie.svg\" width=\"30px\">
+                  Témoignages</a>
                 <a href=\"disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"30px\">
                   Déconnexion</a>
@@ -393,13 +393,13 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
                  Historique</a>
                 <a href=\"money\">
                   <img src=\"../pics/icons8-money.svg\" width=\"30px\">
-                  Dépenses</a><br>
+                  Dépenses</a>
                 <a href=\"goals\">
                   <img src=\"../pics/icons8-goal.svg\" width=\"30px\">
                   Objectifs</a>
-                <a href=\"services\">
-                  <img src=\"../pics/icons8-services.svg\" width=\"30px\">
-                  Services</a>
+                <a href=\"temoignages\">
+                  <img src=\"../pics/icons8-quote copie.svg\" width=\"30px\">
+                  Témoignages</a>
                 <a href=\"disconnect\">
                   <img src=\"../pics/icons8-disconnected.svg\" width=\"30px\">
                   Déconnexion</a>

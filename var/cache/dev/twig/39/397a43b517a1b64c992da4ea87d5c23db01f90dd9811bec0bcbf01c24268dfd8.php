@@ -104,67 +104,70 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
         // line 12
-        echo "  Bravo
+        echo "<h3>
+  <em>\"Stay hungry, stay foolish\"</em>- Steve Jobs</h3>
+<br>
+  Bravo
   ";
-        // line 13
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 13, $this->source); })()), "pseudonyme", [], "any", false, false, false, 13), "html", null, true);
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "pseudonyme", [], "any", false, false, false, 16), "html", null, true);
         echo "
   !<br><br>
   ";
-        // line 15
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 15, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["substance"]) {
-            // line 16
+            // line 19
             echo "  <em>Actuellement, les produits listés sont :</em>
   <p class=\"\">
     ";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 18), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 21), "html", null, true);
             echo "
          ";
-            // line 19
-            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 19) === true)) {
+            // line 22
+            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 22) === true)) {
                 echo "<img src='../pics/icons8-happy_skull.svg' width='30px'>";
             }
             echo "<br>
 
     <a href='add-substance?id=";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 21), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 24), "html", null, true);
             echo "'><img src='../pics/icons8-add.svg' width='30px'></a>
     ";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 22), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 25), "html", null, true);
             echo "
     <a href='less-substance?id=";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 23), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 26), "html", null, true);
             echo "'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id=";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 25), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "'><img src='../pics/icons8-delete.svg' width='30px'></a>
     ";
-            // line 26
-            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 26) === false)) {
-                // line 27
+            // line 29
+            if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 29) === false)) {
+                // line 30
                 echo "<br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
      <a href='nocivite-substance?id=";
-                // line 28
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 28), "html", null, true);
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 31), "html", null, true);
                 echo "'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
      ";
             }
-            // line 30
+            // line 33
             echo "  </p>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 35
         echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -186,7 +189,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
 
     public function getDebugInfo()
     {
-        return array (  168 => 32,  161 => 30,  156 => 28,  153 => 27,  151 => 26,  147 => 25,  142 => 23,  138 => 22,  134 => 21,  127 => 19,  123 => 18,  119 => 16,  115 => 15,  110 => 13,  107 => 12,  97 => 11,  83 => 7,  80 => 6,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  171 => 35,  164 => 33,  159 => 31,  156 => 30,  154 => 29,  150 => 28,  145 => 26,  141 => 25,  137 => 24,  130 => 22,  126 => 21,  122 => 19,  118 => 18,  113 => 16,  107 => 12,  97 => 11,  83 => 7,  80 => 6,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -202,6 +205,9 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
   {% endif %}
 {% endblock %}
 {%block sidebar %}
+<h3>
+  <em>\"Stay hungry, stay foolish\"</em>- Steve Jobs</h3>
+<br>
   Bravo
   {{user.pseudonyme}}
   !<br><br>

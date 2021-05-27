@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '0e42a2b852ed8d19475d2bb7a709b685ea8e7073',
+    'reference' => 'c75bc13720cb17c04053f4f2cbb7544a19a4595b',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '0e42a2b852ed8d19475d2bb7a709b685ea8e7073',
+      'reference' => 'c75bc13720cb17c04053f4f2cbb7544a19a4595b',
     ),
     'cmen/google-charts-bundle' => 
     array (
@@ -413,6 +413,15 @@
       ),
       'reference' => 'd962626a1b454edb36f727f8e0090b45280af98c',
     ),
+    'symfony/amqp-messenger' => 
+    array (
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dbdde5e095c1ee8df84560db5bdd4e7e48cbeac',
+    ),
     'symfony/apache-pack' => 
     array (
       'pretty_version' => 'v1.0.1',
@@ -527,6 +536,15 @@
       array (
       ),
       'reference' => '3d7a8138342ea146628a14372d1f1317503c6364',
+    ),
+    'symfony/doctrine-messenger' => 
+    array (
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f5544cd4a5d06ffb75a09c6cde099d22cd0e1255',
     ),
     'symfony/dom-crawler' => 
     array (
@@ -703,6 +721,15 @@
       array (
       ),
       'reference' => '4f57a44cef0b4555043160b8bf223fcde8a7a59a',
+    ),
+    'symfony/messenger' => 
+    array (
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '91c9283dab9294d30e55bd9697f5a7527b3fef3e',
     ),
     'symfony/mime' => 
     array (
@@ -886,6 +913,15 @@
       array (
       ),
       'reference' => '1c89e22a22e01f040849a28f7fe63c6a16e6c99f',
+    ),
+    'symfony/redis-messenger' => 
+    array (
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '70c0adb4edd401ed97fbe88568e16381c13a69d2',
     ),
     'symfony/requirements-checker' => 
     array (

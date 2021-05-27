@@ -3,7 +3,7 @@
   {{page.content|raw}}
 {% endblock %}
 {%block sidebar %}
-  {{user.pseudonyme}}, petit rappel : sur vos consommations actuelles :
+  <h3>{{user.pseudonyme}}, petit rappel : sur vos consommations actuelles :</h3>
   <br>
   {%for substance in substances%}
   <p class="">
@@ -22,4 +22,4 @@
 
     </p>
     {%endfor%}
- endblock %}
+ {%endblock %}

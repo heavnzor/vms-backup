@@ -1,13 +1,13 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
-
-    background-image: url("./pics/background.png");
+    background-image: url("./pics/back-ground copie.png");
     background-repeat: no-repeat;
     background-color: #666666;
     background-position: center;
     justify-content: left;
     align-items: center;
+    font-size: 15px;
     justify-content: center;
 
 }

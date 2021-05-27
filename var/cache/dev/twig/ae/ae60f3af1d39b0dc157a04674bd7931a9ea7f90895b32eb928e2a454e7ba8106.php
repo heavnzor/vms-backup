@@ -150,7 +150,7 @@ class __TwigTemplate_70c1f8dcd85d1f1e5b88c4b503f43bee02f7c22af608a1906c560c50db4
   <br>
 
 
-<em>Actuellement, les produits listés sont :</em>
+<h3>Actuellement, les produits listés sont :</h3
 
 ";
         // line 34
@@ -265,7 +265,7 @@ Vous désirez ajouter autre chose qu'un médicament ? <a href='tabac'>Une marque
   <br>
 
 
-<em>Actuellement, les produits listés sont :</em>
+<h3>Actuellement, les produits listés sont :</h3
 
 {%for substance in substances%}
   <p class=\"\">

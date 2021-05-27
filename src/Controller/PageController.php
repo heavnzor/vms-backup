@@ -5,11 +5,14 @@ namespace App\Controller;
 use DateTime;
 use DateTimeZone;
 use App\Entity\Page;
+use App\Entity\User;
 use Twig\Environment;
+use App\Entity\Comment;
 use App\Entity\Cannabis;
 use App\Entity\Cigarette;
 use App\Entity\Substance;
 use App\Entity\Medicament;
+use App\Form\CommentFormType;
 use App\Form\CannabisFormType;
 use App\Form\CigaretteFormType;
 use App\Form\SubstanceFormType;
@@ -64,13 +67,42 @@ class PageController extends AbstractController
         }
         switch ($slug) {
 
-
-
+            case 'temoignages':
+                $comment = new Comment();
+                $form = $this->createForm(CommentFormType::class, $comment);
+                $form->handleRequest($request);
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $comment->setUser($user);
+                    $comment = $form->getData();
+                    $datetime  = date_timezone_set(new DateTime('now'), new DateTimeZone('Europe/Paris'));
+                    $comment->setCreatedAt($datetime);
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $entityManager->persist($comment);
+                    $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
+                    $entityManager->flush();
+                    return new Response($twig->render('page/temoignages.html.twig', [
+                        'page' => $page,
+                        'comments' => $comments,
+                        'substances' => $user->getSubstances(),
+                        'comment' => $comment,
+                        'user' => $user,
+                    ]));
+                } else {
+                    $comment = new Comment();
+                    $form = $this->createForm(CommentFormType::class, $comment);
+                    $form = $form->createView();
+                    $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
+                    return new Response($twig->render('page/temoignages.html.twig', [
+                        'page' => $page,
+                        'comments' => $comments,
+                        'slug' => $slug,
+                        'substances' => $user->getSubstances(),
+                        'commentForm' => $form,
+                        'user' => $user,
+                    ]));
+                }
             case 'stats':
                 $substances = $user->getSubstances();
-       
-
-           
 
                 $data = [['Substance', 'Quantité']];
                 foreach ($substances as $substance) {
@@ -101,8 +133,8 @@ class PageController extends AbstractController
                     if ($substance->getQuantityType() === 'milligrammes') {
                         $substance->setQuantity($substance->getQuantity() / 1000);
                     }
-                    if($substance->getNocivity() === true){
-                       $substance->getQuantity() * 1000;
+                    if ($substance->getNocivity() === true) {
+                        $substance->getQuantity() * 1000;
                     }
                     $data[] = array(
                         $substance->getName(), $substance->getQuantity()
@@ -206,7 +238,7 @@ class PageController extends AbstractController
                         'substances' => $substances,
                         'page' => $page,
                         'user' => $user
-                        
+
                     ]));
                 }
 
@@ -335,7 +367,7 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/cigarette.html.twig', [
                         'page' => $page,
                         'value' => $value,
-                        
+
                         'substances' => $user->getSubstances(),
                         'cigaretteForm' => $form,
                         'user' => $userRepository->find($userId),

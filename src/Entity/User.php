@@ -58,9 +58,14 @@ class User implements UserInterface
      */
     private $substances;
 
+
+   
+  
+
     public function __construct()
     {
         $this->substances = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -212,4 +217,19 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getComment(): ?Comment
+    {
+        return $this->comment;
+    }
+
+    public function setComment(?Comment $comment): self
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+
+
 }

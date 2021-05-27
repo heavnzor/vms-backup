@@ -89,9 +89,9 @@ class __TwigTemplate_95597121ea78a380bdaee1c4323aacbfb6f336f23ae657463584d18a3db
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
         // line 6
-        echo "  ";
+        echo "  <h3>";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 6, $this->source); })()), "pseudonyme", [], "any", false, false, false, 6), "html", null, true);
-        echo ", petit rappel : sur vos consommations actuelles :
+        echo ", petit rappel : sur vos consommations actuelles :</h3>
   <br>
   ";
         // line 8
@@ -141,7 +141,7 @@ class __TwigTemplate_95597121ea78a380bdaee1c4323aacbfb6f336f23ae657463584d18a3db
   {{page.content|raw}}
 {% endblock %}
 {%block sidebar %}
-  {{user.pseudonyme}}, petit rappel : sur vos consommations actuelles :
+  <h3>{{user.pseudonyme}}, petit rappel : sur vos consommations actuelles :</h3>
   <br>
   {%for substance in substances%}{{substance.name}}
     à raison de
