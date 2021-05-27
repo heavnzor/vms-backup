@@ -1,5 +1,5 @@
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
 
     background-image: url("./pics/background.png");
@@ -12,11 +12,11 @@ body {
 
 }
 a {
-    color: red !important;
+    color: rgb(252, 73, 73) !important;
     text-decoration: none !important;
 }
 a:hover {
-    color: red !important;
+    color : rgb(252, 73, 73)!important;
     text-decoration: underline !important;
 }
 
@@ -29,6 +29,10 @@ code {
     color: white;
 }
 
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Lobster Two', cursive;
+
+}
 
 footer {
     color: black;
@@ -121,16 +125,16 @@ nav {
 }
 
 main {
-    background-color: black;
+    background-color: #666666;
     color: white;
     text-align: left;
-    border: 1px dotted white;
+    border: 1px dotted black;
 }
 aside {
-    background-color: black;
-    color: white;
+    background-color: #666666;
+    color : white;
     text-align: left;
-    border: 1px dotted white;
+    border: 1px dotted black;
 
 
 }

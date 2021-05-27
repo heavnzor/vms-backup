@@ -12,7 +12,7 @@
       ],
       "css": [
         "/build/css/bootstrap.css",
-        "https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap",
+        "https://fonts.googleapis.com/css2?family=Lobster+Two&family=Sacramento&family=Source+Sans+Pro&display=swap",
         "/build/app.css",
         "/build/iphone.css"
       ]

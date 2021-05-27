@@ -94,7 +94,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
   ";
         // line 8
         if (array_key_exists("substances", $context)) {
-            echo "Vous consommez :<br>
+            echo "<h3>Vous consommez :</h3><br>
 ";
             // line 9
             $context['_parent'] = $context;
@@ -201,7 +201,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
 {%block sidebar %}
 
   
-  {%if substances is defined %}Vous consommez :<br>
+  {%if substances is defined %}<h3>Vous consommez :</h3><br>
 {%for substance in substances%}
   <p class=\"\">
     {{substance.name}}
