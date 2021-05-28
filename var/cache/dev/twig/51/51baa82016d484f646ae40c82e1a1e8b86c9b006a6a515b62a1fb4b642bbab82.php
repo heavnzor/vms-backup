@@ -68,18 +68,20 @@ class __TwigTemplate_89d7036081141949d89625381ccb9c7a2c931210a82d97a04af20c81335
         echo "Nous sommes ravis de vous voir aujourd'hui, comme dirait maître Yoda : \"Que la force soit avec vous.\" <br>
 ";
         // line 6
-        if (array_key_exists("user", $context)) {
+        if ((array_key_exists("user", $context) &&  !((isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 6, $this->source); })()) === null))) {
             // line 7
-            echo "Vous êtes désormais authentifié ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 7, $this->source); })()), "username", [], "any", false, false, false, 7), "html", null, true);
-            echo "<br>
+            echo "
+<strong><br><span class=\"alert alert-success\">Vous êtes désormais authentifié ";
+            // line 8
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 8, $this->source); })()), "pseudonyme", [], "any", false, false, false, 8), "html", null, true);
+            echo "</span></strong><br>
 ";
         } else {
             // line 9
-            echo "Vous avez attéri sur cette page parce que <br><br>
+            echo "<br>
+Vous avez attéri sur cette page parce que <br><br>
 <ul>
-<li>Soit vous êtes authentifié</li>
-<li>Soit il vous reste à cliquer sur le mail qui vous a été envoyé</li>
+<li>Il vous reste à cliquer sur l'email qui vous a été envoyé (si vous ne le trouvez pas regardez dans vos spams)</li>
 </ul>
 ";
         }
@@ -103,7 +105,7 @@ class __TwigTemplate_89d7036081141949d89625381ccb9c7a2c931210a82d97a04af20c81335
 
     public function getDebugInfo()
     {
-        return array (  79 => 9,  73 => 7,  71 => 6,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  81 => 9,  76 => 8,  73 => 7,  71 => 6,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -113,13 +115,13 @@ class __TwigTemplate_89d7036081141949d89625381ccb9c7a2c931210a82d97a04af20c81335
 
 {% block main %}
 Nous sommes ravis de vous voir aujourd'hui, comme dirait maître Yoda : \"Que la force soit avec vous.\" <br>
-{%if user is defined %}
-Vous êtes désormais authentifié {{user.username}}<br>
-{%else %}
+{%if user is defined and user is not same as (null) %}
+
+<strong><br><span class=\"alert alert-success\">Vous êtes désormais authentifié {{user.pseudonyme}}</span></strong><br>
+{%else %}<br>
 Vous avez attéri sur cette page parce que <br><br>
 <ul>
-<li>Soit vous êtes authentifié</li>
-<li>Soit il vous reste à cliquer sur le mail qui vous a été envoyé</li>
+<li>Il vous reste à cliquer sur l'email qui vous a été envoyé (si vous ne le trouvez pas regardez dans vos spams)</li>
 </ul>
 {% endif %}
 {%endblock %}

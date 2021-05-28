@@ -68,7 +68,7 @@ class GuardAuthenticatorHandler
      */
     public function handleAuthenticationSuccess(TokenInterface $token, Request $request, AuthenticatorInterface $guardAuthenticator, string $providerKey): ?Response
     {
-        $response = $guardAuthenticator->onAuthenticationSuccess($request, $token, $providerKey);
+        $response = $guardAuthenticator->onAuthenticationSuccess($request,  $token, $providerKey);
 
         // check that it's a Response or null
         if ($response instanceof Response || null === $response) {

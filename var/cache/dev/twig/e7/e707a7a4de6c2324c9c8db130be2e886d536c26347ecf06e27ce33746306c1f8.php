@@ -107,50 +107,64 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
                 echo "      ";
                 $context["price"] = (twig_number_format_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 16, $this->source); })()), 2, ".") + (isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 16, $this->source); })()));
                 // line 17
+                echo "      ";
+                if ((twig_get_attribute($this->env, $this->source, $context["substance"], "type", [], "any", false, false, false, 17) === "medicament")) {
+                    // line 18
+                    echo "      ";
+                    $context["price"] = ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 18, $this->source); })()) / 28);
+                    // line 19
+                    echo "      ";
+                    $context["tempprice"] = ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 19, $this->source); })()) / 28);
+                    // line 20
+                    echo "
+    ";
+                }
+                // line 22
                 echo "      <strong>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 17), "html", null, true);
-                echo " :</strong>
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 22), "html", null, true);
+                echo "
+        :</strong>
       <br>
       ";
-                // line 19
-                $context["price"] = twig_replace_filter((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 19, $this->source); })()), ["," => "."]);
-                // line 20
+                // line 25
+                $context["price"] = twig_replace_filter((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 25, $this->source); })()), ["," => "."]);
+                // line 26
                 echo "      ";
-                echo twig_escape_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 20, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 26, $this->source); })()), "html", null, true);
                 echo "
       € par jour. Voyons maintenant si nous multiplions par 7 pour savoir combien vous coûte une semaine ...
       ";
-                // line 22
-                echo twig_escape_filter($this->env, ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 22, $this->source); })()) * 7), "html", null, true);
+                // line 28
+                echo twig_escape_filter($this->env, ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 28, $this->source); })()) * 7), "html", null, true);
                 echo "€ !<br>
     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 24
+            // line 30
             echo "
     <strong>L'addition s'il vous plait !</strong><br>
 
     ";
-            // line 27
-            echo twig_escape_filter($this->env, (isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 27, $this->source); })()), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, (isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 33, $this->source); })()), "html", null, true);
             echo "€ par jour soit
     ";
-            // line 28
-            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 28, $this->source); })()) * 7), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 34, $this->source); })()) * 7), "html", null, true);
             echo "€ par semaine soit
     ";
-            // line 29
-            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 29, $this->source); })()) * 30), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 35, $this->source); })()) * 30), "html", null, true);
             echo "€ par mois soit
     ";
-            // line 30
-            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 30, $this->source); })()) * 365), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, ((isset($context["price"]) || array_key_exists("price", $context) ? $context["price"] : (function () { throw new RuntimeError('Variable "price" does not exist.', 36, $this->source); })()) * 365), "html", null, true);
             echo "€ par an!
     ";
         }
-        // line 32
+        // line 38
         echo "  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -160,7 +174,7 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
 
     }
 
-    // line 34
+    // line 40
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,108 +184,110 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 35
+        // line 41
         echo "    ";
         if (array_key_exists("user", $context)) {
-            // line 36
+            // line 42
             echo "      ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 36, $this->source); })()), "pseudonyme", [], "any", false, false, false, 36), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 42, $this->source); })()), "pseudonyme", [], "any", false, false, false, 42), "html", null, true);
             echo ", calculons ensemble combien vous coute toutes les substances que vous consommez.<br><hr><br>Vous savez combien vous fumez exactement ? Indiquez ici le nombre de cigarettes ou de joints que vous fumez par jour:<br><hr><br>
       <form action='calcul' method='post'><input type='number' name=\"number\"><br><br>Joints<br><input type=\"radio\" name='type' value='cannabis'><br><br>Cigarettes<br><input type=\"radio\" name='type' value='tabac'><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
       ";
-            // line 38
+            // line 44
             if (array_key_exists("conso", $context)) {
-                // line 39
+                // line 45
                 echo "        ";
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 39, $this->source); })()));
+                $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 45, $this->source); })()));
                 foreach ($context['_seq'] as $context["_key"] => $context["substance"]) {
-                    // line 40
-                    echo "          ";
-                    if ((twig_get_attribute($this->env, $this->source, $context["substance"], "type", [], "any", false, false, false, 40) === "cigarette")) {
-                        // line 41
-                        echo "            ";
-                        if (((isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 41, $this->source); })()) === "tabac")) {
-                            // line 42
-                            echo "              ";
-                            $context["tempprice"] = twig_number_format_filter($this->env, twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["substance"], "price", [], "any", false, false, false, 42), ["," => "."]), 2, ".");
-                            // line 43
-                            echo "              Soit un paquet est égal à 20 cigarettes, vous en fumez
-              ";
-                            // line 44
-                            echo twig_escape_filter($this->env, (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 44, $this->source); })()), "html", null, true);
-                            echo "
-              donc cela vous coûte
-              ";
-                            // line 46
-                            $context["tempprice"] = ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 46, $this->source); })()) / 20);
-                            // line 47
-                            echo "              ";
-                            $context["tempprice"] = ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 47, $this->source); })()) * (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 47, $this->source); })()));
-                            // line 48
-                            echo "              ";
-                            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 48, $this->source); })()), 2, "."), "html", null, true);
-                            echo "€ par jour...
-              ";
-                        }
-                        // line 50
+                    // line 46
+                    echo "         
+            ";
+                    // line 47
+                    if ((twig_get_attribute($this->env, $this->source, $context["substance"], "type", [], "any", false, false, false, 47) === "cigarette")) {
+                        // line 48
                         echo "              ";
-                    }
-                    // line 51
-                    echo "              ";
-                }
-                $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
-                $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 52
-                echo "              ";
-                $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 52, $this->source); })()));
-                foreach ($context['_seq'] as $context["_key"] => $context["substance"]) {
-                    // line 53
-                    echo "                ";
-                    if ((twig_get_attribute($this->env, $this->source, $context["substance"], "type", [], "any", false, false, false, 53) === "cannabis")) {
-                        // line 54
-                        echo "                  ";
-                        if (((isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 54, $this->source); })()) === "cannabis")) {
-                            // line 55
-                            echo "                    ";
-                            $context["tempprice"] = twig_number_format_filter($this->env, twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["substance"], "price", [], "any", false, false, false, 55), ["," => "."]), 2, ".");
-                            // line 56
-                            echo "                    Soit un joint est égal à 0,5 gramme, vous en fumez
-                    ";
-                            // line 57
-                            echo twig_escape_filter($this->env, (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 57, $this->source); })()), "html", null, true);
+                        if (((isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 48, $this->source); })()) === "tabac")) {
+                            // line 49
+                            echo "                ";
+                            $context["tempprice"] = twig_number_format_filter($this->env, twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["substance"], "price", [], "any", false, false, false, 49), ["," => "."]), 2, ".");
+                            // line 50
+                            echo "                Soit un paquet est égal à 20 cigarettes, vous en fumez
+                ";
+                            // line 51
+                            echo twig_escape_filter($this->env, (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 51, $this->source); })()), "html", null, true);
                             echo "
-                    donc cela vous coûte
-                    ";
-                            // line 59
-                            $context["tempprice"] = (((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 59, $this->source); })()) * (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 59, $this->source); })())) * 0.5);
-                            // line 60
-                            echo "                    ";
-                            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 60, $this->source); })()), 2, "."), "html", null, true);
+                donc cela vous coûte
+                ";
+                            // line 53
+                            $context["tempprice"] = ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 53, $this->source); })()) / 20);
+                            // line 54
+                            echo "                ";
+                            $context["tempprice"] = ((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 54, $this->source); })()) * (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 54, $this->source); })()));
+                            // line 55
+                            echo "                ";
+                            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 55, $this->source); })()), 2, "."), "html", null, true);
                             echo "€ par jour...
-                    ";
+                ";
                         }
-                        // line 62
-                        echo "                    ";
+                        // line 57
+                        echo "                ";
                     }
-                    // line 63
-                    echo "                    ";
+                    // line 58
+                    echo "                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 64
+                // line 59
+                echo "                ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 59, $this->source); })()));
+                foreach ($context['_seq'] as $context["_key"] => $context["substance"]) {
+                    // line 60
+                    echo "                  ";
+                    if ((twig_get_attribute($this->env, $this->source, $context["substance"], "type", [], "any", false, false, false, 60) === "cannabis")) {
+                        // line 61
+                        echo "                    ";
+                        if (((isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 61, $this->source); })()) === "cannabis")) {
+                            // line 62
+                            echo "                      ";
+                            $context["tempprice"] = twig_number_format_filter($this->env, twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["substance"], "price", [], "any", false, false, false, 62), ["," => "."]), 2, ".");
+                            // line 63
+                            echo "                      Soit un joint est égal à 0,5 gramme, vous en fumez
+                      ";
+                            // line 64
+                            echo twig_escape_filter($this->env, (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 64, $this->source); })()), "html", null, true);
+                            echo "
+                      donc cela vous coûte
+                      ";
+                            // line 66
+                            $context["tempprice"] = (((isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 66, $this->source); })()) * (isset($context["conso"]) || array_key_exists("conso", $context) ? $context["conso"] : (function () { throw new RuntimeError('Variable "conso" does not exist.', 66, $this->source); })())) * 0.5);
+                            // line 67
+                            echo "                      ";
+                            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["tempprice"]) || array_key_exists("tempprice", $context) ? $context["tempprice"] : (function () { throw new RuntimeError('Variable "tempprice" does not exist.', 67, $this->source); })()), 2, "."), "html", null, true);
+                            echo "€ par jour...
+                      ";
+                        }
+                        // line 69
+                        echo "                      ";
+                    }
+                    // line 70
+                    echo "                      ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 71
                 echo "
-                    ";
+                      ";
             }
-            // line 66
-            echo "                    ";
+            // line 73
+            echo "                      ";
         }
-        // line 67
+        // line 74
         echo "
-                  ";
+                    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -292,7 +308,7 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
 
     public function getDebugInfo()
     {
-        return array (  273 => 67,  270 => 66,  266 => 64,  260 => 63,  257 => 62,  251 => 60,  249 => 59,  244 => 57,  241 => 56,  238 => 55,  235 => 54,  232 => 53,  227 => 52,  221 => 51,  218 => 50,  212 => 48,  209 => 47,  207 => 46,  202 => 44,  199 => 43,  196 => 42,  193 => 41,  190 => 40,  185 => 39,  183 => 38,  177 => 36,  174 => 35,  164 => 34,  154 => 32,  149 => 30,  145 => 29,  141 => 28,  137 => 27,  132 => 24,  124 => 22,  118 => 20,  116 => 19,  110 => 17,  107 => 16,  104 => 15,  100 => 14,  97 => 13,  94 => 12,  91 => 11,  86 => 9,  80 => 7,  78 => 6,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  289 => 74,  286 => 73,  282 => 71,  276 => 70,  273 => 69,  267 => 67,  265 => 66,  260 => 64,  257 => 63,  254 => 62,  251 => 61,  248 => 60,  243 => 59,  237 => 58,  234 => 57,  228 => 55,  225 => 54,  223 => 53,  218 => 51,  215 => 50,  212 => 49,  209 => 48,  207 => 47,  204 => 46,  199 => 45,  197 => 44,  191 => 42,  188 => 41,  178 => 40,  168 => 38,  163 => 36,  159 => 35,  155 => 34,  151 => 33,  146 => 30,  138 => 28,  132 => 26,  130 => 25,  123 => 22,  119 => 20,  116 => 19,  113 => 18,  110 => 17,  107 => 16,  104 => 15,  100 => 14,  97 => 13,  94 => 12,  91 => 11,  86 => 9,  80 => 7,  78 => 6,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -313,7 +329,13 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
     {%for substance in substances%}
       {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
       {%set price = tempprice|number_format(2, '.') + price %}
-      <strong>{{substance.name}} :</strong>
+      {%if substance.type is same as 'medicament' %}
+      {% set price = price / 28 %}
+      {% set tempprice = price / 28 %}
+
+    {%endif%}
+      <strong>{{substance.name}}
+        :</strong>
       <br>
       {%set price = price|replace({',': '.'})%}
       {{tempprice}}
@@ -336,35 +358,36 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
       <form action='calcul' method='post'><input type='number' name=\"number\"><br><br>Joints<br><input type=\"radio\" name='type' value='cannabis'><br><br>Cigarettes<br><input type=\"radio\" name='type' value='tabac'><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
       {%if conso is defined %}
         {%for substance in substances%}
-          {%if substance.type is same as 'cigarette'%}
-            {%if type is same as 'tabac'%}
-              {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
-              Soit un paquet est égal à 20 cigarettes, vous en fumez
-              {{conso}}
-              donc cela vous coûte
-              {% set tempprice = tempprice / 20%}
-              {%set tempprice = tempprice * conso%}
-              {{tempprice|number_format(2,'.')}}€ par jour...
-              {%endif%}
-              {%endif%}
-              {%endfor%}
-              {%for substance in substances%}
-                {%if substance.type is same as 'cannabis'%}
-                  {%if type is same as 'cannabis'%}
-                    {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
-                    Soit un joint est égal à 0,5 gramme, vous en fumez
-                    {{conso}}
-                    donc cela vous coûte
-                    {% set tempprice = tempprice * conso * 0.5 %}
-                    {{tempprice|number_format(2,'.')}}€ par jour...
-                    {%endif%}
-                    {%endif%}
-                    {%endfor%}
+         
+            {%if substance.type is same as 'cigarette'%}
+              {%if type is same as 'tabac'%}
+                {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+                Soit un paquet est égal à 20 cigarettes, vous en fumez
+                {{conso}}
+                donc cela vous coûte
+                {% set tempprice = tempprice / 20%}
+                {%set tempprice = tempprice * conso%}
+                {{tempprice|number_format(2,'.')}}€ par jour...
+                {%endif%}
+                {%endif%}
+                {%endfor%}
+                {%for substance in substances%}
+                  {%if substance.type is same as 'cannabis'%}
+                    {%if type is same as 'cannabis'%}
+                      {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+                      Soit un joint est égal à 0,5 gramme, vous en fumez
+                      {{conso}}
+                      donc cela vous coûte
+                      {% set tempprice = tempprice * conso * 0.5 %}
+                      {{tempprice|number_format(2,'.')}}€ par jour...
+                      {%endif%}
+                      {%endif%}
+                      {%endfor%}
 
-                    {%endif%}
-                    {%endif%}
+                      {%endif%}
+                      {%endif%}
 
-                  {%endblock %}
+                    {%endblock %}
 ", "page/money.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/money.html.twig");
     }
 }

@@ -14,7 +14,13 @@
     {%for substance in substances%}
       {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
       {%set price = tempprice|number_format(2, '.') + price %}
-      <strong>{{substance.name}} :</strong>
+      {%if substance.type is same as 'medicament' %}
+      {% set price = price / 28 %}
+      {% set tempprice = price / 28 %}
+
+    {%endif%}
+      <strong>{{substance.name}}
+        :</strong>
       <br>
       {%set price = price|replace({',': '.'})%}
       {{tempprice}}
@@ -37,32 +43,33 @@
       <form action='calcul' method='post'><input type='number' name="number"><br><br>Joints<br><input type="radio" name='type' value='cannabis'><br><br>Cigarettes<br><input type="radio" name='type' value='tabac'><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
       {%if conso is defined %}
         {%for substance in substances%}
-          {%if substance.type is same as 'cigarette'%}
-            {%if type is same as 'tabac'%}
-              {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
-              Soit un paquet est égal à 20 cigarettes, vous en fumez
-              {{conso}}
-              donc cela vous coûte
-              {% set tempprice = tempprice / 20%}
-              {%set tempprice = tempprice * conso%}
-              {{tempprice|number_format(2,'.')}}€ par jour...
-              {%endif%}
-              {%endif%}
-              {%endfor%}
-              {%for substance in substances%}
-                {%if substance.type is same as 'cannabis'%}
-                  {%if type is same as 'cannabis'%}
-                    {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
-                    Soit un joint est égal à 0,5 gramme, vous en fumez
-                    {{conso}}
-                    donc cela vous coûte
-                    {% set tempprice = tempprice * conso * 0.5 %}
-                    {{tempprice|number_format(2,'.')}}€ par jour...
-                    {%endif%}
-                    {%endif%}
-                    {%endfor%}
+         
+            {%if substance.type is same as 'cigarette'%}
+              {%if type is same as 'tabac'%}
+                {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+                Soit un paquet est égal à 20 cigarettes, vous en fumez
+                {{conso}}
+                donc cela vous coûte
+                {% set tempprice = tempprice / 20%}
+                {%set tempprice = tempprice * conso%}
+                {{tempprice|number_format(2,'.')}}€ par jour...
+                {%endif%}
+                {%endif%}
+                {%endfor%}
+                {%for substance in substances%}
+                  {%if substance.type is same as 'cannabis'%}
+                    {%if type is same as 'cannabis'%}
+                      {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
+                      Soit un joint est égal à 0,5 gramme, vous en fumez
+                      {{conso}}
+                      donc cela vous coûte
+                      {% set tempprice = tempprice * conso * 0.5 %}
+                      {{tempprice|number_format(2,'.')}}€ par jour...
+                      {%endif%}
+                      {%endif%}
+                      {%endfor%}
 
-                    {%endif%}
-                    {%endif%}
+                      {%endif%}
+                      {%endif%}
 
-                  {%endblock %}
+                    {%endblock %}

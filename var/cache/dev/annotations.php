@@ -494,6 +494,10 @@ return [[
 '[C]App%5CEntity%5CUser%23addSubstance' => 1,
 'App%5CEntity%5CUser%23removeSubstance' => 0,
 '[C]App%5CEntity%5CUser%23removeSubstance' => 1,
+'App%5CEntity%5CUser%23getComment' => 0,
+'[C]App%5CEntity%5CUser%23getComment' => 1,
+'App%5CEntity%5CUser%23setComment' => 0,
+'[C]App%5CEntity%5CUser%23setComment' => 1,
 'App%5CEntity%5CUser%24id' => 8,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24email' => 38,
@@ -1150,7 +1154,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1622087439,
+1 => 1622140033,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

@@ -3,13 +3,13 @@
 
 {% block main %}
 Nous sommes ravis de vous voir aujourd'hui, comme dirait maître Yoda : "Que la force soit avec vous." <br>
-{%if user is defined %}
-Vous êtes désormais authentifié {{user.username}}<br>
-{%else %}
+{%if user is defined and user is not same as (null) %}
+
+<strong><br><span class="alert alert-success">Vous êtes désormais authentifié {{user.pseudonyme}}</span></strong><br>
+{%else %}<br>
 Vous avez attéri sur cette page parce que <br><br>
 <ul>
-<li>Soit vous êtes authentifié</li>
-<li>Soit il vous reste à cliquer sur le mail qui vous a été envoyé</li>
+<li>Il vous reste à cliquer sur l'email qui vous a été envoyé (si vous ne le trouvez pas regardez dans vos spams)</li>
 </ul>
 {% endif %}
 {%endblock %}
