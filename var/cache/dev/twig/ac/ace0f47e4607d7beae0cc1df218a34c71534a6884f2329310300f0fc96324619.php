@@ -99,8 +99,8 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
     ";
         }
         // line 19
-        echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+        echo "  
+    <h1 class=\"h3 mb-3 font-weight-normal\">Connectez vous : </h1>
     <label for=\"inputUsername\">Email</label><br>
     <input type=\"text\" value=\"";
         // line 22
@@ -191,8 +191,8 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
         <a href=\"{{ path('app_logout') }}\">Logout</a>
       </div>
     {% endif %}
-
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
+  
+    <h1 class=\"h3 mb-3 font-weight-normal\">Connectez vous : </h1>
     <label for=\"inputUsername\">Email</label><br>
     <input type=\"text\" value=\"{{ last_username }}\" name=\"email\" id=\"inputUsername\" class=\"form-control\" autocomplete=\"username\" required=\"required\" autofocus=\"autofocus\">
     <label for=\"inputPassword\">Password</label><br>

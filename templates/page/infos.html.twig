@@ -4,5 +4,15 @@
   {{page.content|raw}}
 {% endblock %}
 {%block sidebar %}
-  {{user.pseudonyme}} voici quelques informations sur les substances addictives (source : gouv.fr)
+  {%if user is defined %}
+    {{user.pseudonyme}}
+    voici quelques informations sur les substances addictives (source : gouv.fr)
+    {%else%}
+    <p class='alert alert-danger' role='alert'>Bonjour sombre inconnu,
+  <a href="register" style="color:black !important;">inscrivez vous</a>
+  ou
+  <a href="login" style="color:black !important;">connectez vous</a>
+  pour avoir accès à toutes les pages.</p>
+
+  {%endif %}
 {% endblock %}

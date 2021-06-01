@@ -6,6 +6,7 @@ use DateTime;
 use DateTimeZone;
 use App\Entity\Page;
 use App\Entity\User;
+use App\SpamChecker;
 use Twig\Environment;
 use App\Entity\Comment;
 use App\Entity\Cannabis;
@@ -46,10 +47,10 @@ class PageController extends AbstractController
     /**
      * @Route("page/{slug}"), name="page_show"
      */
-    public function show(Environment $twig, EntityManagerInterface $em, Request $request, string $slug, Page $page, UserRepository $userRepository, MedicamentRepository $medicamentRepository): Response
+    public function show(Environment $twig, SpamChecker $spamChecker, EntityManagerInterface $em, Request $request, string $slug, Page $page, UserRepository $userRepository, MedicamentRepository $medicamentRepository): Response
     {
         $user = $this->getUser();
-        if (!$user && $slug !== "home") {
+        if (!$user && ($slug !== "home" && $slug !== 'infos' && $slug !=='videos' && $slug !== 'partenaires')) {
             return $this->RedirectToRoute('app_login');
         } elseif (!$user && $slug === 'home') {
             return new Response($twig->render('page/home.html.twig', [
@@ -57,7 +58,28 @@ class PageController extends AbstractController
                 'page' => $page,
 
             ]));
-        } else {
+        } elseif (!$user && $slug === 'infos') {
+            return new Response($twig->render('page/infos.html.twig', [
+                'page' => $page,
+
+            ]));
+        } elseif (!$user && $slug === 'videos') {
+            return new Response($twig->render('page/videos.html.twig', [
+                'page' => $page,
+
+            ]));
+        } elseif (!$user && $slug === 'partenaires') {
+            $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
+            return new Response($twig->render('page/partenaires.html.twig', [
+                'page' => $page,
+
+            ]));
+        } elseif (!$user && $slug === 'partenaires') {
+            return new Response($twig->render('page/partenaires.html.twig', [
+                'page' => $page,
+
+            ]));
+        }else {
             $userId = $user->getId();
             $isVerified = $user->getIsVerified();
             if ($isVerified === false) {
@@ -72,16 +94,32 @@ class PageController extends AbstractController
                 $form = $this->createForm(CommentFormType::class, $comment);
                 $form->handleRequest($request);
                 if ($form->isSubmitted() && $form->isValid()) {
-                    $comment->setUser($user);
+                    $comment->addUser($user);
+                    $comment->setAuthor($user->getPseudonyme());
                     $comment = $form->getData();
                     $datetime  = date_timezone_set(new DateTime('now'), new DateTimeZone('Europe/Paris'));
                     $comment->setCreatedAt($datetime);
                     $entityManager = $this->getDoctrine()->getManager();
-                    $entityManager->persist($comment);
                     $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
-                    $entityManager->flush();
+                    if ($user->getComment() !== null) {
+                        $moreThanOne = true;
+                    } else {
+                        $entityManager->persist($comment);
+                        $context = [
+                            'user_ip' => $request->getClientIp(),
+                            'user_agent' => $request->headers->get('user-agent'),
+                            'referrer' => $request->headers->get('referer'),
+                            'permalink' => $request->getUri(),
+                        ];
+                        if (2 === $spamChecker->getSpamScore($comment, $context)) {
+                            throw new \RuntimeException('Blatant spam, go away!');
+                        }
+                        $entityManager->flush();
+                        $moreThanOne = false;
+                    }
                     return new Response($twig->render('page/temoignages.html.twig', [
                         'page' => $page,
+                        'moreThanOne' => $moreThanOne,
                         'comments' => $comments,
                         'substances' => $user->getSubstances(),
                         'comment' => $comment,
@@ -90,15 +128,16 @@ class PageController extends AbstractController
                 } else {
                     $comment = new Comment();
                     $form = $this->createForm(CommentFormType::class, $comment);
-                    $form = $form->createView();
+                    $moreThanOne = false;
                     $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
                     return new Response($twig->render('page/temoignages.html.twig', [
                         'page' => $page,
                         'comments' => $comments,
                         'slug' => $slug,
+                        'moreThanOne' => $moreThanOne,
                         'substances' => $user->getSubstances(),
-                        'commentForm' => $form,
-                        'user' => $user,
+                        'commentForm' => $form->createView(),
+                        'user' => $user
                     ]));
                 }
             case 'stats':
@@ -166,6 +205,11 @@ class PageController extends AbstractController
                 return new Response($twig->render('page/money.html.twig', [
                     'page' => $page,
                     'substances' => $substances,
+                    'user' => $user,
+                ]));
+            case 'partenaires':
+                return new Response($twig->render('page/partenaires.html.twig', [
+                    'page' => $page,
                     'user' => $user,
                 ]));
             case 'autre-substance':

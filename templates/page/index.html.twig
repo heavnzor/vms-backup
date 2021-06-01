@@ -1,11 +1,51 @@
 {% extends 'index.html.twig' %}
 
 {%block main %}
+<h1>Register</h1>
 
-Bienvenue ! pour avoir accès à toutes les pages, veuillez vous <img src='../pics/icons8-signin.svg' width='30px'><br> <a href='login'> connecter</a> ou vous <a href='register'>enregistrer.</a>
+<form action='register' method='post'>
+{{ form_label(registrationForm.email) }}<br>
+{{ form_widget(registrationForm.email) }}<br>
+<small>{{ form_help(registrationForm.email) }}</small><br>
+{{ form_errors(registrationForm.email) }}<br>
+{{ form_label(registrationForm.pseudonyme) }}<br>
+{{ form_widget(registrationForm.pseudonyme) }}<br>
+<small>{{ form_help(registrationForm.pseudonyme) }}</small><br>
+{{ form_errors(registrationForm.pseudonyme) }}<br>
+{{ form_label(registrationForm.plainPassword) }}<br>
+{{ form_widget(registrationForm.plainPassword) }}<br>
+<small>{{ form_help(registrationForm.plainPassword) }}</small><br>
+{{ form_errors(registrationForm.plainPassword) }}<br>
+{{ form_row(registrationForm.agreeTerms) }}
+-
+<a href="https://viamedo.fr/CGV.pdf" target="_blank">CGV</a><br>
+
+<button type="submit" class="btn btn-primary" id="submit">S'enregistrer</button>
+{{ form_end(registrationForm) }}
 
  {% endblock %}
 
 {% block sidebar %}
 
+<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+<form action="login" method="post">
+<label for="inputUsername">Email</label><br>
+<input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" autocomplete="username" required="required" autofocus="autofocus">
+<label for="inputPassword">Password</label><br>
+<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required="required">
+
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+<br>
+<div class="checkbox mb-3">
+  <label>
+    <input type="checkbox" name="_remember_me">
+    Remember me
+  </label>
+</div><br>
+
+<button class="btn btn-lg btn-primary" type="submit" id="submit">
+  Sign in
+</button>
+</form>
 {% endblock %}

@@ -15,8 +15,8 @@
       {%set tempprice = substance.price|replace({',': '.'})|number_format(2,'.')%}
       {%set price = tempprice|number_format(2, '.') + price %}
       {%if substance.type is same as 'medicament' %}
-      {% set price = price / 28 %}
-      {% set tempprice = price / 28 %}
+      {% set price = price / 14 %}
+      {% set tempprice = price / 14 %}
 
     {%endif%}
       <strong>{{substance.name}}
@@ -24,7 +24,7 @@
       <br>
       {%set price = price|replace({',': '.'})%}
       {{tempprice}}
-      € par jour. Voyons maintenant si nous multiplions par 7 pour savoir combien vous coûte une semaine ...
+      € par jour * . Voyons maintenant si nous multiplions par 7 pour savoir combien vous coûte une semaine ...
       {{tempprice * 7 }}€ !<br>
     {%endfor %}
 
@@ -35,6 +35,9 @@
     {{price * 30 }}€ par mois soit
     {{price * 365}}€ par an!
     {%endif%}
+
+    <br><br> * Ces données sont données à titre approximatif, il ne s'agit pas de vos dépenses exactes en la matière, en particulier pour les médicaments.<br>
+    En effet, le calcul prend en compte qu'une boite équivaut à une moyenne de 14 comprimés.
   {% endblock %}
 
   {%block sidebar %}

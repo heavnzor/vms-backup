@@ -172,7 +172,7 @@ class __TwigTemplate_df7db1ef4d92569cc86d2ee2a2a1ba4bcc19ccb51a96af4c01d5d9c06bf
     <a href='add-substance?id=";
             // line 34
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 34), "html", null, true);
-            echo "'><img src='../pics/icons8-add.svg' width='30px'></a>
+            echo "'><img src='../pics/icons8-add.png' width='30px'></a>
     ";
             // line 35
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 35), "html", null, true);
@@ -180,12 +180,12 @@ class __TwigTemplate_df7db1ef4d92569cc86d2ee2a2a1ba4bcc19ccb51a96af4c01d5d9c06bf
     <a href='less-substance?id=";
             // line 36
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 36), "html", null, true);
-            echo "'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+            echo "'><img src='../pics/icons8-minus.png' width='30px'></a><br>
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id=";
             // line 38
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 38), "html", null, true);
-            echo "'><img src='../pics/icons8-delete.svg' width='30px'></a>
+            echo "'><img src='../pics/icons8-delete.png' width='30px'></a>
     ";
             // line 39
             if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 39) === false)) {
@@ -194,7 +194,7 @@ class __TwigTemplate_df7db1ef4d92569cc86d2ee2a2a1ba4bcc19ccb51a96af4c01d5d9c06bf
      <a href='nocivite-substance?id=";
                 // line 41
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 41), "html", null, true);
-                echo "'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+                echo "'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      ";
             }
             // line 43
@@ -264,14 +264,14 @@ class __TwigTemplate_df7db1ef4d92569cc86d2ee2a2a1ba4bcc19ccb51a96af4c01d5d9c06bf
   <p class=\"\">
     {{substance.name}} 
     {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
-    <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.svg' width='30px'></a>
+    <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.png' width='30px'></a>
     {{substance.quantity}}
-    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.png' width='30px'></a><br>
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
-    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.png' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
  <br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
-     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      {%endif%}
   </p>
   {%endfor%}

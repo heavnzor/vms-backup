@@ -100,7 +100,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
         $credentials = $this->getCredentials($request);
        $userProvider = $this->userProvider;
 
-       return new RedirectResponse($this->urlGenerator->generate('app_user'));
+       return new RedirectResponse($this->urlGenerator->generate('app_page_index'));
     }
 
     protected function getLoginUrl()

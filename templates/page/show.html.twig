@@ -35,14 +35,14 @@ Vous désirez ajouter autre chose qu'un médicament ? <a href='tabac'>Une marque
   <p class="">
     {{substance.name}} 
 {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
-    <a href="add-substance?id={{substance.id}}"><img src='../pics/icons8-add.svg' width='30px'></a>
+    <a href="add-substance?id={{substance.id}}"><img src='../pics/icons8-add.png' width='30px'></a>
     {{substance.quantity}} {{substance.quantityType}} 
-    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.svg' width='30px'></a><br>
+    <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.png' width='30px'></a><br>
     <span class="badge badge-danger">Voulez-vous le supprimer ?</span>
-    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.svg' width='30px'></a>
+    <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.png' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
      <br><span class="badge badge-danger">Considérez vous cette substance<br> comme nocive ?</span> 
-     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.svg' width='30px'></a>
+     <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      {%endif%}
      
   </p>

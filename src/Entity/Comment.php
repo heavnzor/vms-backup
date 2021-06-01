@@ -23,6 +23,10 @@ class Comment
      * @ORM\Column(type="string", length=180)
      */
     private $title;
+    /**
+     * @ORM\Column(type="string", length=180)
+     */
+    private $author;
 
     /**
      * @ORM\Column(type="text")
@@ -36,18 +40,25 @@ class Comment
      */
     private $createdAt;
 
-   
+    /**
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="comment")
+     */
+    private $users;
+
+
+
 
 
 
     public function __construct()
     {
         $this->author = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
-    
 
- 
+
+
 
     public function getId(): ?int
     {
@@ -90,10 +101,58 @@ class Comment
 
         return $this;
     }
+    public function __toString(): string
+    {
+        return $this->users;
+    }
 
- 
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
 
-  
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->setComment($this);
+        }
 
+        return $this;
+    }
 
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getComment() === $this) {
+                $user->setComment(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of author
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set the value of author
+     *
+     * @return  self
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
 }

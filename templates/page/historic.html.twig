@@ -3,29 +3,43 @@
 {% block main %}
   <h2>{{ page.title }}</h2>
   <br>{{page.content|raw }}<br>
- 
+
 {% endblock %}
 
 {%block sidebar %}
   {%if user is defined%}
-    {{user.pseudonyme}}, voici l'historique de vos consommations.<br><br>{% if substances is defined %}
-  {%for substance in substances %}Vous consommez depuis
-    {% set difference = date(substance.createdAt|date('d-m-Y H:i:s')).diff(date('now'|date('d-m-Y H:i:s','Europe/Paris'))) %}
-    {{substance.createdAt|date('d-m-Y H:i:s')}}
-    ce produit :
-    <strong>{{substance.name}}</strong>
-    donc depuis
-    {% set leftDays = difference.days %}
-    {% set leftHours = difference.h %}
-    {% set leftMinutes = difference.i %}
-    {{leftDays}}
-    jours,
-    {{leftHours}}
-    heures, et
-    {{leftMinutes}}
-    minutes.<br>
-  {%endfor %}
-{% endif %}
+    <h3>
+      {{user.pseudonyme}}, voici l'historique de vos consommations.</h3><br><br>
+    {% if substances is defined %}
+    <ol class="list-group list-group-numbered">
+      {%for substance in substances %}
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">
+                Vous consommez depuis
+                {% set difference = date(substance.createdAt|date('d-m-Y H:i:s')).diff(date('now'|date('d-m-Y H:i:s','Europe/Paris'))) %}
+                {{substance.createdAt|date('d-m-Y H:i:s')}}</div>
+
+              Ce produit :
+              <strong>{{substance.name}}</strong>
+              donc depuis
+              {% set leftDays = difference.days %}
+              {% set leftHours = difference.h %}
+              {% set leftMinutes = difference.i %}
+              {{leftDays}}
+              jours,
+              {{leftHours}}
+              heures, et
+              {{leftMinutes}}
+              minutes.<br>
+            </div>
+            <span class="badge bg-primary rounded-pill">{{substance.quantity}}</span>
+          </li>
+     
+
+      {%endfor %}
+         </ol>
+    {% endif %}
 
   {%endif %}
 {%endblock %}

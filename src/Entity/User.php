@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use App\Entity\Comment;
+use App\Entity\Substance;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -58,6 +60,13 @@ class User implements UserInterface
      */
     private $substances;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Comment::class, inversedBy="users")
+     */
+    private $comment;
+
+  
+
 
    
   
@@ -65,7 +74,6 @@ class User implements UserInterface
     public function __construct()
     {
         $this->substances = new ArrayCollection();
-        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -93,6 +101,10 @@ class User implements UserInterface
     public function getUsername(): string
     {
         return (string) $this->email;
+    }
+    public function __toString(): string
+    {
+        return $this->pseudonyme;
     }
 
     /**
@@ -229,6 +241,7 @@ class User implements UserInterface
 
         return $this;
     }
+
 
 
 

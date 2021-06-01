@@ -7,4 +7,5 @@ return array (
   'APP_SECRET' => 'ebbff1bf382216b8b67dc25f05009fe2',
   'DATABASE_URL' => 'mysql://u699696044_heavnzor:Houellebecq2a@sql512.main-hosting.eu:3306/u699696044_viamedo?',
   'MAILER_DSN' => 'smtp://webmaster@viamedo.fr:6jtkmz6G95EcNm83@mail.infomaniak.com:587',
+  'AKISMET_KEY' => "dac38a2edc75"
 );

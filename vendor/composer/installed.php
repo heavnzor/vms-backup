@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'c75bc13720cb17c04053f4f2cbb7544a19a4595b',
+    'reference' => 'b93fb58d36cab0c0bdb7943aa9e432750c595de7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'c75bc13720cb17c04053f4f2cbb7544a19a4595b',
+      'reference' => 'b93fb58d36cab0c0bdb7943aa9e432750c595de7',
     ),
     'cmen/google-charts-bundle' => 
     array (
