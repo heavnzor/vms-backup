@@ -207,6 +207,10 @@ class PageController extends AbstractController
                     'substances' => $substances,
                     'user' => $user,
                 ]));
+            case 'cookies':
+                return new Response($twig->render('page/cookies.html.twig', [
+                    'page' => $page,
+                ]));
             case 'partenaires':
                 return new Response($twig->render('page/partenaires.html.twig', [
                     'page' => $page,

@@ -6182,6 +6182,8 @@
       <argument type="collection"/>
       <argument type="collection">
         <argument key="defer">true</argument>
+        <argument key="preload">true</argument>
+        <argument key="cache">true</argument>
       </argument>
       <argument type="collection"/>
       <argument type="service" id="debug.event_dispatcher"/>

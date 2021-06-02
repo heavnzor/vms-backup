@@ -53,6 +53,8 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
 <html class=\"no-js\" lang=\"en-US\">
   <!--<![endif]-->
   <head>
+  <script defer id=\"Cookiebot\" src=\"https://consent.cookiebot.com/uc.js\" data-cbid=\"bfaadfd2-6845-47fd-9936-06612d0ff5ce\" data-blockingmode=\"auto\" type=\"text/javascript\"></script>
+    
     <meta charset=\"UTF-8\"/>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
@@ -70,7 +72,7 @@ class __TwigTemplate_36d851d5a55043452dc65af0d3951a99d668f254c7819d11e857245815a
       gtag('config', 'G-CEFC8S5YV4');
     </script>
     ";
-        // line 25
+        // line 27
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 30
         echo "    ";
@@ -127,7 +129,7 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
 
     }
 
-    // line 25
+    // line 27
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,10 +139,9 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 26
-        echo "      ";
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app", null, "_default", ["defer" => true]);
         // line 28
+        echo "      ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
     ";
         
@@ -253,8 +254,8 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
                 </div>
 
                 <div class=\"row\">
-                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela - <a href=\"cookies\">Politique en matière de Cookies</a> - 
+                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a> - <a href=\"https://www.facebook.com/ViaMedo-102753971946564\" target='_blank'><img src=\"../pics/icons8-facebook.png\" width=\"30px\"></a> - <a href='https://www.patreon.com/viamedo' target='_blank'><img src=\"../pics/icons8-patreon.png \" width=\"30px\"></a> 
                   </div>
                 </div>
 
@@ -316,7 +317,7 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
 
     public function getDebugInfo()
     {
-        return array (  295 => 122,  277 => 118,  252 => 124,  245 => 122,  240 => 119,  238 => 118,  188 => 70,  178 => 69,  165 => 31,  155 => 30,  144 => 28,  141 => 26,  131 => 25,  119 => 140,  117 => 69,  79 => 33,  76 => 30,  74 => 25,  48 => 1,);
+        return array (  296 => 122,  278 => 118,  253 => 124,  246 => 122,  241 => 119,  239 => 118,  189 => 70,  179 => 69,  166 => 31,  156 => 30,  143 => 28,  133 => 27,  121 => 140,  119 => 69,  81 => 33,  78 => 30,  76 => 27,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -329,6 +330,8 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
 <html class=\"no-js\" lang=\"en-US\">
   <!--<![endif]-->
   <head>
+  <script defer id=\"Cookiebot\" src=\"https://consent.cookiebot.com/uc.js\" data-cbid=\"bfaadfd2-6845-47fd-9936-06612d0ff5ce\" data-blockingmode=\"auto\" type=\"text/javascript\"></script>
+    
     <meta charset=\"UTF-8\"/>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
@@ -346,9 +349,7 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
       gtag('config', 'G-CEFC8S5YV4');
     </script>
     {% block stylesheets %}
-      {{ encore_entry_link_tags('app', attributes={
-    defer: true
-}) }}
+      {{ encore_entry_link_tags('app')}}
     {% endblock %}
     {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
@@ -448,8 +449,8 @@ Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison
                 </div>
 
                 <div class=\"row\">
-                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela -
-                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a>
+                  <div class=\"col-sm-12\" style=\"text-align:center;\">Copyright 2021 - Antonu-Maria Mela - <a href=\"cookies\">Politique en matière de Cookies</a> - 
+                    <a href=\"http://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a> - <a href=\"https://www.facebook.com/ViaMedo-102753971946564\" target='_blank'><img src=\"../pics/icons8-facebook.png\" width=\"30px\"></a> - <a href='https://www.patreon.com/viamedo' target='_blank'><img src=\"../pics/icons8-patreon.png \" width=\"30px\"></a> 
                   </div>
                 </div>
 
