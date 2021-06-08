@@ -40,10 +40,16 @@ class PageController extends AbstractController
      */
     public function index(PageRepository $pageRepository): Response
     {
-        return $this->RedirectToRoute('app_page_show', ['slug' => 'home']);
+        return $this->RedirectToRoute('app_login');
     }
 
-
+    /**
+     * @Route("v2/"), name="v2"
+     */
+    public function vTwo(Environment $twig): Response
+    {
+       return new Response($twig->render('v2/index.html.twig'));
+    }
     /**
      * @Route("page/{slug}"), name="page_show"
      */
@@ -54,6 +60,7 @@ class PageController extends AbstractController
             return $this->RedirectToRoute('app_login');
         } elseif (!$user && $slug === 'home') {
             return new Response($twig->render('page/home.html.twig', [
+                'slug' => $slug,
 
                 'page' => $page,
 
@@ -61,22 +68,26 @@ class PageController extends AbstractController
         } elseif (!$user && $slug === 'infos') {
             return new Response($twig->render('page/infos.html.twig', [
                 'page' => $page,
+                'slug' => $slug,
 
             ]));
         } elseif (!$user && $slug === 'videos') {
             return new Response($twig->render('page/videos.html.twig', [
                 'page' => $page,
+                'slug' => $slug,
 
             ]));
         } elseif (!$user && $slug === 'partenaires') {
             $comments = $this->getDoctrine()->getRepository(Comment::class)->findAll();
             return new Response($twig->render('page/partenaires.html.twig', [
                 'page' => $page,
+                'slug' => $slug,
 
             ]));
         } elseif (!$user && $slug === 'partenaires') {
             return new Response($twig->render('page/partenaires.html.twig', [
                 'page' => $page,
+                'slug' => $slug,
 
             ]));
         }else {
@@ -84,7 +95,9 @@ class PageController extends AbstractController
             $isVerified = $user->getIsVerified();
             if ($isVerified === false) {
 
-                return $this->RedirectToRoute('app_login');
+                return $this->RedirectToRoute('app_login', [
+                    'slug' => $slug,
+                ]);
             }
         }
         switch ($slug) {
@@ -124,6 +137,7 @@ class PageController extends AbstractController
                         'substances' => $user->getSubstances(),
                         'comment' => $comment,
                         'user' => $user,
+                        'slug' => $slug,
                     ]));
                 } else {
                     $comment = new Comment();
@@ -196,7 +210,8 @@ class PageController extends AbstractController
                 return $this->render('page/stats.html.twig', array(
                     'piechart' => $pieChart,
                     'page' => $page,
-                    'user' => $user
+                    'user' => $user,
+                    'slug' => $slug,
                 ));
 
                 break;
@@ -206,15 +221,24 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $substances,
                     'user' => $user,
+                    'slug' => $slug,
+                ]));
+            case 'CGV':
+                $substances = $user->getSubstances();
+                return new Response($twig->render('page/cgv.html.twig', [
+                    'page' => $page,
+                    'slug' => $slug,
                 ]));
             case 'cookies':
                 return new Response($twig->render('page/cookies.html.twig', [
                     'page' => $page,
+                    'slug' => $slug,
                 ]));
             case 'partenaires':
                 return new Response($twig->render('page/partenaires.html.twig', [
                     'page' => $page,
                     'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'autre-substance':
                 $substance = new Substance();
@@ -238,6 +262,7 @@ class PageController extends AbstractController
                         'substanceForm' => $form->createView(),
                         'substances' => $user->getSubstances(),
                         'substance' => $substance,
+                        'slug' => $slug,
                         'user' => $user,
                     ]));
                 } else {
@@ -263,6 +288,7 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $user->getSubstances(),
                     'user' => $user,
+                    'slug' => $slug,
                     'substance' => $substance,
                 ]));
 
@@ -272,11 +298,12 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $substances,
                     'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'home':
                 if (isset($anonymous) && $anonymous === true) {
                     return new Response($twig->render('page/home.html.twig', [
-
+                        'slug' => $slug,
                         'page' => $page,
 
                     ]));
@@ -285,7 +312,8 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/home.html.twig', [
                         'substances' => $substances,
                         'page' => $page,
-                        'user' => $user
+                        'user' => $user,
+                        'slug' => $slug,
 
                     ]));
                 }
@@ -294,15 +322,19 @@ class PageController extends AbstractController
                 return new Response($twig->render('page/search.html.twig', [
                     'page' => $page,
                     'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'login':
-                return  $this->RedirectToRoute('app_login');
+                return  $this->RedirectToRoute('app_login', [
+                    'slug' => $slug,
+                ]);
             case 'disconnect':
                 return  $this->RedirectToRoute('app_logout');
             case 'infos':
                 $substances = $user->getSubstances();
                 return new Response($twig->render('page/infos.html.twig', [
                     'page' => $page,
+                    'slug' => $slug,
                     'substances' => $substances,
                     'user' => $user,
                 ]));
@@ -312,6 +344,7 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $substances,
                     'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'goals':
                 $substances = $user->getSubstances();
@@ -319,6 +352,7 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $substances,
                     'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'historic':
                 $substances = $user->getSubstances();
@@ -326,6 +360,7 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' => $substances,
                     'user' => $userRepository->find($userId),
+                    'slug' => $slug,
                 ]));
             case 'calcul':
                 $substances = $user->getSubstances();
@@ -334,6 +369,7 @@ class PageController extends AbstractController
                 return new Response($twig->render('page/money.html.twig', [
                     'page' => $page,
                     'type' => $type,
+                    'slug' => $slug,
                     'conso' => $conso,
                     'substances' => $substances,
                     'user' => $userRepository->find($userId),
@@ -345,16 +381,23 @@ class PageController extends AbstractController
                         'page' => $page,
                         'substances' => $user->getSubstances(),
                         'user' => $userRepository->find($userId),
+                        'slug' => $slug,
                     ]));
                 }
                 $substance = $this->getDoctrine()->getRepository(Substance::class)->find($id);
-                $substance->setQuantity($substance->getQuantity() + 1);
+                if($substance->getQuantity()<1){
+                    $add = 0.2;
+                }else{
+                    $add = 1;
+                }
+                $substance->setQuantity($substance->getQuantity() + $add);
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($substance);
                 $entityManager->flush();
                 return new Response($twig->render('page/add-substance.html.twig', [
                     'page' => $page,
                     'substance' => $substance,
+                    'slug' => $slug,
                     'substances' => $user->getSubstances(),
                     'user' => $userRepository->find($userId),
                 ]));
@@ -363,12 +406,18 @@ class PageController extends AbstractController
                 if (empty($id)) {
                     return new Response($twig->render('page/index.html.twig', [
                         'page' => $page,
+                        'slug' => $slug,
                         'substances' => $user->getSubstances(),
                         'user' => $userRepository->find($userId),
                     ]));
                 }
                 $substance = $this->getDoctrine()->getRepository(Substance::class)->find($id);
-                $substance->setQuantity($substance->getQuantity() - 1);
+                if ($substance->getQuantity() < 1) {
+                    $add = 0.2;
+                } else {
+                    $add = 1;
+                }
+                $substance->setQuantity($substance->getQuantity() - $add);
                 if ($substance->getQuantity() == '0') {
                     $user->removeSubstance($substance);
                     $entityManager = $this->getDoctrine()->getManager();
@@ -382,6 +431,7 @@ class PageController extends AbstractController
                     'page' => $page,
                     'substances' =>  $user->getSubstances(),
                     'substance' => $substance,
+                    'slug' => $slug,
                     'user' => $userRepository->find($userId),
                 ]));
             case 'delete-substance':
@@ -389,6 +439,7 @@ class PageController extends AbstractController
                 if (empty($id)) {
                     return new Response($twig->render('page/index.html.twig', [
                         'page' => $page,
+                        'slug' => $slug,
                         'substances' => $user->getSubstances(),
                         'user' => $userRepository->find($userId),
                     ]));
@@ -401,6 +452,7 @@ class PageController extends AbstractController
                 return new Response($twig->render('page/delete-substance.html.twig', [
                     'page' => $page,
                     'substance' => $substance,
+                    'slug' => $slug,
                     'substances' => $user->getSubstances(),
                     'user' => $userRepository->find($userId),
                 ]));
@@ -415,7 +467,7 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/cigarette.html.twig', [
                         'page' => $page,
                         'value' => $value,
-
+                        'slug' => $slug,
                         'substances' => $user->getSubstances(),
                         'cigaretteForm' => $form,
                         'user' => $userRepository->find($userId),
@@ -445,6 +497,7 @@ class PageController extends AbstractController
                         'page' => $page,
                         'substances' => $substances,
                         'value' => $value,
+                        'slug' => $slug,
                         'medicamentForm' => $form,
                         'user' => $user,
                     ]));
@@ -473,6 +526,7 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/cannabis.html.twig', [
                         'page' => $page,
                         'value' => $value,
+                        'slug' => $slug,
                         'substances' => $user->getSubstances(),
                         'cannabisForm' => $form,
                         'user' => $userRepository->find($userId),
@@ -517,6 +571,7 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/cigarette.html.twig', [
                         'page' => $page,
                         'user' => $user,
+                        'slug' => $slug,
                         'cigaretteForm' => $form->createView(),
                         'val' => $req,
                         'substances' => $user->getSubstances(),
@@ -553,6 +608,7 @@ class PageController extends AbstractController
                     return new Response($twig->render('page/show.html.twig', [
                         'page' => $page,
                         'user' => $user,
+                        'slug' => $slug,
                         'substances' => $substances,
                         'medicamentForm' => $form->createView(),
                         'val' => $req,
@@ -588,6 +644,7 @@ class PageController extends AbstractController
                         'page' => $page,
                         'cannabisForm' => $form->createView(),
                         'user' => $user,
+                        'slug' => $slug,
                         'substances' => $user->getSubstances(),
                         'val' => $req,
                         'user' => $userRepository->find($userId),
@@ -596,18 +653,21 @@ class PageController extends AbstractController
             case 'register':
                 return new Response($twig->render('page/register.html.twig', [
                     'page' => $page,
-                    'user' => $user
+                    'user' => $user,
+                    'slug' => $slug,
                 ]));
             case 'services':
                 return new Response($twig->render('page/services.html.twig', [
                     'page' => $page,
-                    'user' => $user
+                    'user' => $user,
+                    'slug' => $slug,
                 ]));
         }
 
         return new Response($twig->render('page/index.html.twig', [
             'pages' => $this->getDoctrine()->getRepository(Page::class)->findAll(),
             'user' => $user,
+            'slug' => $slug,
         ]));
     }
 }

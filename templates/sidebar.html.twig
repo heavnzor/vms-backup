@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Right Sidebar - Arcana by HTML5 UP</title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être. Et pour être tout à fait exact : devenir qui vous êtes. ViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature. Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. "/>
+		<meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1"/>
+		<link rel="icon" href="../pics/favicon_16.ico" sizes="16x16"/>
+		<link rel="icon" href="../pics/favicon.ico" sizes="32x32"/>
+		<meta name=" viewport" content=" width" =" device-width," initial-scale=" 1," user-scalable=" no"/>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app')}}
+		{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body class="is-preload">
+		<div
+			id="page-wrapper">
+
+			<!-- Header -->
+			<div
+				id="header">
+
+				<!-- Logo -->
+				<h1 style="font-family: Sacramento, cursive;">
+					<a href="home" id="logo" style="font-size: 40px;">
+						ViaMedo
+						<em>
+							Votre moi idéal à portée de main</em>
+					</a>
+				</h1>
+
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+<li {% if slug is same as('home') %} class="current" {% endif %}>
+
+							<a href="home">
+
+								Accueil
+							</a>
+						</li>
+<li {% if slug is same as('infos') %} class="current" {% endif %}>
+
+
+							<a href="infos">
+
+								Informations
+							</a>
+						</li>
+<li {% if slug is same as('substances') %} class="current" {% endif %}>
+
+							<a href="substances">
+
+								Substances
+							</a>
+						</li>
+						<li {% if slug is same as('videos') %} class="current" {% endif %}>
+							<a href="videos">
+
+								Vidéos
+							</a>
+						</li>
+						<li {% if slug is same as('tips') %} class="current" {% endif %}>
+							<a href="tips">
+
+								Astuces
+							</a>
+						</li>
+						<li {% if slug is same as('stats') %} class="current" {% endif %}>
+							<a href="stats">
+
+								Statistiques
+							</a>
+						</li>
+						<li {% if slug is same as('historic') %} class="current" {% endif %}>
+							<a href="historic">
+
+								Historique
+							</a>
+						</li>
+						<li {% if slug is same as('money') %} class="current" {% endif %}>
+							<a href="money">
+
+								Dépenses
+							</a>
+						</li>
+						<li {% if slug is same as('goals') %} class="current" {% endif %}>
+							<a href="goals">
+
+								Objectifs
+							</a>
+						</li>
+						<li {% if slug is same as('partenaires') %} class="current" {% endif %}>
+							<a href="partenaires">
+
+								Partenaires
+							</a>
+						</li>
+						<li>
+							<img src="../pics/icone.png" width="50px">
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+
+			<!-- Main -->
+			<section class="wrapper style1">
+				<div class="container">
+					<div class="row gtr-200">
+						<div class="col-8 col-12-narrower">
+							<div
+								id="content">
+
+								<!-- Content -->
+
+								<article>
+									{% block main %}{% endblock %}
+									
+							</article>
+
+						</div>
+					</div>
+					<div class="col-4 col-12-narrower">
+						<div
+							id="sidebar">
+
+							<!-- Sidebar -->
+
+							<section>
+
+								{% block sidebar %}{% endblock %}
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<section class="col-3 col-6-narrower col-12-mobilep">
+						<h3>Quelques liens utiles</h3>
+						<ul class="links">
+							<li>
+								<a href='mailto:webmaster@viamedo.fr'>Contact</a>
+							</li>
+							<li>
+								<a href="http://www.viamedo.fr/cgv.pdf">Confidentialité</a>
+							</li>
+							<li>
+								<a href="http://viamedo.fr/cookies.html">Cookies</a>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<!-- Icons -->
+			<ul class="icons">
+				<li>
+					<a href="https://www.facebook.com/ViaMedo-102753971946564" class="icon brands fa-facebook-f">
+
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/anto-mela/" class="icon brands fa-linkedin-in">
+						<span class="label">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.patreon.com/viamedo" class="icon brands fa-patreon">
+						<span class="label">Patreon</span>
+					</a>
+				</li>
+			</ul>
+			<!-- Copyright -->
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; 2021 - Antonu-Maria MELA. All rights reserved</li>
+					<li>Design:
+						<a href="http://html5up.net">HTML5 UP</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

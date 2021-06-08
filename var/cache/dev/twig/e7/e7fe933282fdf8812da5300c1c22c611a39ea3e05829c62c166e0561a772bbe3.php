@@ -33,7 +33,7 @@ class __TwigTemplate_6d4dc1f0c7d25772b639426b4cd111c75f3d7571701517ea0da1a8e8ff4
     protected function doGetParent(array $context)
     {
         // line 1
-        return "index.html.twig";
+        return "sidebar.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_6d4dc1f0c7d25772b639426b4cd111c75f3d7571701517ea0da1a8e8ff4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page/add-substance.html.twig"));
 
-        $this->parent = $this->loadTemplate("index.html.twig", "page/add-substance.html.twig", 1);
+        $this->parent = $this->loadTemplate("sidebar.html.twig", "page/add-substance.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -82,7 +82,7 @@ class __TwigTemplate_6d4dc1f0c7d25772b639426b4cd111c75f3d7571701517ea0da1a8e8ff4
             // line 7
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["substance"]) || array_key_exists("substance", $context) ? $context["substance"] : (function () { throw new RuntimeError('Variable "substance" does not exist.', 7, $this->source); })()), "name", [], "any", false, false, false, 7), "html", null, true);
             echo "
-    a été incrémenter de plus un.
+    a été incrémenté.
   ";
         }
         
@@ -194,14 +194,14 @@ class __TwigTemplate_6d4dc1f0c7d25772b639426b4cd111c75f3d7571701517ea0da1a8e8ff4
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'index.html.twig' %}
+        return new Source("{% extends 'sidebar.html.twig' %}
 {%block main %}
   <h1>{{page.title}}</h1>
   {{page.content|raw}}
   {% if substance is defined %}
     La quantité de
     {{substance.name}}
-    a été incrémenter de plus un.
+    a été incrémenté.
   {% endif %}
 {% endblock %}
 {%block sidebar %}

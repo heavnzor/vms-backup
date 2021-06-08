@@ -1,11 +1,11 @@
-{% extends 'index.html.twig' %}
+{% extends 'sidebar.html.twig' %}
 {%block main %}
   <h1>{{page.title}}</h1>
   {{page.content|raw}}
   {% if substance is defined %}
     La quantité de
     {{substance.name}}
-    a été diminué de moins un.
+    a été diminué.
   {% endif %}
 {% endblock %}
 {%block sidebar %}
@@ -16,9 +16,9 @@
   {{user.pseudonyme}}
   !
   <br><br>
+    <em>Actuellement, les produits listés sont :</em>
 
   {%for substance in substances%}
-    <em>Actuellement, les produits listés sont :</em>
     <p class="">
       {{substance.name}}
             {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}

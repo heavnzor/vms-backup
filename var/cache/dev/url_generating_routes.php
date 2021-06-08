@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
     'app_page_index' => [[], ['_controller' => 'App\\Controller\\PageController::index'], [], [['text', '/']], [], []],
+    'app_page_vtwo' => [[], ['_controller' => 'App\\Controller\\PageController::vTwo'], [], [['text', '/v2/']], [], []],
     'app_page_show' => [['slug'], ['_controller' => 'App\\Controller\\PageController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/page']], [], []],
     'page_crud_index' => [[], ['_controller' => 'App\\Controller\\PageCrudController::index'], [], [['text', '/page/crud/']], [], []],
     'page_crud_new' => [[], ['_controller' => 'App\\Controller\\PageCrudController::new'], [], [['text', '/page/crud/new']], [], []],

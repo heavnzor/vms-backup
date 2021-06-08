@@ -33,7 +33,7 @@ class __TwigTemplate_d253af2ee773cbe78d7f7c47be0d1cea147805258f500d67f54bb084bc0
     protected function doGetParent(array $context)
     {
         // line 1
-        return "index.html.twig";
+        return "sidebar.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_d253af2ee773cbe78d7f7c47be0d1cea147805258f500d67f54bb084bc0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page/partenaires.html.twig"));
 
-        $this->parent = $this->loadTemplate("index.html.twig", "page/partenaires.html.twig", 1);
+        $this->parent = $this->loadTemplate("sidebar.html.twig", "page/partenaires.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -74,7 +74,7 @@ class __TwigTemplate_d253af2ee773cbe78d7f7c47be0d1cea147805258f500d67f54bb084bc0
         echo twig_get_attribute($this->env, $this->source, (isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 4, $this->source); })()), "content", [], "any", false, false, false, 4);
         echo "
 
-  Comment ça marche ? Prenez d'abord contact avec nous. Nous vous demanderons de placer un lien sur votre site et en échange je placerai un lien vers le votre dans cette rubrique.
+  Comment ça marche ? Prenez d'abord contact avec nous. Nous vous demanderons de placer un lien sur vôtre site et en échange je placerai un lien vers le votre dans cette rubrique.
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,12 +122,12 @@ class __TwigTemplate_d253af2ee773cbe78d7f7c47be0d1cea147805258f500d67f54bb084bc0
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'index.html.twig' %}
+        return new Source("{% extends 'sidebar.html.twig' %}
 {% block main %}
   <h1>{{page.title}}</h1>
   {{page.content|raw}}
 
-  Comment ça marche ? Prenez d'abord contact avec nous. Nous vous demanderons de placer un lien sur votre site et en échange je placerai un lien vers le votre dans cette rubrique.
+  Comment ça marche ? Prenez d'abord contact avec nous. Nous vous demanderons de placer un lien sur vôtre site et en échange je placerai un lien vers le votre dans cette rubrique.
 {% endblock %}
 {% block sidebar %}
  Intéressé par un partenariat ? N'hésitez pas à nous contacter à l'adresse : <a href='mailto:webmaster@viamedo.fr'>webmaster@viamedo.fr</a>

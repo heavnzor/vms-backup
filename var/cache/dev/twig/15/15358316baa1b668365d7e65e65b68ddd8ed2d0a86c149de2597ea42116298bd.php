@@ -135,16 +135,14 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 22, $this->source); })()), "plainPassword", [], "any", false, false, false, 22), 'errors');
         echo "<br>
-";
-        // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 23, $this->source); })()), "agreeTerms", [], "any", false, false, false, 23), 'row');
-        echo " - <a href=\"https://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a><br>
+<input type=\"checkbox\" id=\"registration_form_agreeTerms\" name=\"registration_form[agreeTerms]\" required=\"required\" value=\"1\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
+- Accepter les conditions<br>
+
+<a href=\"https://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a><br><br>
+
 
   <button type=\"submit\" class=\"btn btn-primary\" id=\"submit\">S'enregistrer</button>
-  ";
-        // line 26
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 26, $this->source); })()), 'form_end');
-        echo "
+  </form>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -154,7 +152,7 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
 
     }
 
-    // line 28
+    // line 32
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -190,7 +188,7 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
 
     public function getDebugInfo()
     {
-        return array (  158 => 28,  146 => 26,  140 => 23,  136 => 22,  132 => 21,  128 => 20,  124 => 19,  120 => 18,  116 => 17,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  96 => 12,  92 => 11,  88 => 10,  83 => 7,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  156 => 32,  136 => 22,  132 => 21,  128 => 20,  124 => 19,  120 => 18,  116 => 17,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  96 => 12,  92 => 11,  88 => 10,  83 => 7,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -217,10 +215,14 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
 {{ form_widget(registrationForm.plainPassword) }}<br>
 <small>{{ form_help(registrationForm.plainPassword) }}</small><br>
 {{ form_errors(registrationForm.plainPassword) }}<br>
-{{ form_row(registrationForm.agreeTerms) }} - <a href=\"https://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a><br>
+<input type=\"checkbox\" id=\"registration_form_agreeTerms\" name=\"registration_form[agreeTerms]\" required=\"required\" value=\"1\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
+- Accepter les conditions<br>
+
+<a href=\"https://viamedo.fr/CGV.pdf\" target=\"_blank\">CGV</a><br><br>
+
 
   <button type=\"submit\" class=\"btn btn-primary\" id=\"submit\">S'enregistrer</button>
-  {{ form_end(registrationForm) }}
+  </form>
 {% endblock %}
 {%block sidebar %}<ul>
 Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, puis nous vous envoyons un email afin de valider votre compte.</li><br>

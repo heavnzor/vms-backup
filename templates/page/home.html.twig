@@ -5,9 +5,10 @@
 {%block sidebar %}
 
   
-  {%if substances is defined %}<h3>Vous consommez :</h3><br>
+  {%if substances is defined %}<h3 class="h3">Vous consommez :</h3><br>
 {%for substance in substances%}
-    {{substance.name}}
+<p>
+    {{substance.name}}<br>
          {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
 
     <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.png' width='30px'></a>
@@ -16,7 +17,7 @@
     <span class="badge badge-danger">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.png' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
-<br> <span class="badge badge-danger">Considérez vous cette <br> substance comme nocive ?</span> 
+<br> <span class="badge badge-danger">Considérez vous cette substance comme nocive ?</span> 
      <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      {%endif%}
   </p>

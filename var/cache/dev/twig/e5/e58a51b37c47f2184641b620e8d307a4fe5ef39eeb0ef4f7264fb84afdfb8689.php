@@ -94,76 +94,78 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
   ";
         // line 8
         if (array_key_exists("substances", $context)) {
-            echo "<h3>Vous consommez :</h3><br>
+            echo "<h3 class=\"h3\">Vous consommez :</h3><br>
 ";
             // line 9
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["substances"]) || array_key_exists("substances", $context) ? $context["substances"] : (function () { throw new RuntimeError('Variable "substances" does not exist.', 9, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["substance"]) {
                 // line 10
-                echo "    ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 10), "html", null, true);
-                echo "
-         ";
+                echo "<p>
+    ";
                 // line 11
-                if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 11) === true)) {
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "name", [], "any", false, false, false, 11), "html", null, true);
+                echo "<br>
+         ";
+                // line 12
+                if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 12) === true)) {
                     echo "<img src='../pics/icons8-happy_skull.svg' width='30px'>";
                 }
                 echo "<br>
 
     <a href='add-substance?id=";
-                // line 13
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 13), "html", null, true);
+                // line 14
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 14), "html", null, true);
                 echo "'><img src='../pics/icons8-add.png' width='30px'></a>
     ";
-                // line 14
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 14), "html", null, true);
+                // line 15
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 15), "html", null, true);
                 echo "
     <a href='less-substance?id=";
-                // line 15
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 15), "html", null, true);
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 16), "html", null, true);
                 echo "'><img src='../pics/icons8-minus.png' width='30px'></a><br>
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id=";
-                // line 17
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 17), "html", null, true);
+                // line 18
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 18), "html", null, true);
                 echo "'><img src='../pics/icons8-delete.png' width='30px'></a>
     ";
-                // line 18
-                if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 18) === false)) {
-                    // line 19
-                    echo "<br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
-     <a href='nocivite-substance?id=";
+                // line 19
+                if ((twig_get_attribute($this->env, $this->source, $context["substance"], "nocivity", [], "any", false, false, false, 19) === false)) {
                     // line 20
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 20), "html", null, true);
+                    echo "<br> <span class=\"badge badge-danger\">Considérez vous cette substance comme nocive ?</span> 
+     <a href='nocivite-substance?id=";
+                    // line 21
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 21), "html", null, true);
                     echo "'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      ";
                 }
-                // line 22
+                // line 23
                 echo "  </p>
   ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['substance'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 23
+            // line 24
             echo "  
   
   ";
         }
-        // line 25
+        // line 26
         echo "<br>
   ";
-        // line 26
+        // line 27
         if (array_key_exists("user", $context)) {
-            // line 27
+            // line 28
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 27, $this->source); })()), "pseudonyme", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 28, $this->source); })()), "pseudonyme", [], "any", false, false, false, 28), "html", null, true);
             echo ", commencez dès à présent à ajouter les substances que vous consommez.
 
  ";
         } else {
-            // line 30
+            // line 31
             echo " <p class='alert alert-danger' role='alert'>Bonjour cher inconnu, <a href=\"register\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
  ";
         }
@@ -187,7 +189,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
 
     public function getDebugInfo()
     {
-        return array (  167 => 30,  160 => 27,  158 => 26,  155 => 25,  150 => 23,  143 => 22,  138 => 20,  135 => 19,  133 => 18,  129 => 17,  124 => 15,  120 => 14,  116 => 13,  109 => 11,  104 => 10,  100 => 9,  96 => 8,  92 => 6,  82 => 5,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  169 => 31,  162 => 28,  160 => 27,  157 => 26,  152 => 24,  145 => 23,  140 => 21,  137 => 20,  135 => 19,  131 => 18,  126 => 16,  122 => 15,  118 => 14,  111 => 12,  107 => 11,  104 => 10,  100 => 9,  96 => 8,  92 => 6,  82 => 5,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,9 +201,10 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
 {%block sidebar %}
 
   
-  {%if substances is defined %}<h3>Vous consommez :</h3><br>
+  {%if substances is defined %}<h3 class=\"h3\">Vous consommez :</h3><br>
 {%for substance in substances%}
-    {{substance.name}}
+<p>
+    {{substance.name}}<br>
          {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
 
     <a href='add-substance?id={{substance.id}}'><img src='../pics/icons8-add.png' width='30px'></a>
@@ -210,7 +213,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>
     <a href='delete-substance?id={{substance.id}}'><img src='../pics/icons8-delete.png' width='30px'></a>
     {%if substance.nocivity is same as(false) %}
-<br> <span class=\"badge badge-danger\">Considérez vous cette <br> substance comme nocive ?</span> 
+<br> <span class=\"badge badge-danger\">Considérez vous cette substance comme nocive ?</span> 
      <a href='nocivite-substance?id={{substance.id}}'><img src='../pics/icons8-skull_heart.png' width='30px'></a>
      {%endif%}
   </p>

@@ -117,7 +117,8 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
 <br>
     <div class=\"checkbox mb-3\">
       <label>
-        <input type=\"checkbox\" name=\"_remember_me\">
+<input type=\"checkbox\" name=\"_remember_me\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
+
         Remember me
       </label>
     </div><br>
@@ -135,7 +136,7 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
 
     }
 
-    // line 42
+    // line 43
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -145,7 +146,7 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        echo " Vous désirez vous inscrire ? <a href=\"register\">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail (vous l'avez probablement déjà fait), puis authentifier vous une première fois.
+        echo " Vous désirez vous inscrire ? <a href=\"register\">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail, puis authentifiez vous une première fois.
 <br><br><a href='reset-password'>Password oublié?</a>
 ";
         
@@ -168,7 +169,7 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
 
     public function getDebugInfo()
     {
-        return array (  139 => 42,  114 => 26,  107 => 22,  102 => 19,  96 => 16,  92 => 15,  88 => 13,  86 => 12,  83 => 11,  77 => 9,  75 => 8,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  140 => 43,  114 => 26,  107 => 22,  102 => 19,  96 => 16,  92 => 15,  88 => 13,  86 => 12,  83 => 11,  77 => 9,  75 => 8,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,7 +204,8 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
 <br>
     <div class=\"checkbox mb-3\">
       <label>
-        <input type=\"checkbox\" name=\"_remember_me\">
+<input type=\"checkbox\" name=\"_remember_me\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
+
         Remember me
       </label>
     </div><br>
@@ -214,7 +216,7 @@ Bienvenue ! pour avoir accès à toutes les pages, veuillez vous connecter  <a h
   </form>
 {% endblock %}
 
-{% block sidebar %} Vous désirez vous inscrire ? <a href=\"register\">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail (vous l'avez probablement déjà fait), puis authentifier vous une première fois.
+{% block sidebar %} Vous désirez vous inscrire ? <a href=\"register\">Cliquez ici</a><br><br>Pour vous authentifier complètement, veuillez cliquer sur le lien envoyé sur votre boite mail, puis authentifiez vous une première fois.
 <br><br><a href='reset-password'>Password oublié?</a>
 {% endblock %}
 ", "security/login.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/security/login.html.twig");

@@ -1,140 +1,205 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en-US">
-  <!--<![endif]-->
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ViaMedo : Beta</title>
-    <!-- style and script resources -->    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-CEFC8S5YV4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ViaMedo : Aide à la désaccoutumance de substances addictives</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app')}}
+		{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+		<meta name="description" content="Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être.
+			
+																																																																																																Et pour être tout à fait exact : devenir qui vous êtes.
+			
+																																																																																																ViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature.
+			
+																																																																																																Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. "/>
+		<meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1"/>
 
-      gtag('config', 'G-CEFC8S5YV4');
-    </script>
-    {% block stylesheets %}
-      {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-    {% block javascripts %}
-      {{ encore_entry_script_tags('app') }}
-    {% endblock %}
-    <!--meta properties -->
-    <meta name="description" content="Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être.
+		<link rel="icon" href="../pics/favicon_16.ico" sizes="16x16"/>
+		<link rel="icon" href="../pics/favicon.ico" sizes="32x32"/>
 
-Et pour être tout à fait exact : devenir qui vous êtes.
+	</head>
+	{% block body %}
+		<body class="is-preload">
+			<div
+				id="page-wrapper">
+				<!-- Header -->
+				<div
+					id="header">
+					<!-- Logo -->
+					<h1 style="font-family: Sacramento, cursive;">
+						<a href="home" id="logo" style="font-size: 40px;">
+							ViaMedo
+							<em>
+								Votre moi idéal à portée de main</em>
+						</a>
+					</h1>
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li {% if slug is same as('home') %} class="current" {% endif %}>
 
-ViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature.
+							<a href="page/home">
+								Accueil
+							</a>
+						</li>
+<li {% if slug is same as('infos') %} class="current" {% endif %}>
 
-Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. "/>
-    <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
-    <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1"/>
-    <link rel="canonical" href=""/>
-    <!--open graph meta tags for social sites and search engines-->
-    <meta property="og:locale" content="fr_FR"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Aide à la désaccoutumance de substances addictives"/>
-    <meta property="og:description" content="Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être.
+							<a href="page/infos">
 
-Et pour être tout à fait exact : devenir qui vous êtes.
+								Informations
+							</a>
+						</li>
+<li {% if slug is same as('substances') %} class="current" {% endif %}>
 
-ViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature.
+							<a href="page/substances">
 
-Comme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. "/>
-    <meta property="og:url" content="https://viamedo.fr"/>
-    <meta property="og:site_name" content="ViaMedo"/>
-    <meta property="og:image:width" content="1200"/>
-    <meta property="og:image:height" content="660"/>
-    <!--search engine verification-->
-    <meta name="google-site-verification" content=""/>
+								Substances
+							</a>
+						</li>
+<li {% if slug is same as('videos') %} class="current" {% endif %}>
 
-    <!--powered by meta-->
-    <!-- Site fevicon icons -->
-    <link rel="icon" href="../pics/favicon_16.ico" sizes="16x16"/>
-    <link rel="icon" href="../pics/favicon.ico" sizes="32x32"/>
-    <!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
-  </head>
-  <body>
-    {% block body %}
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-11">
-            <img src="../pics/banniere.png"></div>
-        </div>
-        <div class="row centered ">
-          <div class="col-sm 11  ">
-            <div class="collapse " id="navbarToggleExternalContent">
-              <div class="bg-darkless ">
-                <a href="page/home">
-                  <img src="../pics/icons8-home.png" width="30px">
-                  Accueil</a>
-                <a href="page/infos">
-                  <img src="../pics/icons8-info.png" width="30px">
-                  Informations</a>
-                <a href="page/substances">
-                  <img src="../pics/icons8-temperature_sensitive.png" width="30px">
-                  Substances</a>
-                <a href="page/videos">
-                  <img src="../pics/icons8-video.png" width="30px">
-                  Vidéos</a>
-                <a href="page/tips">
-                  <img src="../pics/icons8-idea.png" width="30px">
-                  Astuces</a>
-                <a href="page/stats">
-                  <img src="../pics/icons8-chart.png" width="30px">
-                  Statistiques</a>
-                <a href="page/historic">
-                  <img src="../pics/icons8-historic_ship.png" width="30px">
-                 Historique</a>
-                <a href="page/money">
-                  <img src="../pics/icons8-money.png" width="30px">
-                  Dépenses</a>
-                <a href="page/goals">
-                  <img src="../pics/icons8-goal.png" width="30px">
-                  Objectifs</a>
-                <a href="page/partenaires">
-                  <img src="../pics/icons8-handshake.png" width="30
-px">
-                  Partenaires</a>
-               
-          
-              </div>
-            </div>
-            <nav class="navbar navbar-dark bg-dark col-sm-11" role="navigation">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span></nav>
+							<a href="page/videos">
 
-              <div class="row centered">
-                <main class="col-sm-6 py-5 px-5">
-                  {%block main %}{% endblock %}
-                </main>
-                <aside class="col-sm-5 py-5 px-5">
-                  {%block sidebar%}{%endblock%}
-                  {%if user is defined%}<br><br>
-                <a  class='alert alert-danger' style="text-align:right;" href='disconnect'>Déconnexion</a><br><br>
-                {%endif%}</aside>
-                </div>
+								Vidéos
+							</a>
+						</li>
+<li {% if slug is same as('tips') %} class="current" {% endif %}>
 
-                <div class="row">
-                  <div class="col-sm-12" style="text-align:center !important;">Copyright 2021 - <a href='mailto:webmaster@viamedo.fr'>Antonu-Maria Mela</a> - <a href="page/cookies">Politique en matière de Cookies</a> -
-                    <a href="http://viamedo.fr/cgv.pdf" target="_blank">Données et confidentialité</a> - <a href="https://www.facebook.com/ViaMedo-102753971946564" target="_blank"><img src="../pics/icons8-facebook.png" width="30px"></a> - <a href='https://www.patreon.com/viamedo' target='_blank'><img src="../pics/icons8-patreon.png" width="30px" ></a> 
-                  </div>
-                </div>
+							<a href="page/tips">
 
-              </div>
+								Astuces
+							</a>
+						</li>
+<li {% if slug is same as('stats') %} class="current" {% endif %}>
 
-              <!--[if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="page/#">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+							<a href="page/stats">
 
-              <link rel="stylesheet" type="text/css" href="/" media="print"/>
-              <script src="" async="async" defer="defer"></script>
-              {%endblock%}
-            </body>
-          </html>
+								Statistiques
+							</a>
+						</li>
+<li {% if slug is same as('historic') %} class="current" {% endif %}>
+
+							<a href="page/historic">
+
+								Historique
+							</a>
+						</li>
+<li {% if slug is same as('money') %} class="current" {% endif %}>
+
+							<a href="page/money">
+
+								Dépenses
+							</a>
+						</li>
+<li {% if slug is same as('goals') %} class="current" {% endif %}>
+
+							<a href="page/goals" >
+
+								Objectifs
+							</a>
+						</li>
+<li {% if slug is same as('partenaires') %} class="current" {% endif %}>
+
+<a href="page/partenaires" >
+
+								Partenaires
+							</a>
+						</li>
+						<li>
+							<img src="../pics/icone.png" width="50px">
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Banner -->
+			<section id="banner">
+				<header>
+
+
+					<h2>ViaMedo:
+						<em>Votre nouvelle vie commence maintenant</em>
+					</h2>
+					<a href="#knowMore" class="button">En savoir plus</a>
+
+
+				</header>
+			</section>
+			<!-- Gigantic Heading -->
+			<section class="wrapper style2">
+				<div class="container">
+					<header class="major" id="knowMore">
+						{% block main %}{% endblock %}
+					</header>
+				</div>
+			</section>
+			<!-- Gigantic Heading -->
+			<section class="wrapper style2">
+				<div class="container">
+					<header class="major">
+						{% block sidebar %}{% endblock %}
+					</header>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="col-3 col-6-narrower col-12-mobilep">
+							<h3>Quelques liens utiles :</h3>
+							<ul class="links">
+								<li>
+									<a href='mailto:webmaster@viamedo.fr'>Contact</a>
+								</li>
+								<li>
+									<a href="http://www.viamedo.fr/cgv.pdf">Confidentialité</a>
+								</li>
+								<li>
+									<a href="http://viamedo.fr/cookies.html">Cookies</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+				<!-- Icons -->
+				<ul class="icons">
+					<li>
+						<a href="https://www.facebook.com/ViaMedo-102753971946564" class="icon brands fa-facebook-f">
+
+							<span class="label">Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/anto-mela/" class="icon brands fa-linkedin-in">
+							<span class="label">LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.patreon.com/viamedo" class="icon brands fa-patreon">
+							<span class="label">Patreon</span>
+						</a>
+					</li>
+				</ul>
+				<!-- Copyright -->
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; 2021 - Antonu-Maria MELA. All rights reserved</li>
+						<li>Design:
+							<a href="http://html5up.net">HTML5 UP</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</body>
+	</html>
+</div>{% endblock %}</body></html>

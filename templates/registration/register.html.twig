@@ -20,10 +20,14 @@
 {{ form_widget(registrationForm.plainPassword) }}<br>
 <small>{{ form_help(registrationForm.plainPassword) }}</small><br>
 {{ form_errors(registrationForm.plainPassword) }}<br>
-{{ form_row(registrationForm.agreeTerms) }} - <a href="https://viamedo.fr/CGV.pdf" target="_blank">CGV</a><br>
+<input type="checkbox" id="registration_form_agreeTerms" name="registration_form[agreeTerms]" required="required" value="1" style="appearance: checkbox; width: 15px;height: 15px;">
+- Accepter les conditions<br>
+
+<a href="https://viamedo.fr/CGV.pdf" target="_blank">CGV</a><br><br>
+
 
   <button type="submit" class="btn btn-primary" id="submit">S'enregistrer</button>
-  {{ form_end(registrationForm) }}
+  </form>
 {% endblock %}
 {%block sidebar %}<ul>
 Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, puis nous vous envoyons un email afin de valider votre compte.</li><br>

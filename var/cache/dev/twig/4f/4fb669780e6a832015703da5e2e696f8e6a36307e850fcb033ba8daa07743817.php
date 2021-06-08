@@ -33,7 +33,7 @@ class __TwigTemplate_0c755ef02df2f8cf382511ea447f32e6bcc7dc9780f3048ec11536ecc1f
     protected function doGetParent(array $context)
     {
         // line 1
-        return "index.html.twig";
+        return "sidebar.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_0c755ef02df2f8cf382511ea447f32e6bcc7dc9780f3048ec11536ecc1f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page/historic.html.twig"));
 
-        $this->parent = $this->loadTemplate("index.html.twig", "page/historic.html.twig", 1);
+        $this->parent = $this->loadTemplate("sidebar.html.twig", "page/historic.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -201,7 +201,7 @@ class __TwigTemplate_0c755ef02df2f8cf382511ea447f32e6bcc7dc9780f3048ec11536ecc1f
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'index.html.twig' %}
+        return new Source("{% extends 'sidebar.html.twig' %}
 
 {% block main %}
   <h2>{{ page.title }}</h2>

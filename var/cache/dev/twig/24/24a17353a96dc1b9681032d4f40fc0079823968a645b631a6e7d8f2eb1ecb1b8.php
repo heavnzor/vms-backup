@@ -33,7 +33,7 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
     protected function doGetParent(array $context)
     {
         // line 1
-        return "index.html.twig";
+        return "sidebar.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page/cookies.html.twig"));
 
-        $this->parent = $this->loadTemplate("index.html.twig", "page/cookies.html.twig", 1);
+        $this->parent = $this->loadTemplate("sidebar.html.twig", "page/cookies.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -71,8 +71,8 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
         echo "
 
   <br><br>
-  <script id=\"CookieDeclaration\" src=\"https://consent.cookiebot.com/bfaadfd2-6845-47fd-9936-06612d0ff5ce/cd.js\" type=\"text/javascript\" async></script>
-";
+Pour télécharer le document en matière de confidentialité et de cookies <a href='https://viamedo.fr/cgv.pdf' target='_blank'>cliquez ici</a>
+  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -92,7 +92,7 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
         // line 9
-        echo "
+        echo "    
 
   ";
         
@@ -120,15 +120,15 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'index.html.twig' %}
+        return new Source("{% extends 'sidebar.html.twig' %}
 {%block main %}
   {{page.content|raw}}
 
   <br><br>
-  <script id=\"CookieDeclaration\" src=\"https://consent.cookiebot.com/bfaadfd2-6845-47fd-9936-06612d0ff5ce/cd.js\" type=\"text/javascript\" async></script>
-{% endblock %}
-{%block sidebar %}
-
+Pour télécharer le document en matière de confidentialité et de cookies <a href='https://viamedo.fr/cgv.pdf' target='_blank'>cliquez ici</a>
+  {% endblock %}
+{% block sidebar %}
+    
 
   {% endblock %}
 ", "page/cookies.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/cookies.html.twig");
