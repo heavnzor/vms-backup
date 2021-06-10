@@ -43,7 +43,9 @@
   {%block sidebar %}
     {%if user is defined%}
       {{user.pseudonyme}}, calculons ensemble combien vous coute toutes les substances que vous consommez.<br><hr><br>Vous savez combien vous fumez exactement ? Indiquez ici le nombre de cigarettes ou de joints que vous fumez par jour:<br><hr><br>
-      <form action='calcul' method='post'><input type='number' name="number"><br><br>Joints<br><input type="radio" name='type' value='cannabis'><br><br>Cigarettes<br><input type="radio" name='type' value='tabac'><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
+<form action='calcul' method='post'><input type='number' name="number"><br><br>Joints<br><input type="radio" name='type' value='cannabis' style="appearance: checkbox; width: 15px;height: 15px;"><br><br>Cigarettes<br><input type="radio" name='type' value='tabac' style="appearance: checkbox; width: 15px;height: 15px;"><br><br><input type='submit' class='btn btn-primary' value='calculer'></form><br>
+
+
       {%if conso is defined %}
         {%for substance in substances%}
          

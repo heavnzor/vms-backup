@@ -82,7 +82,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
             // line 7
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["substance"]) || array_key_exists("substance", $context) ? $context["substance"] : (function () { throw new RuntimeError('Variable "substance" does not exist.', 7, $this->source); })()), "name", [], "any", false, false, false, 7), "html", null, true);
             echo "
-    a bien été supprimé
+    a bien été supprimée
   ";
         }
         
@@ -201,7 +201,7 @@ class __TwigTemplate_6437a475bbe7f16b0c106393117bb641740e400a1cdf0985e1db448e892
   {% if substance is defined %}
     La subtance
     {{substance.name}}
-    a bien été supprimé
+    a bien été supprimée
   {% endif %}
 {% endblock %}
 {%block sidebar %}

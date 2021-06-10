@@ -2,6 +2,8 @@
 
 namespace App\Security;
 
+use DateTime;
+use DateTimeZone;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,7 +52,8 @@ class EmailVerifier extends AbstractController
         $this->verifyEmailHelper->validateEmailConfirmation($request->getUri(), $user->getId(), $user->getEmail());
 
         $user->setIsVerified(true);
-
+        $datetime  = date_timezone_set(new DateTime('now'), new DateTimeZone('Europe/Paris'));
+        $user->setSubscribtionDate($datetime);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();

@@ -69,6 +69,9 @@ class __TwigTemplate_41295bb53e21b739390c85874ec7ce8b206476d040bb7f81cc000bb9957
         echo "  ";
         echo twig_get_attribute($this->env, $this->source, (isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 3, $this->source); })()), "content", [], "any", false, false, false, 3);
         echo "
+<div id=\"cookiefirst-policy-page\"></div>
+<div>Cette déclaration de cookie a été créée et mise à jour par
+\t<a href=\"https://cookiefirst.com\">CookieFirst.com</a>.</div>
 
   <br><br>
 Pour télécharer le document en matière de confidentialité et de cookies <a href='https://viamedo.fr/cgv.pdf' target='_blank'>cliquez ici</a>
@@ -81,7 +84,7 @@ Pour télécharer le document en matière de confidentialité et de cookies <a h
 
     }
 
-    // line 8
+    // line 11
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -91,7 +94,7 @@ Pour télécharer le document en matière de confidentialité et de cookies <a h
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 9
+        // line 12
         echo "    
 
   ";
@@ -115,7 +118,7 @@ Pour télécharer le document en matière de confidentialité et de cookies <a h
 
     public function getDebugInfo()
     {
-        return array (  95 => 9,  85 => 8,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  98 => 12,  88 => 11,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,6 +126,9 @@ Pour télécharer le document en matière de confidentialité et de cookies <a h
         return new Source("{% extends 'sidebar.html.twig' %}
 {%block main %}
   {{page.content|raw}}
+<div id=\"cookiefirst-policy-page\"></div>
+<div>Cette déclaration de cookie a été créée et mise à jour par
+\t<a href=\"https://cookiefirst.com\">CookieFirst.com</a>.</div>
 
   <br><br>
 Pour télécharer le document en matière de confidentialité et de cookies <a href='https://viamedo.fr/cgv.pdf' target='_blank'>cliquez ici</a>

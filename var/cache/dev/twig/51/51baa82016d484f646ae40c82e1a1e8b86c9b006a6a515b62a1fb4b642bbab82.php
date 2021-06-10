@@ -71,7 +71,7 @@ class __TwigTemplate_89d7036081141949d89625381ccb9c7a2c931210a82d97a04af20c81335
         if ((array_key_exists("user", $context) &&  !((isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 6, $this->source); })()) === null))) {
             // line 7
             echo "
-<strong><br><span class=\"alert alert-danger\">Vous êtes désormais authentifié ";
+<strong><br><span class=\"alert alert-success\">Vous êtes désormais authentifié ";
             // line 8
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 8, $this->source); })()), "pseudonyme", [], "any", false, false, false, 8), "html", null, true);
             echo "</span></strong><br>
@@ -117,7 +117,7 @@ Vous avez attéri sur cette page parce que <br><br>
 Nous sommes ravis de vous voir aujourd'hui, comme dirait maître Yoda : \"Que la force soit avec vous.\" <br>
 {%if user is defined and user is not same as (null) %}
 
-<strong><br><span class=\"alert alert-danger\">Vous êtes désormais authentifié {{user.pseudonyme}}</span></strong><br>
+<strong><br><span class=\"alert alert-success\">Vous êtes désormais authentifié {{user.pseudonyme}}</span></strong><br>
 {%else %}<br>
 Vous avez attéri sur cette page parce que <br><br>
 <ul>

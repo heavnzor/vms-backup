@@ -40,16 +40,17 @@ class PageController extends AbstractController
      */
     public function index(PageRepository $pageRepository): Response
     {
+        if($this->getUser()){
+            $user = $this->getUser();
+            $datetime  = date_timezone_set(new DateTime('now'), new DateTimeZone('Europe/Paris'));
+            $user->setLastConnection($datetime);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
         return $this->RedirectToRoute('app_login');
     }
 
-    /**
-     * @Route("v2/"), name="v2"
-     */
-    public function vTwo(Environment $twig): Response
-    {
-       return new Response($twig->render('v2/index.html.twig'));
-    }
     /**
      * @Route("page/{slug}"), name="page_show"
      */
@@ -328,6 +329,8 @@ class PageController extends AbstractController
                 return  $this->RedirectToRoute('app_login', [
                     'slug' => $slug,
                 ]);
+            case 'subscribe':
+                return  $this->RedirectToRoute('app_register');
             case 'disconnect':
                 return  $this->RedirectToRoute('app_logout');
             case 'infos':

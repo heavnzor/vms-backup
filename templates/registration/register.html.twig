@@ -5,7 +5,7 @@
     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
   {% endfor %}
 
-  <h1>Register</h1>
+  <h1 class="h1">Enregister un compte</h1><br>
 
   {{ form_start(registrationForm) }}
   {{ form_label(registrationForm.email) }}<br>
@@ -20,6 +20,11 @@
 {{ form_widget(registrationForm.plainPassword) }}<br>
 <small>{{ form_help(registrationForm.plainPassword) }}</small><br>
 {{ form_errors(registrationForm.plainPassword) }}<br>
+{{ form_row(registrationForm._token)}}
+{{ form_row(registrationForm.subscribtionDate)}}
+{{ form_row(registrationForm.lastConnection)}}
+
+
 <input type="checkbox" id="registration_form_agreeTerms" name="registration_form[agreeTerms]" required="required" value="1" style="appearance: checkbox; width: 15px;height: 15px;">
 - Accepter les conditions<br>
 

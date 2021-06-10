@@ -1,9 +1,10 @@
 {% extends 'index2.html.twig' %}
 
-{% block title %}Reset your password{% endblock %}
+{% block title %}Réinitialisez votre password {% endblock %}
 
 {% block main %}
-    <h1>Reset your password</h1>
+<h1 class="h1">Réinitialisez votre password</h1>
+
 
     {{ form_start(resetForm) }}
         {{ form_row(resetForm.plainPassword) }}

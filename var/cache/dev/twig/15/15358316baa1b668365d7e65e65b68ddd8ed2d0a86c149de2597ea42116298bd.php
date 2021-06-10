@@ -81,7 +81,7 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 7
         echo "
-  <h1>Register</h1>
+  <h1 class=\"h1\">Enregister un compte</h1><br>
 
   ";
         // line 10
@@ -135,6 +135,20 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 22, $this->source); })()), "plainPassword", [], "any", false, false, false, 22), 'errors');
         echo "<br>
+";
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 23, $this->source); })()), "_token", [], "any", false, false, false, 23), 'row');
+        echo "
+";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 24, $this->source); })()), "subscribtionDate", [], "any", false, false, false, 24), 'row');
+        echo "
+";
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 25, $this->source); })()), "lastConnection", [], "any", false, false, false, 25), 'row');
+        echo "
+
+
 <input type=\"checkbox\" id=\"registration_form_agreeTerms\" name=\"registration_form[agreeTerms]\" required=\"required\" value=\"1\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
 - Accepter les conditions<br>
 
@@ -152,7 +166,7 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
 
     }
 
-    // line 32
+    // line 37
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -188,7 +202,7 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
 
     public function getDebugInfo()
     {
-        return array (  156 => 32,  136 => 22,  132 => 21,  128 => 20,  124 => 19,  120 => 18,  116 => 17,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  96 => 12,  92 => 11,  88 => 10,  83 => 7,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  170 => 37,  148 => 25,  144 => 24,  140 => 23,  136 => 22,  132 => 21,  128 => 20,  124 => 19,  120 => 18,  116 => 17,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  96 => 12,  92 => 11,  88 => 10,  83 => 7,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -200,7 +214,7 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
     <div class=\"alert alert-danger\" role=\"alert\">{{ flashError }}</div>
   {% endfor %}
 
-  <h1>Register</h1>
+  <h1 class=\"h1\">Enregister un compte</h1><br>
 
   {{ form_start(registrationForm) }}
   {{ form_label(registrationForm.email) }}<br>
@@ -215,6 +229,11 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
 {{ form_widget(registrationForm.plainPassword) }}<br>
 <small>{{ form_help(registrationForm.plainPassword) }}</small><br>
 {{ form_errors(registrationForm.plainPassword) }}<br>
+{{ form_row(registrationForm._token)}}
+{{ form_row(registrationForm.subscribtionDate)}}
+{{ form_row(registrationForm.lastConnection)}}
+
+
 <input type=\"checkbox\" id=\"registration_form_agreeTerms\" name=\"registration_form[agreeTerms]\" required=\"required\" value=\"1\" style=\"appearance: checkbox; width: 15px;height: 15px;\">
 - Accepter les conditions<br>
 

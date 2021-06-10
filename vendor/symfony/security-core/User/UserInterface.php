@@ -56,6 +56,10 @@ interface UserInterface
      */
     public function getPassword();
 
+    public function setSubscribtionDate($datetime);
+
+    public function setLastConnection($datetime);
+
     /**
      * Returns the salt that was originally used to encode the password.
      *

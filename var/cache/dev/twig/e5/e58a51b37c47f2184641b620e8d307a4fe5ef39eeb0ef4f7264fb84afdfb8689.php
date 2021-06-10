@@ -166,7 +166,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
  ";
         } else {
             // line 31
-            echo " <p class='alert alert-danger' role='alert'>Bonjour cher inconnu, <a href=\"register\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
+            echo " <p class='alert alert-danger' role='alert'>Bonjour cher inconnu, <a href=\"subscribe\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
  ";
         }
         
@@ -224,7 +224,7 @@ class __TwigTemplate_48a84c4bde84665dd7b1a5e97076ea372e57db187fa31820f48bb846334
  {{user.pseudonyme}}, commencez dès à présent à ajouter les substances que vous consommez.
 
  {%else %}
- <p class='alert alert-danger' role='alert'>Bonjour cher inconnu, <a href=\"register\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
+ <p class='alert alert-danger' role='alert'>Bonjour cher inconnu, <a href=\"subscribe\" style=\"color:black !important;\">inscrivez vous</a> ou <a href=\"login\" style=\"color:black !important;\">connectez vous</a> pour avoir accès à toutes les pages.</p>
  {%endif%}
 {% endblock %}
 ", "page/home.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/page/home.html.twig");

@@ -25,9 +25,10 @@ return [[
                 '/build/js/bootstrap.bundle.js',
             ],
             'css' => [
-                '/build/css/bootstrap.css',
+                '/build/css/bootstrap.min.css',
+                'https://fonts.googleapis.com/css2?family=Lobster+Two&family=Sacramento&display=swap',
                 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap',
-                '/build/css/main.css',
+                '/build/css/main1.css',
                 '/build/css/fontawesome-all.min.css',
             ],
         ],

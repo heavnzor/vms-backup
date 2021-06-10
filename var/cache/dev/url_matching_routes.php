@@ -15,7 +15,6 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_page_index', '_controller' => 'App\\Controller\\PageController::index'], null, null, null, false, false, null]],
-        '/v2' => [[['_route' => 'app_page_vtwo', '_controller' => 'App\\Controller\\PageController::vTwo'], null, null, null, true, false, null]],
         '/page/crud/new' => [[['_route' => 'page_crud_new', '_controller' => 'App\\Controller\\PageCrudController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],

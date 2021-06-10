@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
@@ -51,10 +52,20 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @ORM\Column(type="datetime")
+     */
+    private $lastConnection;
+
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $subscribtionDate;
     /**
      * @ORM\ManyToMany(targetEntity=Substance::class, inversedBy="users",cascade={"persist"})
      */
@@ -65,11 +76,11 @@ class User implements UserInterface
      */
     private $comment;
 
-  
 
 
-   
-  
+
+
+
 
     public function __construct()
     {
@@ -112,7 +123,7 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
-        if($this->email === 'anto.mela@me.com'){
+        if ($this->email === 'anto.mela@me.com') {
             $roles = $this->roles;
             $roles[] = 'ROLE_ADMIN';
             $roles[] = 'ROLE_USER';
@@ -169,7 +180,7 @@ class User implements UserInterface
 
     /**
      * Get the value of pseudonyme
-     */ 
+     */
     public function getPseudonyme()
     {
         return $this->pseudonyme;
@@ -179,7 +190,7 @@ class User implements UserInterface
      * Set the value of pseudonyme
      *
      * @return  self
-     */ 
+     */
     public function setPseudonyme($pseudonyme)
     {
         $this->pseudonyme = $pseudonyme;
@@ -189,7 +200,7 @@ class User implements UserInterface
 
     /**
      * Get the value of isVerified
-     */ 
+     */
     public function getIsVerified()
     {
         return $this->isVerified;
@@ -199,7 +210,7 @@ class User implements UserInterface
      * Set the value of isVerified
      *
      * @return  self
-     */ 
+     */
     public function setIsVerified($isVerified)
     {
         $this->isVerified = $isVerified;
@@ -245,4 +256,44 @@ class User implements UserInterface
 
 
 
+
+    /**
+     * Get the value of subscribtionDate
+     */
+    public function getSubscribtionDate()
+    {
+        return $this->subscribtionDate;
+    }
+
+    /**
+     * Set the value of subscribtionDate
+     *
+     * @return  self
+     */
+    public function setSubscribtionDate($subscribtionDate)
+    {
+        $this->subscribtionDate = $subscribtionDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastConnection
+     */ 
+    public function getLastConnection()
+    {
+        return $this->lastConnection;
+    }
+
+    /**
+     * Set the value of lastConnection
+     *
+     * @return  self
+     */ 
+    public function setLastConnection($lastConnection)
+    {
+        $this->lastConnection = $lastConnection;
+
+        return $this;
+    }
 }

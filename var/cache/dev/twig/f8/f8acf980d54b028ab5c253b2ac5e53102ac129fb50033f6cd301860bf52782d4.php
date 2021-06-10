@@ -42,7 +42,7 @@ class __TwigTemplate_f77b4af3564d631055798a5cd0caceb573912179a8ff6843305b7316db0
         // line 1
         echo "
 
-<h1>Hi!</h1>
+<h1 class=\"h1\">Hi!</h1>
 
 <p>Pour réinitialiser votre mot de passe, veuillez consulter le lien suivant</p>
 
@@ -87,7 +87,7 @@ class __TwigTemplate_f77b4af3564d631055798a5cd0caceb573912179a8ff6843305b7316db0
     {
         return new Source("
 
-<h1>Hi!</h1>
+<h1 class=\"h1\">Hi!</h1>
 
 <p>Pour réinitialiser votre mot de passe, veuillez consulter le lien suivant</p>
 

@@ -6182,10 +6182,14 @@
       <argument type="collection"/>
       <argument type="collection">
         <argument key="defer">true</argument>
+        <argument key="async">true</argument>
+      </argument>
+      <argument type="collection">
+        <argument key="defer">true</argument>
+        <argument key="async">true</argument>
         <argument key="preload">true</argument>
         <argument key="cache">true</argument>
       </argument>
-      <argument type="collection"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
     <service id="webpack_encore.twig_entry_files_extension" class="Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension">
@@ -6804,12 +6808,6 @@
         <argument key="pageRepository" type="service_closure" id="App\Repository\PageRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4MQU.NJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="twig" type="service_closure" id="twig"/>
-      </argument>
-    </service>
     <service id=".service_locator.fxzqVVX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6852,7 +6850,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.TxyHC7b.Symfony\Component\Security\Core\User\UserInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.4f1z2W_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5FS6SJ7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service_closure" id=".service_locator.q6hA_O0"/>
@@ -6879,7 +6877,6 @@
         <argument key="App\Controller\Admin\PageCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController::index" type="service_closure" id=".service_locator.C.vhrmY"/>
         <argument key="App\Controller\PageController::show" type="service_closure" id=".service_locator.fxzqVVX"/>
-        <argument key="App\Controller\PageController::vTwo" type="service_closure" id=".service_locator.4MQU.NJ"/>
         <argument key="App\Controller\PageCrudController::delete" type="service_closure" id=".service_locator.MJvCNOa"/>
         <argument key="App\Controller\PageCrudController::edit" type="service_closure" id=".service_locator.MJvCNOa"/>
         <argument key="App\Controller\PageCrudController::index" type="service_closure" id=".service_locator.C.vhrmY"/>
@@ -6920,7 +6917,6 @@
         <argument key="App\Controller\Admin\PageCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController:index" type="service_closure" id=".service_locator.C.vhrmY"/>
         <argument key="App\Controller\PageController:show" type="service_closure" id=".service_locator.fxzqVVX"/>
-        <argument key="App\Controller\PageController:vTwo" type="service_closure" id=".service_locator.4MQU.NJ"/>
         <argument key="App\Controller\PageCrudController:delete" type="service_closure" id=".service_locator.MJvCNOa"/>
         <argument key="App\Controller\PageCrudController:edit" type="service_closure" id=".service_locator.MJvCNOa"/>
         <argument key="App\Controller\PageCrudController:index" type="service_closure" id=".service_locator.C.vhrmY"/>
@@ -7633,12 +7629,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.4f1z2W_"/>
+      <argument type="service" id=".service_locator.5FS6SJ7"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.4f1z2W_"/>
+      <argument type="service" id=".service_locator.5FS6SJ7"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8124,7 +8120,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4f1z2W_"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.5FS6SJ7"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

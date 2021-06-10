@@ -82,7 +82,7 @@ class __TwigTemplate_94c3f1d74ffdab1e1a818f9d8c0455d62841e1443b75a765e5b90b202d7
             // line 7
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["substance"]) || array_key_exists("substance", $context) ? $context["substance"] : (function () { throw new RuntimeError('Variable "substance" does not exist.', 7, $this->source); })()), "name", [], "any", false, false, false, 7), "html", null, true);
             echo "
-    a été diminué.
+    a été diminuée.
   ";
         }
         
@@ -203,7 +203,7 @@ class __TwigTemplate_94c3f1d74ffdab1e1a818f9d8c0455d62841e1443b75a765e5b90b202d7
   {% if substance is defined %}
     La quantité de
     {{substance.name}}
-    a été diminué.
+    a été diminuée.
   {% endif %}
 {% endblock %}
 {%block sidebar %}
