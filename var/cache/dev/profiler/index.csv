@@ -1,10 +1,7 @@
-90d5cd,127.0.0.1,GET,https://localhost:8000/register,1623292524,3756bd,500
-3756bd,127.0.0.1,GET,https://localhost:8000/register,1623292525,,500
-1ae6ee,127.0.0.1,GET,https://localhost:8000/register,1623292587,,200
-5d8d91,127.0.0.1,POST,https://localhost:8000/register,1623292605,,302
-9a3c2e,127.0.0.1,GET,https://localhost:8000/user,1623292606,,200
-497333,127.0.0.1,GET,https://localhost:8000/verify/email?expires=1623296204&signature=CTYVSXinwD6XQJP4CMekevWWXT0%2Fv%2BR8mZzPNFGkOv0%3D&token=bLUnxhNBIm1ZK1HLHgmyQiP93HQckrX8UpTJRs2DOZ8%3D,1623292634,,302
-bf262e,127.0.0.1,GET,https://localhost:8000/login,1623292635,,200
-327887,127.0.0.1,POST,https://localhost:8000/login,1623292672,,302
-42998c,127.0.0.1,GET,https://localhost:8000/verify/email?expires=1623296204&signature=CTYVSXinwD6XQJP4CMekevWWXT0%2Fv%2BR8mZzPNFGkOv0%3D&token=bLUnxhNBIm1ZK1HLHgmyQiP93HQckrX8UpTJRs2DOZ8%3D,1623292673,,302
-8bb1f4,127.0.0.1,GET,https://localhost:8000/user?slug=home,1623292674,,200
+52f800,127.0.0.1,GET,https://localhost:8000/,1623302557,,302
+065c47,127.0.0.1,GET,https://localhost:8000/login,1623302558,,200
+5e0061,127.0.0.1,GET,https://localhost:8000/,1623302657,,302
+7dc7f0,127.0.0.1,GET,https://localhost:8000/login,1623302658,,200
+b88e84,127.0.0.1,GET,https://localhost:8000/page/infos,1623302661,5eeea8,500
+5eeea8,127.0.0.1,GET,https://localhost:8000/page/infos,1623302662,,500
+cc7636,127.0.0.1,GET,https://localhost:8000/page/infos,1623302701,,200

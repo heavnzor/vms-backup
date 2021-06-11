@@ -172,7 +172,7 @@ class __TwigTemplate_70c1f8dcd85d1f1e5b88c4b503f43bee02f7c22af608a1906c560c50db4
     <a href=\"add-substance?id=";
             // line 38
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "id", [], "any", false, false, false, 38), "html", null, true);
-            echo "\"><img src='../pics/icons8-add.png' width='30px'></a>
+            echo "\"><img src='../pics/icons8-add2.png' width='30px'></a>
     ";
             // line 39
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["substance"], "quantity", [], "any", false, false, false, 39), "html", null, true);
@@ -271,7 +271,7 @@ Vous désirez ajouter autre chose qu'un médicament ? <a href='tabac'>Une marque
   <p class=\"\">
     {{substance.name}} 
 {% if substance.nocivity is same as(true) %}<img src='../pics/icons8-happy_skull.svg' width='30px'>{% endif %}<br>
-    <a href=\"add-substance?id={{substance.id}}\"><img src='../pics/icons8-add.png' width='30px'></a>
+    <a href=\"add-substance?id={{substance.id}}\"><img src='../pics/icons8-add2.png' width='30px'></a>
     {{substance.quantity}} {{substance.quantityType}} 
     <a href='less-substance?id={{substance.id}}'><img src='../pics/icons8-minus.png' width='30px'></a><br>
     <span class=\"badge badge-danger\">Voulez-vous le supprimer ?</span>

@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b93fb58d36cab0c0bdb7943aa9e432750c595de7',
+    'reference' => '101d6e82d5bdb8fa1fb96f7179390efb4ab0f65d',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b93fb58d36cab0c0bdb7943aa9e432750c595de7',
+      'reference' => '101d6e82d5bdb8fa1fb96f7179390efb4ab0f65d',
     ),
     'cmen/google-charts-bundle' => 
     array (

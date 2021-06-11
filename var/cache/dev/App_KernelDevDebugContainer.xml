@@ -6188,7 +6188,7 @@
         <argument key="defer">true</argument>
         <argument key="async">true</argument>
         <argument key="preload">true</argument>
-        <argument key="cache">true</argument>
+        <argument key="cache">false</argument>
       </argument>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>

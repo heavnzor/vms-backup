@@ -44,6 +44,7 @@ return array(
     'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
     'App\\Security\\EmailVerifier' => $baseDir . '/src/Security/EmailVerifier.php',
     'App\\Security\\LoginAuthenticator' => $baseDir . '/src/Security/LoginAuthenticator.php',
+    'App\\SpamChecker' => $baseDir . '/src/SpamChecker.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'CMEN\\GoogleChartsBundle\\CMENGoogleChartsBundle' => $vendorDir . '/cmen/google-charts-bundle/CMENGoogleChartsBundle.php',
     'CMEN\\GoogleChartsBundle\\DependencyInjection\\CMENGoogleChartsExtension' => $vendorDir . '/cmen/google-charts-bundle/DependencyInjection/CMENGoogleChartsExtension.php',

@@ -155,7 +155,7 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t<!-- Logo -->
 \t\t\t\t\t<h1 style=\"font-family: 'Sacramento', cursive !important;\">
 \t\t\t\t\t\t<a href=\"page/home\" id=\"logo\" style=\"font-size: 65px !important;\">
-\t\t\t\t\t\t\tViaMedo
+\t\t\t\t\t\t\tViaMedo : 
 \t\t\t\t\t\t\t<em>
 \t\t\t\t\t\t\t\tVotre moi idéal à portée de main</em>
 \t\t\t\t\t\t</a>
@@ -315,8 +315,8 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\"  style=\"margin-left: '50px';\">
+\t\t\t\t\t\t\t<li  style=\"margin-left: 100px !important;  vertical-align: middle;\">
+\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\" >
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</nav>
@@ -326,9 +326,9 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t<header>
 
 
-\t\t\t\t\t\t<h2 class=\"h2\" style=\"font-family: Source Sans Pro, sans-serif;\">Votre nouvelle vie commence maintenant
+\t\t\t\t\t\t<h2 class=\"h2\" style=\"font-family: Source Sans Pro, sans-serif; color: white !important;\">Votre nouvelle vie commence maintenant
 \t\t\t\t\t\t</h2>
-\t\t\t\t\t\t<a href=\"#knowMore\" class=\"button\">En savoir plus</a>
+\t\t\t\t\t\t<a href=\"#knowMore\" class=\"button\" style=\"color: white !important;\">En savoir plus</a>
 
 
 \t\t\t\t\t</header>
@@ -528,7 +528,7 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t<!-- Logo -->
 \t\t\t\t\t<h1 style=\"font-family: 'Sacramento', cursive !important;\">
 \t\t\t\t\t\t<a href=\"page/home\" id=\"logo\" style=\"font-size: 65px !important;\">
-\t\t\t\t\t\t\tViaMedo
+\t\t\t\t\t\t\tViaMedo : 
 \t\t\t\t\t\t\t<em>
 \t\t\t\t\t\t\t\tVotre moi idéal à portée de main</em>
 \t\t\t\t\t\t</a>
@@ -598,8 +598,8 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\"  style=\"margin-left: '50px';\">
+\t\t\t\t\t\t\t<li  style=\"margin-left: 100px !important;  vertical-align: middle;\">
+\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\" >
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</nav>
@@ -609,9 +609,9 @@ class __TwigTemplate_f7068ca31ed371bd3548df2e4bca1da83471d9741da2e2e285685efb17e
 \t\t\t\t\t<header>
 
 
-\t\t\t\t\t\t<h2 class=\"h2\" style=\"font-family: Source Sans Pro, sans-serif;\">Votre nouvelle vie commence maintenant
+\t\t\t\t\t\t<h2 class=\"h2\" style=\"font-family: Source Sans Pro, sans-serif; color: white !important;\">Votre nouvelle vie commence maintenant
 \t\t\t\t\t\t</h2>
-\t\t\t\t\t\t<a href=\"#knowMore\" class=\"button\">En savoir plus</a>
+\t\t\t\t\t\t<a href=\"#knowMore\" class=\"button\" style=\"color: white !important;\">En savoir plus</a>
 
 
 \t\t\t\t\t</header>

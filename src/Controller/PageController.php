@@ -200,8 +200,8 @@ class PageController extends AbstractController
                 );
 
                 $pieChart->getOptions()->setTitle('Votre consommation de substances');
-                $pieChart->getOptions()->setHeight(400);
-                $pieChart->getOptions()->setWidth(350);
+                $pieChart->getOptions()->setHeight(550);
+                $pieChart->getOptions()->setWidth(550);
                 $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
                 $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
                 $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);

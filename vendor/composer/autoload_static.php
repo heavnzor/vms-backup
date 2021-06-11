@@ -665,6 +665,7 @@ class ComposerStaticInit9ca9d5bccf72ff0a19b1187497a0a521
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Security\\EmailVerifier' => __DIR__ . '/../..' . '/src/Security/EmailVerifier.php',
         'App\\Security\\LoginAuthenticator' => __DIR__ . '/../..' . '/src/Security/LoginAuthenticator.php',
+        'App\\SpamChecker' => __DIR__ . '/../..' . '/src/SpamChecker.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CMEN\\GoogleChartsBundle\\CMENGoogleChartsBundle' => __DIR__ . '/..' . '/cmen/google-charts-bundle/CMENGoogleChartsBundle.php',
         'CMEN\\GoogleChartsBundle\\DependencyInjection\\CMENGoogleChartsExtension' => __DIR__ . '/..' . '/cmen/google-charts-bundle/DependencyInjection/CMENGoogleChartsExtension.php',
