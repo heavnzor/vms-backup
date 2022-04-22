@@ -56,10 +56,6 @@ interface UserInterface
      */
     public function getPassword();
 
-    public function setSubscribtionDate($datetime);
-
-    public function setLastConnection($datetime);
-
     /**
      * Returns the salt that was originally used to encode the password.
      *
@@ -75,24 +71,6 @@ interface UserInterface
      * @return string The username
      */
     public function getUsername();
-    /**
-     * Returns the isverified used to authenticate the user.
-     *
-     * @return self The isverified
-     */
-    public function setIsVerified(bool $isVerified);
-    /**
-     * Returns the username used to authenticate the user.
-     *
-     * @return integer The username
-     */
-    public function getId();
-    /**
-     * Returns the email id to authenticate the user.
-     *
-     * @return string The email
-     */
-    public function getEmail();
 
     /**
      * Removes sensitive data from the user.

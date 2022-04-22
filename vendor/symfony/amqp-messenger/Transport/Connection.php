@@ -219,6 +219,10 @@ class Connection
             return $queueOptions;
         }, $queuesOptions);
 
+        if (!$useAmqps) {
+            unset($amqpOptions['cacert'], $amqpOptions['cert'], $amqpOptions['key'], $amqpOptions['verify']);
+        }
+
         if ($useAmqps && !self::hasCaCertConfigured($amqpOptions)) {
             throw new InvalidArgumentException('No CA certificate has been provided. Set "amqp.cacert" in your php.ini or pass the "cacert" parameter in the DSN to use SSL. Alternatively, you can use amqp:// to use without SSL.');
         }
@@ -588,4 +592,7 @@ class Connection
         return (null !== $amqpStamp ? $amqpStamp->getRoutingKey() : null) ?? $this->getDefaultPublishRoutingKey();
     }
 }
-class_alias(Connection::class, \Symfony\Component\Messenger\Transport\AmqpExt\Connection::class);
+
+if (!class_exists(\Symfony\Component\Messenger\Transport\AmqpExt\Connection::class, false)) {
+    class_alias(Connection::class, \Symfony\Component\Messenger\Transport\AmqpExt\Connection::class);
+}

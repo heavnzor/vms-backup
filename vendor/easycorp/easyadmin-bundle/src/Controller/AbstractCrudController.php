@@ -53,6 +53,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use function Symfony\Component\String\u;
 
@@ -83,15 +84,12 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         return $filters;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureFields(string $pageName): iterable
     {
-        return $this->get(FieldProvider::class)->getDefaultFields($pageName);
+        return $this->container->get(FieldProvider::class)->getDefaultFields($pageName);
     }
 
-    public static function getSubscribedServices()
+    public static function getSubscribedServices(): array
     {
         return array_merge(parent::getSubscribedServices(), [
             'event_dispatcher' => '?'.EventDispatcherInterface::class,
@@ -113,31 +111,31 @@ abstract class AbstractCrudController extends AbstractController implements Crud
     public function index(AdminContext $context)
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
 
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
+        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::INDEX, 'entity' => null])) {
             throw new ForbiddenActionException($context);
         }
 
         $fields = FieldCollection::new($this->configureFields(Crud::PAGE_INDEX));
-        $filters = $this->get(FilterFactory::class)->create($context->getCrud()->getFiltersConfig(), $fields, $context->getEntity());
+        $filters = $this->container->get(FilterFactory::class)->create($context->getCrud()->getFiltersConfig(), $fields, $context->getEntity());
         $queryBuilder = $this->createIndexQueryBuilder($context->getSearch(), $context->getEntity(), $fields, $filters);
-        $paginator = $this->get(PaginatorFactory::class)->create($queryBuilder);
+        $paginator = $this->container->get(PaginatorFactory::class)->create($queryBuilder);
 
         // this can happen after deleting some items and trying to return
         // to a 'index' page that no longer exists. Redirect to the last page instead
         if ($paginator->isOutOfRange()) {
-            return $this->redirect($this->get(AdminUrlGenerator::class)
+            return $this->redirect($this->container->get(AdminUrlGenerator::class)
                 ->set(EA::PAGE, $paginator->getLastPage())
                 ->generateUrl());
         }
 
-        $entities = $this->get(EntityFactory::class)->createCollection($context->getEntity(), $paginator->getResults());
-        $this->get(EntityFactory::class)->processFieldsForAll($entities, $fields);
-        $actions = $this->get(EntityFactory::class)->processActionsForAll($entities, $context->getCrud()->getActionsConfig());
+        $entities = $this->container->get(EntityFactory::class)->createCollection($context->getEntity(), $paginator->getResults());
+        $this->container->get(EntityFactory::class)->processFieldsForAll($entities, $fields);
+        $actions = $this->container->get(EntityFactory::class)->processActionsForAll($entities, $context->getCrud()->getActionsConfig());
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
             'pageName' => Crud::PAGE_INDEX,
@@ -150,7 +148,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -161,12 +159,12 @@ abstract class AbstractCrudController extends AbstractController implements Crud
     public function detail(AdminContext $context)
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
 
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
+        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::DETAIL, 'entity' => $context->getEntity()])) {
             throw new ForbiddenActionException($context);
         }
 
@@ -174,8 +172,8 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             throw new InsufficientEntityPermissionException($context);
         }
 
-        $this->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_DETAIL)));
-        $this->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
+        $this->container->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_DETAIL)));
+        $this->container->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
             'pageName' => Crud::PAGE_DETAIL,
@@ -184,7 +182,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -195,12 +193,12 @@ abstract class AbstractCrudController extends AbstractController implements Crud
     public function edit(AdminContext $context)
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
 
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
+        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::EDIT, 'entity' => $context->getEntity()])) {
             throw new ForbiddenActionException($context);
         }
 
@@ -208,8 +206,8 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             throw new InsufficientEntityPermissionException($context);
         }
 
-        $this->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_EDIT)));
-        $this->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
+        $this->container->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_EDIT)));
+        $this->container->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
         $entityInstance = $context->getEntity()->getInstance();
 
         if ($context->getRequest()->isXmlHttpRequest()) {
@@ -231,32 +229,14 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             $this->processUploadedFiles($editForm);
 
             $event = new BeforeEntityUpdatedEvent($entityInstance);
-            $this->get('event_dispatcher')->dispatch($event);
+            $this->container->get('event_dispatcher')->dispatch($event);
             $entityInstance = $event->getEntityInstance();
 
-            $this->updateEntity($this->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
+            $this->updateEntity($this->container->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
 
-            $this->get('event_dispatcher')->dispatch(new AfterEntityUpdatedEvent($entityInstance));
+            $this->container->get('event_dispatcher')->dispatch(new AfterEntityUpdatedEvent($entityInstance));
 
-            $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
-            if (Action::SAVE_AND_CONTINUE === $submitButtonName) {
-                $url = $this->get(AdminUrlGenerator::class)
-                    ->setAction(Action::EDIT)
-                    ->setEntityId($context->getEntity()->getPrimaryKeyValue())
-                    ->generateUrl();
-
-                return $this->redirect($url);
-            }
-
-            if (Action::SAVE_AND_RETURN === $submitButtonName) {
-                $url = empty($context->getReferrer())
-                    ? $this->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->generateUrl()
-                    : $context->getReferrer();
-
-                return $this->redirect($url);
-            }
-
-            return $this->redirectToRoute($context->getDashboardRouteName());
+            return $this->getRedirectResponseAfterSave($context, Action::EDIT);
         }
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
@@ -267,7 +247,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -278,12 +258,12 @@ abstract class AbstractCrudController extends AbstractController implements Crud
     public function new(AdminContext $context)
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
 
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
+        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::NEW, 'entity' => null])) {
             throw new ForbiddenActionException($context);
         }
 
@@ -292,8 +272,8 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         }
 
         $context->getEntity()->setInstance($this->createEntity($context->getEntity()->getFqcn()));
-        $this->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_NEW)));
-        $this->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
+        $this->container->get(EntityFactory::class)->processFields($context->getEntity(), FieldCollection::new($this->configureFields(Crud::PAGE_NEW)));
+        $this->container->get(EntityFactory::class)->processActions($context->getEntity(), $context->getCrud()->getActionsConfig());
 
         $newForm = $this->createNewForm($context->getEntity(), $context->getCrud()->getNewFormOptions(), $context);
         $newForm->handleRequest($context->getRequest());
@@ -305,38 +285,15 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             $this->processUploadedFiles($newForm);
 
             $event = new BeforeEntityPersistedEvent($entityInstance);
-            $this->get('event_dispatcher')->dispatch($event);
+            $this->container->get('event_dispatcher')->dispatch($event);
             $entityInstance = $event->getEntityInstance();
 
-            $this->persistEntity($this->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
+            $this->persistEntity($this->container->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
 
-            $this->get('event_dispatcher')->dispatch(new AfterEntityPersistedEvent($entityInstance));
+            $this->container->get('event_dispatcher')->dispatch(new AfterEntityPersistedEvent($entityInstance));
             $context->getEntity()->setInstance($entityInstance);
 
-            $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
-            if (Action::SAVE_AND_CONTINUE === $submitButtonName) {
-                $url = $this->get(AdminUrlGenerator::class)
-                    ->setAction(Action::EDIT)
-                    ->setEntityId($context->getEntity()->getPrimaryKeyValue())
-                    ->generateUrl();
-
-                return $this->redirect($url);
-            }
-
-            if (Action::SAVE_AND_RETURN === $submitButtonName) {
-                $url = $context->getReferrer()
-                    ?? $this->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->generateUrl();
-
-                return $this->redirect($url);
-            }
-
-            if (Action::SAVE_AND_ADD_ANOTHER === $submitButtonName) {
-                $url = $this->get(AdminUrlGenerator::class)->setAction(Action::NEW)->generateUrl();
-
-                return $this->redirect($url);
-            }
-
-            return $this->redirectToRoute($context->getDashboardRouteName());
+            return $this->getRedirectResponseAfterSave($context, Action::NEW);
         }
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
@@ -347,7 +304,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -358,12 +315,12 @@ abstract class AbstractCrudController extends AbstractController implements Crud
     public function delete(AdminContext $context)
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
 
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
+        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::DELETE, 'entity' => $context->getEntity()])) {
             throw new ForbiddenActionException($context);
         }
 
@@ -379,26 +336,26 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         $entityInstance = $context->getEntity()->getInstance();
 
         $event = new BeforeEntityDeletedEvent($entityInstance);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
         $entityInstance = $event->getEntityInstance();
 
         try {
-            $this->deleteEntity($this->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
+            $this->deleteEntity($this->container->get('doctrine')->getManagerForClass($context->getEntity()->getFqcn()), $entityInstance);
         } catch (ForeignKeyConstraintViolationException $e) {
             throw new EntityRemoveException(['entity_name' => $context->getEntity()->getName(), 'message' => $e->getMessage()]);
         }
 
-        $this->get('event_dispatcher')->dispatch(new AfterEntityDeletedEvent($entityInstance));
+        $this->container->get('event_dispatcher')->dispatch(new AfterEntityDeletedEvent($entityInstance));
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
             'entity' => $context->getEntity(),
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -407,37 +364,40 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             return $this->redirect($referrer);
         }
 
-        return $this->redirect($this->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->unset(EA::ENTITY_ID)->generateUrl());
+        return $this->redirect($this->container->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->unset(EA::ENTITY_ID)->generateUrl());
     }
 
     public function batchDelete(AdminContext $context, BatchActionDto $batchActionDto): Response
     {
         $event = new BeforeCrudActionEvent($context);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
-        }
-
-        if (!$this->isGranted(Permission::EA_EXECUTE_ACTION)) {
-            throw new ForbiddenActionException($context);
         }
 
         if (!$this->isCsrfTokenValid('ea-batch-action-'.Action::BATCH_DELETE, $batchActionDto->getCsrfToken())) {
             return $this->redirectToRoute($context->getDashboardRouteName());
         }
 
-        $entityManager = $this->getDoctrine()->getManagerForClass($batchActionDto->getEntityFqcn());
+        $entityManager = $this->container->get('doctrine')->getManagerForClass($batchActionDto->getEntityFqcn());
         $repository = $entityManager->getRepository($batchActionDto->getEntityFqcn());
         foreach ($batchActionDto->getEntityIds() as $entityId) {
             $entityInstance = $repository->find($entityId);
+            if (!$entityInstance) {
+                continue;
+            }
+
             $entityDto = $context->getEntity()->newWithInstance($entityInstance);
+            if (!$this->isGranted(Permission::EA_EXECUTE_ACTION, ['action' => Action::DELETE, 'entity' => $entityDto])) {
+                throw new ForbiddenActionException($context);
+            }
 
             if (!$entityDto->isAccessible()) {
                 throw new InsufficientEntityPermissionException($context);
             }
 
             $event = new BeforeEntityDeletedEvent($entityInstance);
-            $this->get('event_dispatcher')->dispatch($event);
+            $this->container->get('event_dispatcher')->dispatch($event);
             $entityInstance = $event->getEntityInstance();
 
             try {
@@ -446,7 +406,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
                 throw new EntityRemoveException(['entity_name' => $entityDto->toString(), 'message' => $e->getMessage()]);
             }
 
-            $this->get('event_dispatcher')->dispatch(new AfterEntityDeletedEvent($entityInstance));
+            $this->container->get('event_dispatcher')->dispatch(new AfterEntityDeletedEvent($entityInstance));
         }
 
         $responseParameters = $this->configureResponseParameters(KeyValueStore::new([
@@ -455,7 +415,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]));
 
         $event = new AfterCrudActionEvent($context, $responseParameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         if ($event->isPropagationStopped()) {
             return $event->getResponse();
         }
@@ -470,7 +430,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         $autocompleteContext = $context->getRequest()->get(AssociationField::PARAM_AUTOCOMPLETE_CONTEXT);
 
         /** @var CrudControllerInterface $controller */
-        $controller = $this->get(ControllerFactory::class)->getCrudControllerInstance($autocompleteContext[EA::CRUD_CONTROLLER_FQCN], Action::INDEX, $context->getRequest());
+        $controller = $this->container->get(ControllerFactory::class)->getCrudControllerInstance($autocompleteContext[EA::CRUD_CONTROLLER_FQCN], Action::INDEX, $context->getRequest());
         /** @var FieldDto $field */
         $field = FieldCollection::new($controller->configureFields($autocompleteContext['originatingPage']))->getByProperty($autocompleteContext['propertyName']);
         /** @var \Closure|null $queryBuilderCallable */
@@ -480,26 +440,26 @@ abstract class AbstractCrudController extends AbstractController implements Crud
             $queryBuilderCallable($queryBuilder);
         }
 
-        $paginator = $this->get(PaginatorFactory::class)->create($queryBuilder);
+        $paginator = $this->container->get(PaginatorFactory::class)->create($queryBuilder);
 
         return JsonResponse::fromJsonString($paginator->getResultsAsJson());
     }
 
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
     {
-        return $this->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters);
+        return $this->container->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters);
     }
 
     public function renderFilters(AdminContext $context): KeyValueStore
     {
         $fields = FieldCollection::new($this->configureFields(Crud::PAGE_INDEX));
-        $this->get(EntityFactory::class)->processFields($context->getEntity(), $fields);
-        $filters = $this->get(FilterFactory::class)->create($context->getCrud()->getFiltersConfig(), $context->getEntity()->getFields(), $context->getEntity());
+        $this->container->get(EntityFactory::class)->processFields($context->getEntity(), $fields);
+        $filters = $this->container->get(FilterFactory::class)->create($context->getCrud()->getFiltersConfig(), $context->getEntity()->getFields(), $context->getEntity());
 
         /** @var FiltersFormType $filtersForm */
-        $filtersForm = $this->get(FormFactory::class)->createFiltersForm($filters, $context->getRequest());
+        $filtersForm = $this->container->get(FormFactory::class)->createFiltersForm($filters, $context->getRequest());
         $formActionParts = parse_url($filtersForm->getConfig()->getAction());
-        $queryString = $formActionParts[EA::QUERY] ?? [];
+        $queryString = $formActionParts[EA::QUERY] ?? '';
         parse_str($queryString, $queryStringAsArray);
         unset($queryStringAsArray[EA::FILTERS], $queryStringAsArray[EA::PAGE]);
 
@@ -542,7 +502,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
 
     public function createEditFormBuilder(EntityDto $entityDto, KeyValueStore $formOptions, AdminContext $context): FormBuilderInterface
     {
-        return $this->get(FormFactory::class)->createEditFormBuilder($entityDto, $formOptions, $context);
+        return $this->container->get(FormFactory::class)->createEditFormBuilder($entityDto, $formOptions, $context);
     }
 
     public function createNewForm(EntityDto $entityDto, KeyValueStore $formOptions, AdminContext $context): FormInterface
@@ -552,7 +512,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
 
     public function createNewFormBuilder(EntityDto $entityDto, KeyValueStore $formOptions, AdminContext $context): FormBuilderInterface
     {
-        return $this->get(FormFactory::class)->createNewFormBuilder($entityDto, $formOptions, $context);
+        return $this->container->get(FormFactory::class)->createNewFormBuilder($entityDto, $formOptions, $context);
     }
 
     /**
@@ -563,26 +523,22 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         return $responseParameters;
     }
 
-    private function getContext(): ?AdminContext
+    protected function getContext(): ?AdminContext
     {
-        return $this->get(AdminContextProvider::class)->getContext();
+        return $this->container->get(AdminContextProvider::class)->getContext();
     }
 
-    private function ajaxEdit(EntityDto $entityDto, ?string $propertyName, bool $newValue): AfterCrudActionEvent
+    protected function ajaxEdit(EntityDto $entityDto, ?string $propertyName, bool $newValue): AfterCrudActionEvent
     {
-        if (!$entityDto->hasProperty($propertyName)) {
-            throw new \RuntimeException(sprintf('The "%s" boolean field cannot be changed because it doesn\'t exist in the "%s" entity.', $propertyName, $entityDto->getName()));
-        }
-
-        $this->get(EntityUpdater::class)->updateProperty($entityDto, $propertyName, $newValue);
+        $this->container->get(EntityUpdater::class)->updateProperty($entityDto, $propertyName, $newValue);
 
         $event = new BeforeEntityUpdatedEvent($entityDto->getInstance());
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
         $entityInstance = $event->getEntityInstance();
 
-        $this->updateEntity($this->get('doctrine')->getManagerForClass($entityDto->getFqcn()), $entityInstance);
+        $this->updateEntity($this->container->get('doctrine')->getManagerForClass($entityDto->getFqcn()), $entityInstance);
 
-        $this->get('event_dispatcher')->dispatch(new AfterEntityUpdatedEvent($entityInstance));
+        $this->container->get('event_dispatcher')->dispatch(new AfterEntityUpdatedEvent($entityInstance));
 
         $entityDto->setInstance($entityInstance);
 
@@ -592,7 +548,7 @@ abstract class AbstractCrudController extends AbstractController implements Crud
         ]);
 
         $event = new AfterCrudActionEvent($this->getContext(), $parameters);
-        $this->get('event_dispatcher')->dispatch($event);
+        $this->container->get('event_dispatcher')->dispatch($event);
 
         return $event;
     }
@@ -636,5 +592,34 @@ abstract class AbstractCrudController extends AbstractController implements Crud
                 $uploadNew($file, $uploadDir, $fileName);
             }
         }
+    }
+
+    protected function getRedirectResponseAfterSave(AdminContext $context, string $action): RedirectResponse
+    {
+        $submitButtonName = $context->getRequest()->request->all()['ea']['newForm']['btn'];
+
+        if (Action::SAVE_AND_CONTINUE === $submitButtonName) {
+            $url = $this->container->get(AdminUrlGenerator::class)
+                ->setAction(Action::EDIT)
+                ->setEntityId($context->getEntity()->getPrimaryKeyValue())
+                ->generateUrl();
+
+            return $this->redirect($url);
+        }
+
+        if (Action::SAVE_AND_RETURN === $submitButtonName) {
+            $url = $context->getReferrer()
+                ?? $this->container->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->generateUrl();
+
+            return $this->redirect($url);
+        }
+
+        if (Action::SAVE_AND_ADD_ANOTHER === $submitButtonName) {
+            $url = $this->container->get(AdminUrlGenerator::class)->setAction(Action::NEW)->generateUrl();
+
+            return $this->redirect($url);
+        }
+
+        return $this->redirectToRoute($context->getDashboardRouteName());
     }
 }

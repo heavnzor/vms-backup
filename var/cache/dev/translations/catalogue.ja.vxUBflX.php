@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('ja', array (
     'This value should satisfy at least one of the following constraints:' => '以下の制約のうち少なくとも1つを満たす必要があります:',
     'Each element of this collection should satisfy its own set of constraints.' => 'コレクションの各要素は、それぞれの制約を満たす必要があります。',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'この値は有効な国際証券識別番号（ISIN）ではありません。',
+    'This value should be a valid expression.' => '式でなければなりません。',
     'This form should not contain extra fields.' => 'フィールドグループに追加のフィールドを含んではなりません。',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'アップロードされたファイルが大きすぎます。小さなファイルで再度アップロードしてください。',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRFトークンが無効です、再送信してください。',
@@ -156,6 +157,22 @@ $catalogue = new MessageCatalogue('ja', array (
     'Invalid or expired login link.' => 'ログインリンクが有効期限切れ、もしくは無効です。',
     'Too many failed login attempts, please try again in %minutes% minute.' => 'ログイン試行回数が多すぎます。%minutes%分後に再度お試しください。',
     'Too many failed login attempts, please try again in %minutes% minutes.' => 'ログイン試行回数が多すぎます。%minutes%分後に再度お試しください。',
+  ),
+  'VerifyEmailBundle' => 
+  array (
+    '%count% year|%count% years' => '%count% 年|%count% 年',
+    '%count% month|%count% months' => '%count% 月|%count% 月',
+    '%count% day|%count% days' => '%count% 日|%count% 日',
+    '%count% hour|%count% hours' => '%count% 時間|%count% 時間',
+    '%count% minute|%count% minutes' => '%count% 分|%count% 分',
+  ),
+  'ResetPasswordBundle' => 
+  array (
+    '%count% year|%count% years' => '%count% 年|%count% 年',
+    '%count% month|%count% months' => '%count% 月|%count% 月',
+    '%count% day|%count% days' => '%count% 日|%count% 日',
+    '%count% hour|%count% hours' => '%count% 時間|%count% 時間',
+    '%count% minute|%count% minutes' => '%count% 分|%count% 分',
   ),
 ));
 
@@ -258,6 +275,7 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'This value should satisfy at least one of the following constraints:' => 'Cette valeur doit satisfaire à au moins une des contraintes suivantes :',
     'Each element of this collection should satisfy its own set of constraints.' => 'Chaque élément de cette collection doit satisfaire à son propre jeu de contraintes.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Cette valeur n\'est pas un code international de sécurité valide (ISIN).',
+    'This value should be a valid expression.' => 'Cette valeur doit être une expression valide.',
     'This form should not contain extra fields.' => 'Ce formulaire ne doit pas contenir des champs supplémentaires.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Le fichier téléchargé est trop volumineux. Merci d\'essayer d\'envoyer un fichier plus petit.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'Le jeton CSRF est invalide. Veuillez renvoyer le formulaire.',
@@ -321,12 +339,15 @@ $catalogueFr = new MessageCatalogue('fr', array (
     '%count% day|%count% days' => '%count% jour|%count% jours',
     '%count% hour|%count% hours' => '%count% heure|%count% heures',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'The link to verify your email has expired. Please request a new link.' => 'Le lien pour vérifier votre adresse e-mail a expiré. Veuillez refaire une demande de réinitialisation.',
+    'The link to verify your email is invalid. Please request a new link.' => 'Le lien pour vérifier votre adresse e-mail est invalide. Veuillez refaire une demande de réinitialisation.',
+    'The link to verify your email appears to be for a different account or email. Please request a new link.' => 'Le lien permettant de vérifier votre adresse e-mail semble correspondre à un autre compte ou e-mail. Veuillez refaire une demande de réinitialisation.',
   ),
   'EasyAdminBundle' => 
   array (
     'page_title.dashboard' => 'Tableau de bord',
-    'page_title.detail' => '%entity_label_singular% <small>(#%entity_short_id%)</small>',
-    'page_title.edit' => 'Modifier %entity_label_singular% <small>(#%entity_short_id%)</small>',
+    'page_title.detail' => '%entity_as_string%',
+    'page_title.edit' => 'Modifier %entity_label_singular%',
     'page_title.index' => '%entity_label_plural%',
     'page_title.new' => 'Créer "%entity_label_singular%"',
     'page_title.exception' => 'Erreur|Erreurs',
@@ -352,7 +373,7 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'action.entity_actions' => 'Actions',
     'action.new' => 'Créer %entity_label_singular%',
     'action.search' => 'Rechercher',
-    'action.detail' => 'Voir',
+    'action.detail' => 'Consulter',
     'action.edit' => 'Éditer',
     'action.delete' => 'Supprimer',
     'action.cancel' => 'Annuler',
@@ -405,10 +426,15 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'login_page.username' => 'Identifiant',
     'login_page.password' => 'Mot de passe',
     'login_page.sign_in' => 'Connectez-vous',
+    'login_page.forgot_password' => 'Mot de passe oublié ?',
+    'login_page.remember_me' => 'Rester connecté',
     'exception.entity_not_found' => 'Cet élément n\'est plus disponible.',
     'exception.entity_remove' => 'Cet élément ne peut être supprimé car d\'autres éléments en dépendent.',
     'exception.forbidden_action' => 'L\'action demandée ne peut être exécutée sur cet élément.',
     'exception.insufficient_entity_permission' => 'Vous n\'êtes pas autorisé à accéder à cet élément.',
+    'autocomplete.no-results-found' => 'Aucun résultat trouvé',
+    'autocomplete.no-more-results' => 'Aucun autre résultat trouvé',
+    'autocomplete.loading-more-results' => 'Chargement de résultats supplémentaires…',
   ),
   'ResetPasswordBundle' => 
   array (
@@ -417,6 +443,12 @@ $catalogueFr = new MessageCatalogue('fr', array (
     '%count% day|%count% days' => '%count% jour|%count% jours',
     '%count% hour|%count% hours' => '%count% heure|%count% heures',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'There was a problem validating your password reset request' => 'Un problème est survenu lors de la validation de votre demande de réinitialisation de mot de passe',
+    'There was a problem handling your password reset request' => 'Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe',
+    'The link in your email is expired. Please try to reset your password again.' => 'Le lien dans votre e-mail est expiré. Veuillez réessayer de réinitialiser votre mot de passe.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Veuillez mettre à jour la configuration de request_password_repository dans config/packages/reset_password.yaml pour pointer vers votre service "request password repository"',
+    'The reset password link is invalid. Please try to reset your password again.' => 'Le lien de réinitialisation du mot de passe n\'est pas valide. Veuillez réessayer de réinitialiser votre mot de passe',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'Vous avez déjà demandé un e-mail de réinitialisation du mot de passe. Veuillez vérifier votre e-mail ou réessayer bientôt.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueFr);

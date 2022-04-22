@@ -99,7 +99,7 @@ class EntrypointLookup implements EntrypointLookupInterface, IntegrityDataProvid
                 throw new EntrypointNotFoundException(sprintf('Could not find the entry "%s". Try "%s" instead (without the extension).', $entryName, $withoutExtension));
             }
 
-            throw new EntrypointNotFoundException(sprintf('Could not find the entry "%s" in "%s". Found: %s.', $entryName, $this->entrypointJsonPath, implode(', ', array_keys($entriesData))));
+            throw new EntrypointNotFoundException(sprintf('Could not find the entry "%s" in "%s". Found: %s.', $entryName, $this->entrypointJsonPath, implode(', ', array_keys($entriesData['entrypoints']))));
         }
     }
 
@@ -139,5 +139,12 @@ class EntrypointLookup implements EntrypointLookupInterface, IntegrityDataProvid
         }
 
         return $this->entriesData;
+    }
+
+    public function entryExists(string $entryName): bool
+    {
+        $entriesData = $this->getEntriesData();
+
+        return isset($entriesData['entrypoints'][$entryName]);
     }
 }

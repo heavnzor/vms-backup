@@ -219,14 +219,13 @@ in some page::
         ;
     }
 
-Dropdown Actions
-----------------
+Dropdown and Inline Entity Actions
+----------------------------------
 
-If you display lots of fields on each row of the ``index`` page, there won't be
-enough room for the item actions. In those cases, you can display the actions in
-a dropdown menu instead of the expanded design used by default.
-
-To do so, use the ``showEntityActionsAsDropdown()`` method::
+In the ``index`` page, the entity actions (``edit``, ``delete``, etc.) are
+displayed by default in a dropdown. This is done to better display the field
+contents on each row. If you prefer to display all the actions *inlined*
+(that is, without a dropdown) use the ``showEntityActionsInlined()`` method::
 
     namespace App\Controller\Admin;
 
@@ -241,7 +240,7 @@ To do so, use the ``showEntityActionsAsDropdown()`` method::
         {
             return $crud
                 // ...
-                ->showEntityActionsAsDropdown()
+                ->showEntityActionsInlined()
             ;
         }
     }
@@ -269,7 +268,32 @@ the ``Action`` class constructor::
     $viewInvoice = Action::new('viewInvoice', false);
 
     // the third optional argument is the full CSS class of a FontAwesome icon
+    // see https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
     $viewInvoice = Action::new('viewInvoice', 'Invoice', 'fa fa-file-invoice');
+
+Then you can configure the basic HTML/CSS attributes of the button/element
+that will represent the action::
+
+    $viewInvoice = Action::new('viewInvoice', 'Invoice', 'fa fa-file-invoice')
+        // renders the action as a <a> HTML element
+        ->displayAsLink()
+        // renders the action as a <button> HTML element
+        ->displayAsButton()
+        // a key-value array of attributes to add to the HTML element
+        ->setHtmlAttributes(['data-foo' => 'bar', 'target' => '_blank'])
+        // removes all existing CSS classes of the action and sets
+        // the given value as the CSS class of the HTML element
+        ->setCssClass('btn btn-primary action-foo')
+        // adds the given value to the existing CSS classes of the action (this is
+        // useful when customizing a built-in action, which already has CSS classes)
+        ->addCssClass('some-custom-css-class text-danger')
+
+.. note::
+
+    When using ``setCssClass()`` or ``addCssClass()`` methods, the action loses
+    the default CSS classes applied by EasyAdmin (``.btn`` and
+    ``.action-<the-action-name>``). You might want to add those CSS classes
+    manually to make your actions look as expected.
 
 Once you've configured the basics, use one of the following methods to define
 which method is executed when clicking on the action:
@@ -506,6 +530,23 @@ load the appropriate menu, etc. However, thanks to the ``routeName`` query strin
 parameter, EasyAdmin knows that it must forward the request to the Symfony
 controller that serves that route, and does that transparently to you.
 
+.. note::
+
+    Handling route parameters in this way is fine in most situations. However,
+    sometimes you need to handle route arguments as proper Symfony route arguments.
+    For example, if you want to pass the ``_switch_user`` query parameter for
+    Symfony's impersonation feature, you can do this::
+
+        // you can generate the full URL with Symfony's URL generator:
+        $impersonate = Action::new('impersonate')->linkToUrl(
+            $urlGenerator->generate('admin', ['_switch_user' => 'user@example.com'], UrlGeneratorInterface::ABSOLUTE_URL)
+        );
+
+        // or you can add the query string parameter directly:
+        $impersonate = Action::new('impersonate')
+            ->linkToRoute('some_route')
+            ->setQueryParameter('_switch_user', 'user@example.com');
+
 Now, create the template used by the ``index()`` method, which lists a summary
 of the stats of all customers and includes a link to the detailed stats of each
 of them:
@@ -577,7 +618,7 @@ by EasyAdmin::
         {
             $url = $this->adminUrlGenerator->setRoute('admin_business_stats_customer', [
                 'id' => $this->getUser()->getId(),
-            ]->generateUrl());
+            ])->generateUrl();
 
             // ...
         }

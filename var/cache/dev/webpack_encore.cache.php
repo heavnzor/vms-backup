@@ -12,7 +12,6 @@ return [[
     'entrypoints' => [
         'app' => [
             'js' => [
-                '/build/js/fbm.js',
                 '/build/js/jquery.min.js',
                 '/build/js/jquery.dropotron.js',
                 '/build/js/browser.js',
@@ -20,7 +19,7 @@ return [[
                 '/build/js/util.js',
                 '/build/js/main.js',
                 '/build/runtime.js',
-                '/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js',
+                '/build/vendors-node_modules_symfony.js',
                 '/build/app.js',
                 '/build/js/bootstrap.min.js',
                 '/build/js/bootstrap.bundle.js',

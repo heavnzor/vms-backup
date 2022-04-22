@@ -6,6 +6,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
+use Twig\Extension\ExtensionInterface;
+use Twig\Extension\RuntimeExtensionInterface;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -24,7 +26,7 @@ class EasyAdminTwigExtension extends AbstractExtension
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
     public function getFunctions()
     {
@@ -35,7 +37,7 @@ class EasyAdminTwigExtension extends AbstractExtension
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
     public function getFilters()
     {
@@ -43,6 +45,7 @@ class EasyAdminTwigExtension extends AbstractExtension
             new TwigFilter('ea_flatten_array', [$this, 'flattenArray']),
             new TwigFilter('ea_filesize', [$this, 'fileSize']),
             new TwigFilter('ea_apply_filter_if_exists', [$this, 'applyFilterIfExists'], ['needs_environment' => true]),
+            new TwigFilter('ea_as_string', [$this, 'representAsString']),
         ];
     }
 
@@ -78,11 +81,59 @@ class EasyAdminTwigExtension extends AbstractExtension
     // Code adapted from https://stackoverflow.com/a/48606773/2804294 (License: CC BY-SA 3.0)
     public function applyFilterIfExists(Environment $environment, $value, string $filterName, ...$filterArguments)
     {
-        if (false === $filter = $environment->getFilter($filterName)) {
+        $filter = $environment->getFilter($filterName);
+        if (false === $filter || null === $filter) {
             return $value;
         }
 
-        return $filter->getCallable()($value, ...$filterArguments);
+        list($class, $method) = $filter->getCallable();
+        if ($class instanceof ExtensionInterface) {
+            return $filter->getCallable()($value, ...$filterArguments);
+        }
+
+        $object = $environment->getRuntime($class);
+        if ($object instanceof RuntimeExtensionInterface && method_exists($object, $method)) {
+            return $object->$method($value, ...$filterArguments);
+        }
+
+        return null;
+    }
+
+    public function representAsString($value): string
+    {
+        if (null === $value) {
+            return '';
+        }
+
+        if (\is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value)) {
+            return (string) $value;
+        }
+
+        if (\is_bool($value)) {
+            return $value ? 'true' : 'false';
+        }
+
+        if (\is_array($value)) {
+            return sprintf('Array (%d items)', \count($value));
+        }
+
+        if (\is_object($value)) {
+            if (method_exists($value, '__toString')) {
+                return (string) $value;
+            }
+
+            if (method_exists($value, 'getId')) {
+                return sprintf('%s #%s', \get_class($value), $value->getId());
+            }
+
+            return sprintf('%s #%s', \get_class($value), substr(md5(spl_object_hash($value)), 0, 7));
+        }
+
+        return '';
     }
 
     public function callFunctionIfExists(Environment $environment, string $functionName, ...$functionArguments)

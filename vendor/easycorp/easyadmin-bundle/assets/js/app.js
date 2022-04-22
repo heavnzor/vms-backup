@@ -1,42 +1,76 @@
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.scss');
 
-// TODO: remove this when we migrate away from all jQuery plugins
-global.$ = global.jQuery = require('jquery');
-
-import 'bootstrap';
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle';
 import Mark from 'mark.js/src/vanilla';
 import DirtyForm from 'dirty-form';
 import * as basicLightbox from 'basiclightbox';
-import './adminlte.js';
-import 'select2';
+import Autocomplete from './autocomplete';
 
 document.addEventListener('DOMContentLoaded', () => {
+    App.createMainMenu();
     App.createLayoutResizeControls();
     App.createNavigationToggler();
     App.createSearchHighlight();
     App.createFilters();
     App.createToggleFields();
+    App.createAutoCompleteFields();
     App.createBatchActions();
     App.createModalWindowsForDeleteActions();
+    App.createPopovers();
+    App.createTooltips();
     App.createUnsavedFormChangesWarning();
     App.createNullableFields();
     App.createImageFields();
     App.createFileUploadFields();
     App.createFieldsWithErrors();
     App.preventMultipleFormSubmission();
-});
 
-// TODO: migrate this when upgrading to Bootstrap 5 and a different Select2 library
-window.addEventListener('load', () => {
-    $('[data-toggle="popover"]').popover();
-    $('[data-toggle="tooltip"]').tooltip();
-
-    createAutoCompleteFields();
-    document.addEventListener('ea.collection.item-added', createAutoCompleteFields);
+    document.addEventListener('ea.collection.item-added', () => App.createAutoCompleteFields());
 });
 
 const App = (() => {
+    const createMainMenu = () => {
+        // inspired by https://codepen.io/phileflanagan/pen/mwpQpY
+        const menuItemsWithSubmenus = document.querySelectorAll('#main-menu .menu-item.has-submenu');
+        menuItemsWithSubmenus.forEach((menuItem) => {
+            const menuItemSubmenu = menuItem.querySelector('.submenu');
+
+            // needed because the menu accordion is based on the max-height property.
+            // visible elements must be initialized with a explicit max-height; otherwise
+            // when you click on them the first time, the animation is not smooth
+            if (menuItem.classList.contains('expanded')) {
+                menuItemSubmenu.style.maxHeight = menuItemSubmenu.scrollHeight + 'px';
+            }
+
+            menuItem.querySelector('.submenu-toggle').addEventListener('click', (event) =>  {
+                event.preventDefault();
+
+                // hide other submenus
+                menuItemsWithSubmenus.forEach((otherMenuItem) => {
+                    if (menuItem === otherMenuItem) {
+                        return;
+                    }
+
+                    const otherMenuItemSubmenu = otherMenuItem.querySelector('.submenu');
+                    if (otherMenuItem.classList.contains('expanded')) {
+                        otherMenuItemSubmenu.style.maxHeight = '0px';
+                        otherMenuItem.classList.remove('expanded');
+                    }
+                });
+
+                // toggle the state of this submenu
+                if (menuItem.classList.contains('expanded')) {
+                    menuItemSubmenu.style.maxHeight = '0px';
+                    menuItem.classList.remove('expanded');
+                } else {
+                    menuItemSubmenu.style.maxHeight = menuItemSubmenu.scrollHeight + 'px';
+                    menuItem.classList.add('expanded');
+                }
+            });
+        });
+    };
+
     const createLayoutResizeControls = () => {
         const sidebarResizerHandler = document.getElementById('sidebar-resizer-handler');
         if (null !== sidebarResizerHandler) {
@@ -114,7 +148,7 @@ const App = (() => {
             return;
         }
 
-        const filterModal = document.querySelector(filterButton.getAttribute('data-modal'));
+        const filterModal = document.querySelector(filterButton.getAttribute('data-bs-target'));
 
         // this is needed to avoid errors when connection is slow
         filterButton.setAttribute('href', filterButton.getAttribute('data-href'));
@@ -123,17 +157,17 @@ const App = (() => {
 
         filterButton.addEventListener('click', (event) => {
             const filterModalBody = filterModal.querySelector('.modal-body');
-
-            $(filterModal).modal({ backdrop: true, keyboard: true });
             filterModalBody.innerHTML = '<div class="fa-3x px-3 py-3 text-muted text-center"><i class="fas fa-circle-notch fa-spin"></i></div>';
 
             fetch(filterButton.getAttribute('href'))
                 .then((response) => { return response.text(); })
-                .then((text) => { setInnerHTMLAndRunScripts(filterModalBody, text); })
+                .then((text) => {
+                    setInnerHTMLAndRunScripts(filterModalBody, text);
+                    App.createAutoCompleteFields();
+                })
                 .catch((error) => { console.error(error); });
 
             event.preventDefault();
-            event.stopPropagation();
         });
 
         const removeFilter = (filterField) => {
@@ -167,7 +201,7 @@ const App = (() => {
             toggleField.closest('.custom-switch').classList.add('disabled');
         };
 
-        document.querySelectorAll('td.field-boolean .custom-control.custom-switch input[type="checkbox"]').forEach((toggleField) => {
+        document.querySelectorAll('td.field-boolean .form-switch input[type="checkbox"]').forEach((toggleField) => {
             toggleField.addEventListener('change', () => {
                 const newValue = toggleField.checked;
                 const oldValue = !newValue;
@@ -223,38 +257,42 @@ const App = (() => {
                     selectAllCheckbox.checked = false;
                 }
 
-                if (0 === selectedRowCheckboxes.length) {
-                    content.querySelector('.global-actions').style.display = 'block';
-                    content.querySelector('.batch-actions').style.display = 'none';
-                    content.querySelector('table').classList.remove('table-batch');
-                } else {
-                    content.querySelector('.global-actions').style.display = 'none';
-                    content.querySelector('.batch-actions').style.display = 'block';
-                    content.querySelector('table').classList.add('table-batch');
-                }
+                const rowsAreSelected = 0 !== selectedRowCheckboxes.length;
+                const contentTitle = document.querySelector('.content-header-title > .title');
+                const filters = content.querySelector('.datagrid-filters');
+                const globalActions = content.querySelector('.global-actions');
+                const batchActions = content.querySelector('.batch-actions');
 
-                const titleContent = document.querySelector('.content-header-title > .title').innerHTML;
-                content.querySelector('.content-header-title > .title').innerHTML = 0 === selectedRowCheckboxes.length ? titleContent : '';
+                if (null !== contentTitle) {
+                    contentTitle.style.visibility = rowsAreSelected ? 'hidden' : 'visible';
+                }
+                if (null !== filters) {
+                    filters.style.display = rowsAreSelected ? 'none' : 'block';
+                }
+                if (null !== globalActions) {
+                    globalActions.style.display = rowsAreSelected ? 'none' : 'block';
+                }
+                if (null !== batchActions) {
+                    batchActions.style.display = rowsAreSelected ? 'block' : 'none';
+                }
             });
         });
 
         const modalTitle = document.querySelector('#batch-action-confirmation-title');
         const titleContentWithPlaceholders = modalTitle.textContent;
 
-        document.querySelector('[data-action-batch]').addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+        document.querySelectorAll('[data-action-batch]').forEach((dataActionBatch) => {
+            dataActionBatch.addEventListener('click', (event) => {
+                event.preventDefault();
 
-            const actionElement = event.target;
-            const actionName = actionElement.textContent.trim() || actionElement.getAttribute('title');
-            const selectedItems = document.querySelectorAll('input[type="checkbox"].form-batch-checkbox:checked');
-            modalTitle.textContent = titleContentWithPlaceholders
-                .replace('%action_name%', actionName)
-                .replace('%num_items%', selectedItems.length.toString());
+                const actionElement = event.target.tagName.toUpperCase() === 'A' ? event.target : event.target.parentNode;
+                const actionName = actionElement.textContent.trim() || actionElement.getAttribute('title');
+                const selectedItems = document.querySelectorAll('input[type="checkbox"].form-batch-checkbox:checked');
+                modalTitle.textContent = titleContentWithPlaceholders
+                    .replace('%action_name%', actionName)
+                    .replace('%num_items%', selectedItems.length.toString());
 
-            $('#modal-batch-action').modal({ backdrop : true, keyboard : true })
-                .off('click', '#modal-batch-action-button')
-                .on('click', '#modal-batch-action-button', function () {
+                document.querySelector('#modal-batch-action-button').addEventListener('click', () => {
                     // prevent double submission of the batch action form
                     actionElement.setAttribute('disabled', 'disabled');
 
@@ -269,7 +307,9 @@ const App = (() => {
                     });
 
                     const batchForm = document.createElement('form');
-                    for (let fieldName in batchFormFields){
+                    batchForm.setAttribute('method', 'POST');
+                    batchForm.setAttribute('action', actionElement.getAttribute('data-action-url'));
+                    for (let fieldName in batchFormFields) {
                         const formField = document.createElement('input');
                         formField.setAttribute('type', 'hidden');
                         formField.setAttribute('name', fieldName);
@@ -280,25 +320,43 @@ const App = (() => {
                     document.body.appendChild(batchForm);
                     batchForm.submit();
                 });
+            });
+        });
+    };
+
+    const createAutoCompleteFields = () => {
+        const autocomplete = new Autocomplete();
+        document.querySelectorAll('[data-ea-widget="ea-autocomplete"]').forEach((autocompleteElement) => {
+            autocomplete.create(autocompleteElement);
         });
     };
 
     const createModalWindowsForDeleteActions = () => {
-        document.querySelectorAll('.action-delete').forEach((action) => {
-            action.addEventListener('click', (event) => {
+        document.querySelectorAll('.action-delete').forEach((actionElement) => {
+            actionElement.addEventListener('click', (event) => {
                 event.preventDefault();
-                const deleteFormAction = action.getAttribute('formaction');
 
-                $('#modal-delete').modal({ backdrop: true, keyboard: true })
-                    .off('click', '#modal-delete-button')
-                    .on('click', '#modal-delete-button', () => {
-                        const deleteForm = document.querySelector('#delete-form');
-                        deleteForm.setAttribute('action', deleteFormAction);
-                        deleteForm.submit();
-                    });
+                document.querySelector('#modal-delete-button').addEventListener('click', () => {
+                    const deleteFormAction = actionElement.getAttribute('formaction');
+                    const deleteForm = document.querySelector('#delete-form');
+                    deleteForm.setAttribute('action', deleteFormAction);
+                    deleteForm.submit();
+                });
             });
         });
     }
+
+    const createPopovers = () => {
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach((popoverElement) => {
+            new bootstrap.Popover(popoverElement);
+        });
+    };
+
+    const createTooltips = () => {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipElement) => {
+            new bootstrap.Tooltip(tooltipElement);
+        });
+    };
 
     const createUnsavedFormChangesWarning = () => {
         ['.ea-new-form', '.ea-edit-form'].forEach((formSelector) => {
@@ -336,11 +394,10 @@ const App = (() => {
 
     const createImageFields = () => {
         document.querySelectorAll('.ea-lightbox-thumbnail').forEach((image) => {
-            image.addEventListener('click', () => {
-                const lightboxContent = document.querySelector(image.getAttribute('data-lightbox-content-selector')).innerHTML;
+            image.addEventListener('click', (event) => {
+                event.preventDefault();
+                const lightboxContent = document.querySelector(image.getAttribute('data-ea-lightbox-content-selector')).innerHTML;
                 const lightbox = basicLightbox.create(lightboxContent);
-                console.log(lightboxContent, lightbox);
-
                 lightbox.show();
             });
         });
@@ -354,7 +411,7 @@ const App = (() => {
             return Math.trunc(bytes / (1024 ** factor)) + unit[factor];
         };
 
-        document.querySelectorAll('.ea-fileupload input[type="file"].custom-file-input').forEach((fileUploadElement) => {
+        document.querySelectorAll('.ea-fileupload input[type="file"]').forEach((fileUploadElement) => {
             fileUploadElement.addEventListener('change', () => {
                 if (0 === fileUploadElement.files.length) {
                     return;
@@ -377,9 +434,14 @@ const App = (() => {
                 const fileUploadFileSizeLabel = fileUploadContainer.querySelector('.input-group-text');
                 const fileUploadDeleteButton = fileUploadContainer.querySelector('.ea-fileupload-delete-btn');
 
-                fileUploadCustomInput.value = filename;
-                fileUploadFileSizeLabel.innerHTML = humanizeFileSize(bytes);
-                fileUploadFileSizeLabel.style.display = 'inherit';
+                fileUploadFileSizeLabel.childNodes.forEach((fileUploadFileSizeLabelChild) => {
+                    if (fileUploadFileSizeLabelChild.nodeType === Node.TEXT_NODE) {
+                        fileUploadFileSizeLabel.removeChild(fileUploadFileSizeLabelChild);
+                    }
+                });
+
+                fileUploadCustomInput.innerHTML = filename;
+                fileUploadFileSizeLabel.prepend(humanizeFileSize(bytes));
                 fileUploadDeleteButton.style.display = 'block';
             });
         });
@@ -391,12 +453,21 @@ const App = (() => {
                 const fileUploadCustomInput = fileUploadContainer.querySelector('.custom-file-label');
                 const fileUploadFileSizeLabel = fileUploadContainer.querySelector('.input-group-text');
                 const fileUploadListOfFiles = fileUploadContainer.querySelector('.fileupload-list');
+                const fileUploadDeleteCheckbox = fileUploadContainer.querySelector('input[type=checkbox].form-check-input');
 
+                if (fileUploadDeleteCheckbox) {
+                    fileUploadDeleteCheckbox.checked = true;
+                    fileUploadDeleteCheckbox.click();
+                }
                 fileUploadInput.value = '';
                 fileUploadCustomInput.innerHTML = '';
-                fileUploadFileSizeLabel.innerHTML = '';
-                fileUploadFileSizeLabel.style.display = 'none';
                 fileUploadDeleteButton.style.display = 'none';
+
+                fileUploadFileSizeLabel.childNodes.forEach((fileUploadFileSizeLabelChild) => {
+                    if (fileUploadFileSizeLabelChild.nodeType === Node.TEXT_NODE) {
+                        fileUploadFileSizeLabel.removeChild(fileUploadFileSizeLabelChild);
+                    }
+                });
 
                 if (null !== fileUploadListOfFiles) {
                     fileUploadListOfFiles.style.display = 'none';
@@ -407,22 +478,71 @@ const App = (() => {
 
     const createFieldsWithErrors = () => {
         const handleFieldsWithErrors = (form, pageName) => {
+            // Intercept errors before submit to avoid browser error "An invalid form control with name='...' is not focusable."
+            //
             // Adding visual feedback for invalid fields: any ".form-group" with invalid fields
             // receives "has-error" class. The class is removed on click on the ".form-group"
             // itself to support custom/complex fields.
-            form.addEventListener('submit', (submitEvent) => {
-                form.querySelectorAll('input,select,textarea').forEach( (input) => {
-                    if (!input.validity.valid) {
-                        const formGroup = input.closest('div.form-group');
-                        formGroup.classList.add('has-error');
+            //
+            // Adding visual error counter feedback for invalid fields inside form tabs (visible or not)
+            document.querySelector('.ea-edit, .ea-new').querySelectorAll('[type="submit"]').forEach((button) => {
+                button.addEventListener('click', function onSubmitButtonsClick(clickEvent) {
 
-                        formGroup.addEventListener('click', function onFormGroupClick() {
-                            formGroup.classList.remove('has-error');
-                            formGroup.removeEventListener('click', onFormGroupClick);
-                        });
+                    let formHasErrors = false;
+
+                    // Remove all error counter badges
+                    document.querySelectorAll('.form-tabs .nav-item .badge-danger.badge').forEach( (badge) => {
+                        badge.parentElement.removeChild(badge);
+                    });
+
+                    form.querySelectorAll('input,select,textarea').forEach( (input) => {
+                        if (!input.validity.valid) {
+                            formHasErrors = true;
+
+                            // Visual feedback for tabz
+                            // Adding a badge with a error count next to the tab label
+                            const formTab = input.closest('div.tab-pane');
+                            if (formTab) {
+                                const navLinkTab = document.querySelector('#' + formTab.id + '-tab');
+                                const badge = navLinkTab.querySelector('.badge');
+                                if (badge) {
+                                    // Increment number of error
+                                    badge.textContent = parseInt(badge.textContent) + 1;
+                                } else {
+                                    // Create a new badge
+                                    let newErrorBadge = document.createElement('span');
+                                    newErrorBadge.classList.add('badge', 'badge-danger');
+                                    newErrorBadge.title = 'form.tab.error_badge_title';
+                                    newErrorBadge.textContent = 1;
+                                    navLinkTab.appendChild(newErrorBadge);
+                                }
+                                navLinkTab.addEventListener('click', function onFormNavLinkTabClick() {
+                                    navLinkTab.querySelectorAll('.badge-danger.badge').forEach( (badge) => {
+                                        badge.parentElement.removeChild(badge);
+                                    });
+                                    navLinkTab.removeEventListener('click', onFormNavLinkTabClick);
+                                });
+                            }
+
+                            // Visual feedback for group
+                            const formGroup = input.closest('div.form-group');
+                            formGroup.classList.add('has-error');
+
+                            formGroup.addEventListener('click', function onFormGroupClick() {
+                                formGroup.classList.remove('has-error');
+                                formGroup.removeEventListener('click', onFormGroupClick);
+                            });
+                        }
+                    });
+
+                    if (formHasErrors) {
+                        clickEvent.preventDefault();
+                        clickEvent.stopPropagation();
                     }
                 });
+            });
 
+            form.addEventListener('submit', (submitEvent) => {
                 const eaEvent = new CustomEvent('ea.form.submit', {
                     cancelable: true,
                     detail: { page: pageName, form: form }
@@ -453,7 +573,7 @@ const App = (() => {
             form.addEventListener('submit', () => {
                 // this timeout is needed to include the disabled button into the submitted form
                 setTimeout(() => {
-                    const submitButtons = form.querySelectorAll('[type="submit"]');
+                    const submitButtons = document.querySelector('.ea-edit, .ea-new').querySelectorAll('[type="submit"]');
                     submitButtons.forEach((button) => {
                         button.setAttribute('disabled', 'disabled');
                     });
@@ -476,13 +596,17 @@ const App = (() => {
     };
 
     return {
+        createMainMenu: createMainMenu,
         createLayoutResizeControls: createLayoutResizeControls,
         createNavigationToggler: createNavigationToggler,
         createSearchHighlight: createSearchHighlight,
         createFilters: createFilters,
         createToggleFields: createToggleFields,
         createBatchActions: createBatchActions,
+        createAutoCompleteFields: createAutoCompleteFields,
         createModalWindowsForDeleteActions: createModalWindowsForDeleteActions,
+        createPopovers: createPopovers,
+        createTooltips: createTooltips,
         createUnsavedFormChangesWarning: createUnsavedFormChangesWarning,
         createNullableFields: createNullableFields,
         createImageFields: createImageFields,
@@ -491,55 +615,3 @@ const App = (() => {
         preventMultipleFormSubmission: preventMultipleFormSubmission,
     };
 })();
-
-// TODO: leave this until we migrate away from Select2
-function createAutoCompleteFields() {
-    var autocompleteFields = $('[data-widget="select2"]:not(.select2-hidden-accessible)');
-
-    autocompleteFields.each(function () {
-        var $this = $(this);
-        var autocompleteUrl = $this.data('ea-autocomplete-endpoint-url');
-        var allowClear = $this.data('allow-clear');
-        var escapeMarkup = $this.data('ea-escape-markup');
-
-        if (undefined === autocompleteUrl) {
-            var options = {
-                theme: 'bootstrap',
-                placeholder: '',
-                allowClear: true
-            };
-
-            if (false === escapeMarkup) {
-                options.escapeMarkup = function(markup) { return markup; };
-            }
-
-            $this.select2(options);
-        } else {
-            $this.select2({
-                theme: 'bootstrap',
-                ajax: {
-                    url: autocompleteUrl,
-                    dataType: 'json',
-                    delay: 250,
-                    data: function (params) {
-                        return { 'query': params.term, 'page': params.page };
-                    },
-                    // to indicate that infinite scrolling can be used
-                    processResults: function (data, params) {
-                        return {
-                            results: $.map(data.results, function(result) {
-                                return { id: result.entityId, text: result.entityAsString };
-                            }),
-                            pagination: {
-                                more: data.has_next_page
-                            }
-                        };
-                    },
-                    cache: true
-                },
-                allowClear: allowClear,
-                minimumInputLength: 1
-            });
-        }
-    });
-}

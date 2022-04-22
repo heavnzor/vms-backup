@@ -3,8 +3,8 @@
 return [
     'page_title' => [
         'dashboard' => 'Tablou de bord',
-        'detail' => '%entity_label_singular% <small>(#%entity_short_id%)</small>',
-        'edit' => 'Editează %entity_label_singular% <small>(#%entity_short_id%)</small>',
+        'detail' => '%entity_as_string%',
+        'edit' => 'Editează %entity_label_singular%',
         'index' => '%entity_label_plural%',
         'new' => 'Creează %entity_label_singular%',
         'exception' => 'Eroare|Erori',
@@ -116,6 +116,8 @@ return [
         'username' => 'Utilizator',
         'password' => 'Parolă',
         'sign_in' => 'Autentifică-te',
+        'forgot_password' => 'V-ați uitat parola?',
+        'remember_me' => 'Tine-ma minte',
     ],
 
     'exception' => [
@@ -123,5 +125,11 @@ return [
         'entity_remove' => 'Acest item nu poate fi șters deoarece alte iteme depind de acesta.',
         'forbidden_action' => 'Acțiunea solicitată nu poate fi efectuată asupra acestui item.',
         'insufficient_entity_permission' => 'Nu sunteți autorizat să accesați acest item.',
+    ],
+
+    'autocomplete' => [
+        'no-results-found' => 'Nu au fost găsite rezultate',
+        // 'no-more-results' => 'No more results',
+        'loading-more-results' => 'Se încarcă mai multe rezultate…',
     ],
 ];

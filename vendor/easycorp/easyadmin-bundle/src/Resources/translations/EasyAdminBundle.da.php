@@ -3,8 +3,8 @@
 return [
     'page_title' => [
         'dashboard' => 'Dashboard',
-        'detail' => '%entity_label_singular% <small>(#%entity_short_id%)</small>',
-        'edit' => 'Ret %entity_label_singular% <small>(#%entity_short_id%)</small>',
+        'detail' => '%entity_as_string%',
+        'edit' => 'Ret %entity_label_singular%',
         'index' => '%entity_label_plural%',
         'new' => 'Opret %entity_label_singular%',
         'exception' => 'Fejl|Fejl',
@@ -115,6 +115,8 @@ return [
         'username' => 'Username',
         'password' => 'Password',
         'sign_in' => 'Sign in',
+        'forgot_password' => 'Glemt din adgangskode?',
+        'remember_me' => 'Husk mig',
     ],
 
     'exception' => [
@@ -122,5 +124,11 @@ return [
         'entity_remove' => 'Dette element kan ikke slettes, da der er andre elementer der er afhængige af det.',
         'forbidden_action' => 'Denne handling kan ikke udføres på dette element.',
         'insufficient_entity_permission' => 'Du har ikke tilladelse til at tilgå dette element.',
+    ],
+
+    'autocomplete' => [
+        'no-results-found' => 'Ingen resultater fundet',
+        // 'no-more-results' => 'No more results',
+        'loading-more-results' => 'Indlæser flere resultater…',
     ],
 ];

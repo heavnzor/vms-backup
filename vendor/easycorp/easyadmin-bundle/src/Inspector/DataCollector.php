@@ -24,17 +24,11 @@ class DataCollector extends BaseDataCollector
         $this->adminContextProvider = $adminContextProvider;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function reset()
     {
         $this->data = [];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function collect(Request $request, Response $response, $exception = null)
     {
         if (null === $context = $this->adminContextProvider->getContext()) {
@@ -70,7 +64,7 @@ class DataCollector extends BaseDataCollector
     }
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getName()
     {

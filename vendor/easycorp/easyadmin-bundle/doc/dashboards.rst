@@ -245,6 +245,10 @@ explained later)::
                 // triggers an error. If this causes any issue in your backend, call this method
                 // to disable this feature and remove all URL signature checks
                 ->disableUrlSignatures()
+
+                // by default, all backend URLs are generated as absolute URLs. If you
+                // need to generate relative URLs instead, call this method
+                ->generateRelativeUrls()
             ;
         }
     }
@@ -307,6 +311,14 @@ All menu items define the following methods to configure some options:
 * ``setPermission(string $permission)``, sets the `Symfony security permission`_
   that the user must have to see this menu item. Read the :ref:`menu security reference <security-menu>`
   for more details.
+* ``setBadge($content, string $style='secondary')``, renders the given content
+  as a badge of the menu item. It's commonly used to show notification counts.
+  The first argument can be any value that can be converted to a string in a Twig
+  template (numbers, strings, *stringable* objects, etc.) The second argument is
+  one of the predefined Bootstrap styles (``primary``, ``secondary``, ``success``,
+  ``danger``, ``warning``, ``info``, ``light``, ``dark``) or an arbitrary string
+  content which is passed as the value of the ``style`` attribute of the HTML
+  element associated to the badge.
 
 The rest of options depend on each menu item type, as explained in the next sections.
 
@@ -407,7 +419,7 @@ It links to a relative or absolute URL::
     }
 
 To avoid leaking internal backend information to external websites, EasyAdmin
-adds the ``rel="noreferrer"`` attribute to all URL menu items, except if the
+adds the ``rel="noopener"`` attribute to all URL menu items, except if the
 menu item defines its own ``rel`` option.
 
 Section Menu Item
@@ -763,6 +775,27 @@ applications can rely on its default values:
 
                 // the 'name' HTML attribute of the <input> used for the password field (default: '_password')
                 'password_parameter' => 'my_custom_password_field',
+
+                // whether to enable or not the "forgot password?" link (default: false)
+                'forgot_password_enabled' => true,
+
+                // the path (i.e. a relative or absolute URL) to visit when clicking the "forgot password?" link (default: '#')
+                'forgot_password_path' => $this->generateUrl('...', ['...' => '...']),
+
+                // the label displayed for the "forgot password?" link (the |trans filter is applied to it)
+                'forgot_password_label' => 'Forgot your password?',
+
+                // whether to enable or not the "remember me" checkbox (default: false)
+                'remember_me_enabled' => true,
+
+                // remember me name form field (default: '_remember_me')
+                'remember_me_parameter' => 'custom_remember_me_param',
+
+                // whether to check by default the "remember me" checkbox (default: false)
+                'remember_me_checked' => true,
+
+                // the label displayed for the remember me checkbox (the |trans filter is applied to it)
+                'remember_me_label' => 'Remember me',
             ]);
         }
     }
@@ -777,12 +810,42 @@ Twig Template Path: ``@EasyAdmin/page/content.html.twig``
 It displays a simple page similar to the index/detail/form pages, with the main
 header, the sidebar menu and the central content section. The only difference is
 that the content section is completely empty, so it's useful to display your own
-text contents, custom forms, etc.
+contents and custom forms, to :ref:`integrate Symfony actions inside EasyAdmin <actions-integrating-symfony>`,
+etc. Example:
+
+.. code-block:: twig
+
+    {# templates/admin/my-custom-page.html.twig #}
+    {% extends '@EasyAdmin/page/content.html.twig' %}
+
+    {% block content_title %}The Title of the Page{% endblock %}
+    {% block page_actions %}
+        <a class="btn btn-primary" href="...">Some Action</a>
+    {% endblock %}
+
+    {% block main %}
+        <table class="datagrid">
+            <thead>
+                <tr>
+                    <td>Some Column</td>
+                    <td>Another Column</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in my_own_data %}
+                    <tr>
+                        <td>{{ data.someColumn }}</td>
+                        <td>{{ data.anotherColumn }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
 
 .. _`Symfony controllers`: https://symfony.com/doc/current/controller.html
 .. _`Symfony route annotations`: https://symfony.com/doc/current/routing.html#creating-routes-as-annotations
 .. _`context object`: https://wiki.c2.com/?ContextObject
-.. _`FontAwesome`: https://fontawesome.com/
+.. _`FontAwesome`: https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
 .. _`allowed values for the "rel" attribute`: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
 .. _`Symfony security permission`: https://symfony.com/doc/current/security.html#roles
 .. _`logout feature`: https://symfony.com/doc/current/security.html#logging-out

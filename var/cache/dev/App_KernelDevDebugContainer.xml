@@ -233,6 +233,7 @@
     <parameter key="doctrine.orm.metadata.yml.class">Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver</parameter>
     <parameter key="doctrine.orm.metadata.php.class">Doctrine\ORM\Mapping\Driver\PHPDriver</parameter>
     <parameter key="doctrine.orm.metadata.staticphp.class">Doctrine\ORM\Mapping\Driver\StaticPHPDriver</parameter>
+    <parameter key="doctrine.orm.metadata.attribute.class">Doctrine\ORM\Mapping\Driver\AttributeDriver</parameter>
     <parameter key="doctrine.orm.proxy_cache_warmer.class">Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer</parameter>
     <parameter key="form.type_guesser.doctrine.class">Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser</parameter>
     <parameter key="doctrine.orm.validator.unique.class">Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator</parameter>
@@ -271,6 +272,7 @@
     <parameter key="easyadmin.config" type="collection"/>
     <parameter key="cmen_google_charts.version">current</parameter>
     <parameter key="cmen_google_charts.language"></parameter>
+    <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -855,7 +857,6 @@
         <argument>cache.annotations</argument>
         <argument>cache.property_info</argument>
         <argument>cache.messenger.restart_workers_signal</argument>
-        <argument>cache.doctrine.orm.default.metadata</argument>
         <argument>cache.doctrine.orm.default.result</argument>
         <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
@@ -1341,7 +1342,6 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="cache.messenger.restart_workers_signal" type="service" id="cache.messenger.restart_workers_signal" on-invalid="ignore_uninitialized"/>
-        <argument key="cache.doctrine.orm.default.metadata" type="service" id="cache.doctrine.orm.default.metadata" on-invalid="ignore_uninitialized"/>
         <argument key="cache.doctrine.orm.default.result" type="service" id="cache.doctrine.orm.default.result" on-invalid="ignore_uninitialized"/>
         <argument key="cache.doctrine.orm.default.query" type="service" id="cache.doctrine.orm.default.query" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
@@ -2002,7 +2002,9 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.cs.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.cs.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.cs.php</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.cs.xlf</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
@@ -2063,7 +2065,9 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.fi.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.fi.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.fi.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fi.php</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.fi.xlf</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
@@ -2094,7 +2098,9 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.hu.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.hu.php</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.hu.xlf</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
@@ -2105,6 +2111,7 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.id.php</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
@@ -2118,11 +2125,14 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ja.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.lb.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.lb.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.lb.php</argument>
           </argument>
           <argument key="lt" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.lt.xlf</argument>
@@ -2151,6 +2161,7 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle+intl-icu.nl.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.nl.php</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle+intl-icu.nl.xlf</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
@@ -2189,6 +2200,7 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ro.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.ro.php</argument>
           </argument>
           <argument key="ru" type="collection">
@@ -2203,6 +2215,8 @@
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/form/Resources/translations/validators.sk.xlf</argument>
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/security-core/Resources/translations/security.sk.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.sk.xlf</argument>
+            <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/vendor/symfony/validator/Resources/translations/validators.sl.xlf</argument>
@@ -2704,10 +2718,6 @@
       <call method="addInstance">
         <argument>cache.messenger.restart_workers_signal</argument>
         <argument type="service" id="cache.messenger.restart_workers_signal"/>
-      </call>
-      <call method="addInstance">
-        <argument>cache.doctrine.orm.default.metadata</argument>
-        <argument type="service" id="cache.doctrine.orm.default.metadata"/>
       </call>
       <call method="addInstance">
         <argument>cache.doctrine.orm.default.result</argument>
@@ -3359,6 +3369,14 @@
           <argument>onKernelController</argument>
         </argument>
         <argument>128</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.finish_request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener"/>
+          <argument>resetAssets</argument>
+        </argument>
+        <argument>0</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
@@ -4142,7 +4160,7 @@
       <argument type="service" id="twig"/>
       <argument type="service" id="error_handler.error_renderer.html"/>
       <argument type="service">
-        <service class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
+        <service class="bool">
           <argument type="service" id="request_stack"/>
           <argument>true</argument>
           <factory class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" method="isDebug"/>
@@ -4442,7 +4460,9 @@
     </service>
     <service id="maker.doctrine_helper" class="Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper">
       <argument>App\Entity</argument>
+      <argument type="service" id="maker.php_compat_util"/>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
+      <argument>true</argument>
       <argument type="collection">
         <argument key="default" type="collection">
           <argument type="collection">
@@ -4461,6 +4481,7 @@
       <argument type="service" id="maker.file_manager"/>
       <argument>App</argument>
       <argument type="service" id="maker.php_compat_util"/>
+      <argument type="service" id="maker.template_component_generator"/>
     </service>
     <service id="maker.entity_class_generator" class="Symfony\Bundle\MakerBundle\Doctrine\EntityClassGenerator">
       <argument type="service" id="maker.generator"/>
@@ -4474,8 +4495,14 @@
     <service id="maker.renderer.form_type_renderer" class="Symfony\Bundle\MakerBundle\Renderer\FormTypeRenderer">
       <argument type="service" id="maker.generator"/>
     </service>
+    <service id="maker.security_controller_builder" class="Symfony\Bundle\MakerBundle\Security\SecurityControllerBuilder">
+      <argument type="service" id="maker.php_compat_util"/>
+    </service>
     <service id="maker.php_compat_util" class="Symfony\Bundle\MakerBundle\Util\PhpCompatUtil">
       <argument type="service" id="maker.file_manager"/>
+    </service>
+    <service id="maker.template_component_generator" class="Symfony\Bundle\MakerBundle\Util\TemplateComponentGenerator">
+      <argument type="service" id="maker.php_compat_util"/>
     </service>
     <service id="maker.maker.make_authenticator" class="Symfony\Bundle\MakerBundle\Maker\MakeAuthenticator">
       <tag name="maker.command"/>
@@ -4483,6 +4510,7 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.doctrine_helper"/>
+      <argument type="service" id="maker.security_controller_builder"/>
     </service>
     <service id="maker.maker.make_command" class="Symfony\Bundle\MakerBundle\Maker\MakeCommand">
       <tag name="maker.command"/>
@@ -4572,6 +4600,7 @@
       <argument type="service" id="maker.user_class_builder"/>
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.entity_class_generator"/>
+      <argument type="service" id="maker.doctrine_helper"/>
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
@@ -4587,7 +4616,7 @@
     <service id="doctrine.dbal.logger.backtrace" class="Doctrine\Bundle\DoctrineBundle\Dbal\Logging\BacktraceLogger" abstract="true"/>
     <service id="doctrine.dbal.logger" class="Symfony\Bridge\Doctrine\Logger\DbalLogger">
       <tag name="monolog.logger" channel="doctrine"/>
-      <argument type="service" id="monolog.logger.doctrine" on-invalid="null"/>
+      <argument>null</argument>
       <argument type="service" id="debug.stopwatch" on-invalid="null"/>
     </service>
     <service id="data_collector.doctrine" class="Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector">
@@ -4656,16 +4685,18 @@
         <argument>dbal:run-sql</argument>
       </call>
     </service>
-    <service id="doctrine.database_import_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\ImportDoctrineCommand">
-      <tag name="console.command" command="doctrine:database:import"/>
-      <tag name="container.no_preload"/>
-      <call method="setName">
-        <argument>doctrine:database:import</argument>
-      </call>
-    </service>
     <service id="doctrine.dbal.default_connection.configuration" class="Doctrine\DBAL\Configuration">
       <call method="setSQLLogger">
         <argument type="service" id="doctrine.dbal.logger.chain.default"/>
+      </call>
+      <call method="setMiddlewares">
+        <argument type="collection">
+          <argument type="service">
+            <service class="Doctrine\DBAL\Logging\Middleware">
+              <argument type="service" id="monolog.logger.doctrine"/>
+            </service>
+          </argument>
+        </argument>
       </call>
     </service>
     <service id="doctrine.dbal.logger.profiling.default" class="Doctrine\DBAL\Logging\DebugStack"/>
@@ -4690,7 +4721,6 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" public="true">
       <argument type="collection">
-        <argument key="connection_override_options" type="collection"/>
         <argument key="url">%env(resolve:DATABASE_URL)%</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">localhost</argument>
@@ -4717,6 +4747,11 @@
         </service>
       </argument>
     </service>
+    <service id="doctrine.dbal.logging_middleware" class="Doctrine\DBAL\Logging\Middleware" abstract="true">
+      <tag name="monolog.logger" channel="doctrine"/>
+      <tag name="doctrine.middleware" connection="default"/>
+      <argument type="service" id="monolog.logger.doctrine"/>
+    </service>
     <service id="messenger.middleware.doctrine_transaction" class="Symfony\Bridge\Doctrine\Messenger\DoctrineTransactionMiddleware" abstract="true">
       <argument type="service" id="doctrine"/>
     </service>
@@ -4725,6 +4760,11 @@
     </service>
     <service id="messenger.middleware.doctrine_close_connection" class="Symfony\Bridge\Doctrine\Messenger\DoctrineCloseConnectionMiddleware" abstract="true">
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="messenger.middleware.doctrine_open_transaction_logger" class="Symfony\Bridge\Doctrine\Messenger\DoctrineOpenTransactionLoggerMiddleware" abstract="true">
+      <argument type="service" id="doctrine"/>
+      <argument>null</argument>
+      <argument type="service" id="monolog.logger"/>
     </service>
     <service id="messenger.transport.doctrine.factory" class="Symfony\Component\Messenger\Bridge\Doctrine\Transport\DoctrineTransportFactory">
       <tag name="messenger.transport_factory"/>
@@ -4900,6 +4940,12 @@
         <argument>doctrine:mapping:import</argument>
       </call>
     </service>
+    <service id="Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController" class="Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController" public="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="profiler"/>
+    </service>
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration">
       <tag name="doctrine.orm.configuration"/>
       <call method="setEntityNamespaces">
@@ -4907,14 +4953,14 @@
           <argument key="App">App\Entity</argument>
         </argument>
       </call>
-      <call method="setMetadataCacheImpl">
-        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata"/>
+      <call method="setMetadataCache">
+        <argument type="service" id="cache.doctrine.orm.default.metadata"/>
       </call>
-      <call method="setQueryCacheImpl">
-        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.query"/>
+      <call method="setQueryCache">
+        <argument type="service" id="cache.doctrine.orm.default.query"/>
       </call>
-      <call method="setResultCacheImpl">
-        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result"/>
+      <call method="setResultCache">
+        <argument type="service" id="cache.doctrine.orm.default.result"/>
       </call>
       <call method="setMetadataDriverImpl">
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
@@ -4953,26 +4999,14 @@
         <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/src/Entity</argument>
       </argument>
     </service>
-    <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
-      <tag name="cache.pool"/>
-      <argument type="service" id="cache.doctrine.orm.default.metadata.recorder_inner"/>
-    </service>
-    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\DoctrineProvider">
-      <argument type="service" id="cache.doctrine.orm.default.metadata"/>
-    </service>
+    <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.result.recorder_inner"/>
     </service>
-    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result" class="Symfony\Component\Cache\DoctrineProvider">
-      <argument type="service" id="cache.doctrine.orm.default.result"/>
-    </service>
     <service id="cache.doctrine.orm.default.query" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.query.recorder_inner"/>
-    </service>
-    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.query" class="Symfony\Component\Cache\DoctrineProvider">
-      <argument type="service" id="cache.doctrine.orm.default.query"/>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver">
       <argument type="service" id="service_container"/>
@@ -5034,6 +5068,9 @@
         <argument>false</argument>
       </call>
       <call method="setCheckDatabasePlatform">
+        <argument>true</argument>
+      </call>
+      <call method="setTransactional">
         <argument>true</argument>
       </call>
       <call method="setMetadataStorageConfiguration">
@@ -5974,6 +6011,7 @@
       <argument type="service" id="doctrine"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\EntityFactory"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory"/>
+      <argument type="service" id="debug.event_dispatcher"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\EntityFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\EntityFactory">
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\FieldFactory"/>
@@ -5995,7 +6033,6 @@
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
-      <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\FieldFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\FieldFactory">
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider"/>
@@ -6115,6 +6152,9 @@
       <tag name="ea.field_configurator"/>
       <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup</argument>
     </service>
+    <service id="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator">
+      <tag name="ea.field_configurator"/>
+    </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator">
       <tag name="ea.field_configurator"/>
     </service>
@@ -6204,7 +6244,6 @@
         <argument key="_default">/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/public/build/entrypoints.json</argument>
       </argument>
       <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/var/cache/dev/webpack_encore.cache.php</argument>
-      <argument type="service" id="cache.webpack_encore"/>
     </service>
     <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <argument>/Users/antonu-mariamela/Documents/Documents/Code/exercices/coding2gether/studi/vms-backup/var/cache/dev/webpack_encore.cache.php</argument>
@@ -6218,6 +6257,14 @@
     </service>
     <service id="webpack_encore.exception_listener" class="Symfony\WebpackEncoreBundle\EventListener\ExceptionListener">
       <tag name="kernel.event_listener" event="kernel.exception"/>
+      <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
+      <argument type="collection">
+        <argument>_default</argument>
+      </argument>
+    </service>
+    <service id="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener" class="Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
       <argument type="service" id="webpack_encore.entrypoint_lookup_collection"/>
       <argument type="collection">
         <argument>_default</argument>
@@ -6391,6 +6438,8 @@
     <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IdConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IdConfigurator" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\ImageConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\ImageConfigurator" abstract="true"/>
     <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\ImageConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\ImageConfigurator" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator" abstract="true"/>
+    <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\IntegerConfigurator" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator" abstract="true"/>
     <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LanguageConfigurator" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LocaleConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\LocaleConfigurator" abstract="true"/>
@@ -7275,6 +7324,9 @@
       <argument type="service" id=".doctrine.orm.default_metadata_driver.inner"/>
       <argument type="service" id=".service_locator.Hllcktv"/>
     </service>
+    <service id="doctrine.dbal.logging_middleware.default" class="Doctrine\DBAL\Logging\Middleware">
+      <argument type="service" id="monolog.logger.doctrine"/>
+    </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -7684,7 +7736,7 @@
     <service id=".errored..service_locator.gABdrqc.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.X3ZhGcz"/>
+      <argument type="service" id=".service_locator.N7DKzjo"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -7726,7 +7778,6 @@
         <argument key="doctrine:database:drop">doctrine.database_drop_command</argument>
         <argument key="doctrine:query:sql">doctrine.query_sql_command</argument>
         <argument key="dbal:run-sql">Doctrine\DBAL\Tools\Console\Command\RunSqlCommand</argument>
-        <argument key="doctrine:database:import">doctrine.database_import_command</argument>
         <argument key="doctrine:cache:clear-metadata">doctrine.cache_clear_metadata_command</argument>
         <argument key="doctrine:cache:clear-query">doctrine.cache_clear_query_cache_command</argument>
         <argument key="doctrine:cache:clear-result">doctrine.cache_clear_result_command</argument>
@@ -7785,7 +7836,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.X3ZhGcz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.N7DKzjo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service_closure" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -7833,7 +7884,6 @@
         <argument key="doctrine.clear_query_region_command" type="service_closure" id="doctrine.clear_query_region_command"/>
         <argument key="doctrine.database_create_command" type="service_closure" id="doctrine.database_create_command"/>
         <argument key="doctrine.database_drop_command" type="service_closure" id="doctrine.database_drop_command"/>
-        <argument key="doctrine.database_import_command" type="service_closure" id="doctrine.database_import_command"/>
         <argument key="doctrine.ensure_production_settings_command" type="service_closure" id="doctrine.ensure_production_settings_command"/>
         <argument key="doctrine.mapping_convert_command" type="service_closure" id="doctrine.mapping_convert_command"/>
         <argument key="doctrine.mapping_import_command" type="service_closure" id="doctrine.mapping_import_command"/>
@@ -7943,7 +7993,6 @@
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
-    <service id="cache.doctrine.orm.default.metadata.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
@@ -8086,9 +8135,9 @@
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager"/>
     <service id="doctrine.orm.metadata.annotation_reader" alias="annotations.cached_reader"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
-    <service id="doctrine.orm.default_metadata_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata"/>
-    <service id="doctrine.orm.default_result_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.result"/>
-    <service id="doctrine.orm.default_query_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.query"/>
+    <service id="doctrine.orm.default_metadata_cache" alias="cache.doctrine.orm.default.metadata"/>
+    <service id="doctrine.orm.default_result_cache" alias="cache.doctrine.orm.default.result"/>
+    <service id="doctrine.orm.default_query_cache" alias="cache.doctrine.orm.default.query"/>
     <service id="Doctrine\ORM\EntityManagerInterface $defaultEntityManager" alias="doctrine.orm.default_entity_manager"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager"/>
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
@@ -8139,9 +8188,9 @@
     <service id=".service_locator.Mo0FXEU" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~y6.45Sl"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
-    <service id=".service_locator.Srphvry" alias=".service_locator.2d6Q4h2"/>
-    <service id=".service_locator.Lr_XbGt" alias=".service_locator.8cuj382"/>
-    <service id=".service_locator.zK8KTAl" alias=".service_locator.M4LTiJD"/>
+    <service id=".service_locator.5HBgZmM" alias=".service_locator.2d6Q4h2"/>
+    <service id=".service_locator.ZzCB1r9" alias=".service_locator.8cuj382"/>
+    <service id=".service_locator.eeHmF9L" alias=".service_locator.M4LTiJD"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

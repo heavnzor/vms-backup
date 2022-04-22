@@ -25,7 +25,7 @@ class DocBlockScanner
     protected $docComment;
 
     /** @var string */
-    protected $shortDescription;
+    protected $shortDescription = '';
 
     /** @var string */
     protected $longDescription = '';
@@ -144,6 +144,7 @@ class DocBlockScanner
     }
 
     /**
+     * @phpcs:disable Generic.Formatting.MultipleStatementAlignment.NotSame
      * @return array
      */
     protected function tokenize()
@@ -160,7 +161,7 @@ class DocBlockScanner
         $currentWord = null;
         $currentLine = null;
 
-        $MACRO_STREAM_ADVANCE_CHAR       = function ($positionsForward = 1) use (
+        $MACRO_STREAM_ADVANCE_CHAR = function ($positionsForward = 1) use (
             &$stream,
             &$streamIndex,
             &$currentChar,
@@ -176,7 +177,7 @@ class DocBlockScanner
             }
             $currentChar = $stream[$streamIndex];
             $matches     = [];
-            $currentLine = preg_match('#(.*?)\r?\n#', $stream, $matches, null, $streamIndex) === 1
+            $currentLine = preg_match('#(.*?)\r?\n#', $stream, $matches, 0, $streamIndex) === 1
                 ? $matches[1]
                 : substr($stream, $streamIndex);
             if ($currentChar === ' ') {

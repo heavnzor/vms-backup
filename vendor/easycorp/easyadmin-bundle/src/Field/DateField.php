@@ -26,6 +26,7 @@ final class DateField implements FieldInterface
             ->setTemplateName('crud/field/date')
             ->setFormType(DateType::class)
             ->addCssClass('field-date')
+            ->setDefaultColumns('col-md-6 col-xxl-5')
             // the proper default values of these options are set on the Crud class
             ->setCustomOption(self::OPTION_DATE_PATTERN, null)
             ->setCustomOption(DateTimeField::OPTION_TIMEZONE, null)
@@ -47,7 +48,7 @@ final class DateField implements FieldInterface
     }
 
     /**
-     * @param string $dateFormatOrPattern A format name ('short', 'medium', 'long', 'full') or a valid ICU Datetime Pattern (see http://userguide.icu-project.org/formatparse/datetime)
+     * @param string $dateFormatOrPattern A format name ('short', 'medium', 'long', 'full') or a valid ICU Datetime Pattern (see https://unicode-org.github.io/icu/userguide/format_parse/datetime/)
      */
     public function setFormat(string $dateFormatOrPattern): self
     {

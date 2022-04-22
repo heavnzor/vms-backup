@@ -26,6 +26,7 @@ final class TimeField implements FieldInterface
             ->setTemplateName('crud/field/time')
             ->setFormType(TimeType::class)
             ->addCssClass('field-time')
+            ->setDefaultColumns('col-md-6 col-xxl-5')
             // the proper default values of these options are set on the Crud class
             ->setCustomOption(self::OPTION_TIME_PATTERN, null)
             ->setCustomOption(DateTimeField::OPTION_TIMEZONE, null)
@@ -47,7 +48,7 @@ final class TimeField implements FieldInterface
     }
 
     /**
-     * @param string $timeFormatOrPattern A format name ('short', 'medium', 'long', 'full') or a valid ICU Datetime Pattern (see http://userguide.icu-project.org/formatparse/datetime)
+     * @param string $timeFormatOrPattern A format name ('short', 'medium', 'long', 'full') or a valid ICU Datetime Pattern (see https://unicode-org.github.io/icu/userguide/format_parse/datetime/)
      */
     public function setFormat(string $timeFormatOrPattern): self
     {
