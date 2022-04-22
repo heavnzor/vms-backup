@@ -33,7 +33,7 @@ class __TwigTemplate_5b65d04c9138fc7fe751e8cce08e4f40ec6352c061f22dccdab62ca3457
     protected function doGetParent(array $context)
     {
         // line 1
-        return "sidebar.html.twig";
+        return "right-sidebar.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_5b65d04c9138fc7fe751e8cce08e4f40ec6352c061f22dccdab62ca3457
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page/stats.html.twig"));
 
-        $this->parent = $this->loadTemplate("sidebar.html.twig", "page/stats.html.twig", 1);
+        $this->parent = $this->loadTemplate("right-sidebar.html.twig", "page/stats.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -66,9 +66,9 @@ class __TwigTemplate_5b65d04c9138fc7fe751e8cce08e4f40ec6352c061f22dccdab62ca3457
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 4
-        echo "  <h2>";
+        echo "  <h1 class=\"h1\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 4, $this->source); })()), "title", [], "any", false, false, false, 4), "html", null, true);
-        echo "</h2>
+        echo "</h1>
   <br>";
         // line 5
         echo twig_get_attribute($this->env, $this->source, (isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 5, $this->source); })()), "content", [], "any", false, false, false, 5);
@@ -138,10 +138,10 @@ class __TwigTemplate_5b65d04c9138fc7fe751e8cce08e4f40ec6352c061f22dccdab62ca3457
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 
 {% block main %}
-  <h2>{{ page.title }}</h2>
+  <h1 class=\"h1\">{{page.title}}</h1>
   <br>{{page.content|raw }}<br>
 <div id=\"div_chart\"></div>
 <script src=\"hightcharts.js\" type=\"text/javascript\"></script>

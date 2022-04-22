@@ -1,16 +1,1 @@
-var chatbox = document.getElementById ('fb-customer-chat');
-chatbox.setAttribute ('page_id', '102753971946564');
-chatbox.setAttribute ('attribution', 'biz_inbox');
-window.fbAsyncInit = function () {
-  FB.init ({xfbml: true, version: 'v11.0'});
-};
-
-(function (d, s, id) {
-  var js, fjs = d.getElementsByTagName (s)[0];
-  if (d.getElementById (id)) return;
-
-  js = d.createElement (s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore (js, fjs);
-}) (document, 'script', 'facebook-jssdk');
+var chatbox=document.getElementById("fb-customer-chat");chatbox.setAttribute("page_id","102753971946564"),chatbox.setAttribute("attribution","biz_inbox"),window.fbAsyncInit=function(){FB.init({xfbml:!0,version:"v11.0"})},function(t,e,n){var o,c=t.getElementsByTagName(e)[0];t.getElementById(n)||((o=t.createElement(e)).id=n,o.src="https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk");

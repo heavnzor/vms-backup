@@ -118,7 +118,7 @@ A très bientôt sur ViaMedo!
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 {%block main %}
   {{page.content|raw}}
 {% endblock %}

@@ -318,7 +318,7 @@ class __TwigTemplate_ede18068bb049ebd18865422da0a2e585c4f01cbc60a67f098227bedea9
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 
 {% block main %}
   <h2>{{ page.title }}</h2>

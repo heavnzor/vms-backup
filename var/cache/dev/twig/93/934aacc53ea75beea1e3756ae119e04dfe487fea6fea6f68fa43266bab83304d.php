@@ -48,32 +48,28 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
         echo "<!DOCTYPE HTML>
 <html>
 \t<head>
-\t\t<title>ViaMedo : Aide à la désaccoutumance de substances addictives</title>
+\t\t<title>ViaMedo : Aide à la désaccoutumance de substances addictives et aide au sevrage de drogues et médicaments</title>
 \t\t<meta charset=\"utf-8\"/>
-\t\t<meta name=\"description\" content=\"Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être.
-\t\t\t\t\t\t\t\t\t\tEt pour être tout à fait exact : devenir qui vous êtes.
-\t\t\t\t\t\t\t\t\t\tViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature.
-\t\t\t\t\t\t\t\t\t\tComme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. \"/>
+\t\t
 \t\t<meta name=\"robots\" content=\"index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1\"/>
 
 
 \t\t<meta name=\" viewport\" content=\" width\" =\" device-width,\" initial-scale=\" 1,\" user-scalable=\" no\"/>
 \t\t";
-        // line 14
+        // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 14
         echo "\t\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 20
+        // line 17
         echo "\t</head>
 \t<body class=\"is-preload\">
 \t\t";
-        // line 22
+        // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 224
-        echo "\t\t</body>
-\t</body>
-</html></body></html>
+        // line 229
+        echo "\t</body>
+</html></body></html></body></html>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -83,7 +79,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     }
 
-    // line 14
+    // line 11
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -93,7 +89,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 15
+        // line 12
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
@@ -106,7 +102,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     }
 
-    // line 17
+    // line 14
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -116,7 +112,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
+        // line 15
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -129,7 +125,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     }
 
-    // line 22
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -139,9 +135,8 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 23
-        echo "\t\t\t<script src=\"https://consent.cookiefirst.com/banner.js\" data-cookiefirst-key=\"32dc3080-1fd3-4c62-b58d-c0575164da94\"></script>
-
+        // line 20
+        echo "
 \t\t\t<div
 \t\t\t\tid=\"page-wrapper\">
 
@@ -152,7 +147,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t<!-- Logo -->
 \t\t\t\t\t<h1 style=\"font-family: 'Sacramento', cursive !important;\">
 \t\t\t\t\t\t<a href=\"home\" id=\"logo\" style=\"font-size: 65px !important;\">
-\t\t\t\t\t\t\tViaMedo : 
+\t\t\t\t\t\t\tViaMedo :
 \t\t\t\t\t\t\t<em>
 \t\t\t\t\t\t\t\tVotre moi idéal à portée de main</em>
 \t\t\t\t\t\t</a>
@@ -164,10 +159,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t<ul>
 
 \t\t\t\t\t\t\t<li ";
-        // line 46
+        // line 42
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 46, $this->source); })()) === "home")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 42, $this->source); })()) === "home")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -178,10 +173,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 51
+        // line 47
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 51, $this->source); })()) === "infos")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 47, $this->source); })()) === "infos")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -194,10 +189,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 58
+        // line 54
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 58, $this->source); })()) === "substances")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 54, $this->source); })()) === "substances")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -210,10 +205,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 65
+        // line 61
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 65, $this->source); })()) === "videos")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 61, $this->source); })()) === "videos")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -225,10 +220,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 71
+        // line 67
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 71, $this->source); })()) === "tips")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 67, $this->source); })()) === "tips")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -240,10 +235,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 77
+        // line 73
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 77, $this->source); })()) === "stats")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 73, $this->source); })()) === "stats")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -255,10 +250,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 83
+        // line 79
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 83, $this->source); })()) === "historic")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 79, $this->source); })()) === "historic")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -270,10 +265,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 89
+        // line 85
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 89, $this->source); })()) === "money")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 85, $this->source); })()) === "money")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -285,10 +280,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 95
+        // line 91
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 95, $this->source); })()) === "goals")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 91, $this->source); })()) === "goals")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -300,10 +295,10 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
-        // line 101
+        // line 97
         if (array_key_exists("slug", $context)) {
             echo " ";
-            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 101, $this->source); })()) === "partenaires")) {
+            if (((isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 97, $this->source); })()) === "partenaires")) {
                 echo " class=\"current\" ";
             }
             echo " ";
@@ -315,8 +310,8 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t<li  style=\"margin-left: 100px !important;  vertical-align: middle;\">
-\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\" >
+\t\t\t\t\t\t\t<li style=\"margin-left: 100px !important;  vertical-align: middle;\">
+\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\">
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</nav>
@@ -335,9 +330,9 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
 \t\t\t\t\t\t\t\t\t<article>
 \t\t\t\t\t\t\t\t\t\t";
-        // line 127
+        // line 123
         $this->displayBlock('main', $context, $blocks);
-        // line 128
+        // line 124
         echo "
 \t\t\t\t\t\t\t\t\t</article>
 
@@ -352,7 +347,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t\t<section>
 
 \t\t\t\t\t\t\t\t\t\t";
-        // line 141
+        // line 137
         $this->displayBlock('sidebar', $context, $blocks);
         echo "<br>
 
@@ -375,7 +370,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t\t\t<a href='mailto:webmaster@viamedo.fr'>Contact</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<a href=\"http://www.viamedo.fr/cgv.pdf\" target=\"_blank\">Confidentialité</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"http://www.viamedo.fr/CGV.pdf\" target=\"_blank\">Confidentialité</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"http://viamedo.fr/cookies.html\" target=\"_blank\">Cookies</a>
@@ -436,7 +431,16 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t";
+\t\t\t</div>
+\t\t\t<div id=\"fb-root\"></div>
+
+\t\t\t<!-- Your Plug-in Discussion code -->
+\t\t\t<div id=\"fb-customer-chat\" class=\"fb-customerchat\"></div>
+
+
+\t\t\t<script src=\"https://consent.cookiefirst.com/banner.js\" data-cookiefirst-key=\"32dc3080-1fd3-4c62-b58d-c0575164da94\" style=\"min-width: 0em !important;\"></script>
+
+\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -445,7 +449,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     }
 
-    // line 127
+    // line 123
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -463,7 +467,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     }
 
-    // line 141
+    // line 137
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -488,7 +492,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 
     public function getDebugInfo()
     {
-        return array (  467 => 141,  449 => 127,  356 => 141,  341 => 128,  339 => 127,  304 => 101,  289 => 95,  274 => 89,  259 => 83,  244 => 77,  229 => 71,  214 => 65,  198 => 58,  182 => 51,  168 => 46,  143 => 23,  133 => 22,  120 => 18,  110 => 17,  97 => 15,  87 => 14,  74 => 224,  72 => 22,  68 => 20,  65 => 17,  63 => 14,  48 => 1,);
+        return array (  471 => 137,  453 => 123,  351 => 137,  336 => 124,  334 => 123,  299 => 97,  284 => 91,  269 => 85,  254 => 79,  239 => 73,  224 => 67,  209 => 61,  193 => 54,  177 => 47,  163 => 42,  139 => 20,  129 => 19,  116 => 15,  106 => 14,  93 => 12,  83 => 11,  71 => 229,  69 => 19,  65 => 17,  62 => 14,  60 => 11,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -496,12 +500,9 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
         return new Source("<!DOCTYPE HTML>
 <html>
 \t<head>
-\t\t<title>ViaMedo : Aide à la désaccoutumance de substances addictives</title>
+\t\t<title>ViaMedo : Aide à la désaccoutumance de substances addictives et aide au sevrage de drogues et médicaments</title>
 \t\t<meta charset=\"utf-8\"/>
-\t\t<meta name=\"description\" content=\"Sur ViaMedo, on vous fait cette promesse : devenir qui vous voulez être.
-\t\t\t\t\t\t\t\t\t\tEt pour être tout à fait exact : devenir qui vous êtes.
-\t\t\t\t\t\t\t\t\t\tViaMedo vous permet d'acquérir une conscience parfaite de votre consommation de substances de toute nature.
-\t\t\t\t\t\t\t\t\t\tComme le disait le docteur Freud, Le moi n'est pas maître dans sa propre maison. \"/>
+\t\t
 \t\t<meta name=\"robots\" content=\"index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1\"/>
 
 
@@ -515,7 +516,6 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t</head>
 \t<body class=\"is-preload\">
 \t\t{% block body %}
-\t\t\t<script src=\"https://consent.cookiefirst.com/banner.js\" data-cookiefirst-key=\"32dc3080-1fd3-4c62-b58d-c0575164da94\"></script>
 
 \t\t\t<div
 \t\t\t\tid=\"page-wrapper\">
@@ -527,7 +527,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t<!-- Logo -->
 \t\t\t\t\t<h1 style=\"font-family: 'Sacramento', cursive !important;\">
 \t\t\t\t\t\t<a href=\"home\" id=\"logo\" style=\"font-size: 65px !important;\">
-\t\t\t\t\t\t\tViaMedo : 
+\t\t\t\t\t\t\tViaMedo :
 \t\t\t\t\t\t\t<em>
 \t\t\t\t\t\t\t\tVotre moi idéal à portée de main</em>
 \t\t\t\t\t\t</a>
@@ -600,8 +600,8 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t<li  style=\"margin-left: 100px !important;  vertical-align: middle;\">
-\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\" >
+\t\t\t\t\t\t\t<li style=\"margin-left: 100px !important;  vertical-align: middle;\">
+\t\t\t\t\t\t\t\t<img src=\"../pics/icone.png\" width=\"50px\">
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</nav>
@@ -654,7 +654,7 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t\t\t\t\t<a href='mailto:webmaster@viamedo.fr'>Contact</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t\t<a href=\"http://www.viamedo.fr/cgv.pdf\" target=\"_blank\">Confidentialité</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"http://www.viamedo.fr/CGV.pdf\" target=\"_blank\">Confidentialité</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"http://viamedo.fr/cookies.html\" target=\"_blank\">Cookies</a>
@@ -715,10 +715,18 @@ class __TwigTemplate_ef1d0af3d875fabca956523bc618b0989d91eabe30ed940a6dd5d11f09a
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t{% endblock %}
-\t\t</body>
+\t\t\t</div>
+\t\t\t<div id=\"fb-root\"></div>
+
+\t\t\t<!-- Your Plug-in Discussion code -->
+\t\t\t<div id=\"fb-customer-chat\" class=\"fb-customerchat\"></div>
+
+
+\t\t\t<script src=\"https://consent.cookiefirst.com/banner.js\" data-cookiefirst-key=\"32dc3080-1fd3-4c62-b58d-c0575164da94\" style=\"min-width: 0em !important;\"></script>
+
+\t\t{% endblock %}
 \t</body>
-</html></body></html>
+</html></body></html></body></html>
 ", "sidebar.html.twig", "/Applications/XAMPP/apps/ViaMedo Symfony/VMS/VMS/vms-backup/templates/sidebar.html.twig");
     }
 }

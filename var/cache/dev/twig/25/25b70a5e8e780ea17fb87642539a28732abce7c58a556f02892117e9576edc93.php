@@ -151,7 +151,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 
 {%block main %}
 <script type=\"text/javascript\">

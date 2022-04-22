@@ -123,7 +123,7 @@ Pour télécharer le document en matière de confidentialité et de cookies <a h
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 {%block main %}
   {{page.content|raw}}
 <div id=\"cookiefirst-policy-page\"></div>

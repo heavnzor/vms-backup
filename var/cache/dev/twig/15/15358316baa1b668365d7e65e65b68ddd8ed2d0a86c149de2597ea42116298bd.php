@@ -81,7 +81,7 @@ class __TwigTemplate_941db466d1cc13c497a03bcf67dbea1c011bbc345f07cbf5f0589ec10bb
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 7
         echo "
-  <h1 class=\"h1\">Enregister un compte</h1><br>
+  <h1 class=\"h1\">Enregistrer un compte</h1><br>
 
   ";
         // line 10
@@ -214,7 +214,7 @@ Le processus d'authentification est simple :<br><br><li> Vous vous enregistrez, 
     <div class=\"alert alert-danger\" role=\"alert\">{{ flashError }}</div>
   {% endfor %}
 
-  <h1 class=\"h1\">Enregister un compte</h1><br>
+  <h1 class=\"h1\">Enregistrer un compte</h1><br>
 
   {{ form_start(registrationForm) }}
   {{ form_label(registrationForm.email) }}<br>

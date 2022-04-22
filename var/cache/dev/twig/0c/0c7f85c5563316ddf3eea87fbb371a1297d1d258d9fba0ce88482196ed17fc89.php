@@ -195,7 +195,7 @@ class __TwigTemplate_f37eaee8b75b94adb2b28df3e2d4e6bcc849588a3c191dabdd91c77267c
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'sidebar.html.twig' %}
+        return new Source("{% extends 'right-sidebar.html.twig' %}
 {%block main %}
   {{page.content|raw}}
 {% endblock %}
