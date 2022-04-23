@@ -40,7 +40,7 @@ class PageController extends AbstractController
      */
     public function index(PageRepository $pageRepository): Response
     {
-        if($this->getUser()){
+        if ($this->getUser()) {
             $user = $this->getUser();
             $datetime  = date_timezone_set(new DateTime('now'), new DateTimeZone('Europe/Paris'));
             $user->setLastConnection($datetime);
@@ -57,7 +57,7 @@ class PageController extends AbstractController
     public function show(Environment $twig, SpamChecker $spamChecker, EntityManagerInterface $em, Request $request, string $slug, Page $page, UserRepository $userRepository, MedicamentRepository $medicamentRepository): Response
     {
         $user = $this->getUser();
-        if (!$user && ($slug !== "home" && $slug !== 'infos' && $slug !=='videos' && $slug !== 'partenaires')) {
+        if (!$user && ($slug !== "home" && $slug !== 'infos' && $slug !== 'videos' && $slug !== 'partenaires')) {
             return $this->RedirectToRoute('app_login');
         } elseif (!$user && $slug === 'home') {
             return new Response($twig->render('page/home.html.twig', [
@@ -91,7 +91,7 @@ class PageController extends AbstractController
                 'slug' => $slug,
 
             ]));
-        }else {
+        } else {
             $userId = $user->getId();
             $isVerified = $user->getIsVerified();
             if ($isVerified === false) {
@@ -388,9 +388,9 @@ class PageController extends AbstractController
                     ]));
                 }
                 $substance = $this->getDoctrine()->getRepository(Substance::class)->find($id);
-                if($substance->getQuantity()<1){
+                if ($substance->getQuantity() < 1) {
                     $add = 0.2;
-                }else{
+                } else {
                     $add = 1;
                 }
                 $substance->setQuantity($substance->getQuantity() + $add);
@@ -578,7 +578,6 @@ class PageController extends AbstractController
                         'cigaretteForm' => $form->createView(),
                         'val' => $req,
                         'substances' => $user->getSubstances(),
-                        'user' => $userRepository->find($userId),
                     ]));
                 }
 

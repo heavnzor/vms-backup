@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '67d5d0c24557dcaf023e2582a76ca7dac5c1e97b',
+        'reference' => 'fc93a85c044007e288f59cc2fd9ea66e953b5de8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '67d5d0c24557dcaf023e2582a76ca7dac5c1e97b',
+            'reference' => 'fc93a85c044007e288f59cc2fd9ea66e953b5de8',
             'dev_requirement' => false,
         ),
         'cmen/google-charts-bundle' => array(
@@ -364,8 +364,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
